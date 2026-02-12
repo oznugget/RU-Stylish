@@ -1,2 +1,2 @@
-# CHOCA-cara-nilla
+# RU Stylish
 RU Stylish website
