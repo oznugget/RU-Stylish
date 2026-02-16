@@ -16,6 +16,7 @@
   <header>
         <h1>RU Stylish</h1>
         <img src="images/rustylishlogo.jpeg" alt="RU Stylish Logo" width="100px" height="120px">
+        <br>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About us</a>
@@ -26,72 +27,90 @@
             <a href="Cart.html">Cart</a>
             <a href="review.html">Reviews</a>
         </nav>
+        <br>
         <input type="text" placeholder="Search...">
     </header>
+    <br>
 
 
-<div class="Category">
+<article class="Category">
 
-    <h4>Categories<h4>
-    <ul>
-        <li><a href=Shirts.html>Shirts</a></li>
-        <li><a href=Shoes.html>Shoes</a></li>
-        <li><a href=Pants.html>Pants</a></li>
-        <li><a href=Hoodies.html>Hoodies</a></li>
-        <li><a href=Caps_Beanies.html>Caps & Beanies</a></li>
-    </ul>
+     <label for="tag">Choose a category</label>
+        <br>
+        <select name="tag" id="tag">
+        <option value="shirt">Shirts</option>
+        <option value="shoes">Shoes</option>
+        <option value="pants">Pants</option>
+        <option value="hoodie">Hoodies</option>
+        <option value="caps_beanies">Caps & Beanies</option>
+        </select>
 
-</div>
+    </article>
 
 
 <section  class="store">
 <table>
+    <h2>Featured Listings</h2>
     <tr>
         <th>
-    <div id="p1">
-        <h3>Adamson House<h3>
-            <img src="images/loafers.jpg" alt="Loafers" width="200px" height="200px">
-        <h4>Seller: ...</h4>
-        <p>Loafers <p>
-        <p>R300</p>
+            <figure id="p1">
+                <a href="view_listing.html">
+                <img src="images/loafers.jpg" alt="Loafers" width="200px" height="200px">
+                </a>
+                <figcaption>
+                    <p>Loafers <p>
+                    <p>R300</p>
+                    <p>Seller: ...</p>
+                </figcaption>
 
-    </div>
+            </figure>
+        </th>
+
+    <th>
+
+        <figure id="p2">
+        
+            <a href="view_listing.html">
+                <img src="images/hoodie.jpg" alt="Loafers" width="200px" height="200px">
+                </a>
+            <figcaption>
+                <p>Black Hoodie<p>
+                <p>R250</p>
+                <p>Seller: ...</p>
+            </figcaption>
+            
+        </figure>
     </th>
 
     <th>
 
-    <div id="p2">
-        <h3>College House<h3>
-            <img src="images/hoodie.jpg" alt="Black Hoodie" width="200px" height="200px">
-        <h4>Seller: ...</h4>
-        <p>Black Hoodie<p>
-        <h5>R250</h5>
-        
-    </div>
+        <figure id="p3">
+            
+                <a href="view_listing.html">
+                <img src="images/whitecap.jpg" alt="Loafers" width="200px" height="200px">
+                </a>
+            <figcaption>
+                <p>White Adidas Cap<p>
+                <p>R150</p>
+                <p>Seller: ...</p>
+            </figcaption>
+            
+        </figure>
     </th>
 
     <th>
 
-    <div id="p3">
-        <h3>Starling House<h3>
-            <img src="images/whitecap.jpg" alt="White Adidas Cap" width="200px" height="200px">
-        <h4>Seller: ...</h4>
-        <p>White Adidas Cap<p>
-        <h5>R150</h5>
-        
-    </div>
-    </th>
-
-    <th>
-
-    <div id="p4">
-        <h3>Somerset<h3>
-            <img src="images/orangetshirt.jpg" alt="Orange T-Shirt Plain" width="200px" height="200px">
-        <h4>Seller: ...</h4>
-        <p>Orange T-Shirt Plain <p>
-        <h5>R100</h5>
-        
-    </div>
+        <figure id="p4">
+                <a href="view_listing.html">
+                <img src="images/orangetshirt.jpg" alt="Loafers" width="200px" height="200px">
+                </a>
+            <figcaption>
+            <p>Orange T-Shirt Plain <p>
+            <p>R100</p>
+            <p>Seller: ...</p>
+            </figcaption>
+            
+        </figure>
     </th>
 </tr>
 </table>
@@ -100,24 +119,27 @@
 
 <footer>
 
-<div id="contacts">
+<aside id="contacts">
     <p>Eastern Cape, Makhanda<br>
         Rhodes University <br>
-    0789011234 <br>
-    Tshikovhi@gmail.com
-    <div>
+        <br>
 
-<div id="links">
-    <p>Follows on :<p>
+        contact us for help<br>
+        &#x260F 0789011234 <br>
+        &#x2709 Tshikovhi@gmail.com <br>
+   
+</aside>
+
+<section id="links">
+    <p>Follows on :</p>
         <ul>
-            instagram
-            facebook  
-            twitter
+            <li><a href="https://www.instagram.com/ru_stylish/">Instagram</a></li>
+            <li>facebook</li>  
+            <li>twitter</li>
             
         </ul>
-    <p>Help<br>
-    0789011234 <br>
-    <div>
+   
+</section>
 
     <p>@ 2026 Copyright:RUStylish.com<p>
 </footer>
