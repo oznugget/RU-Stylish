@@ -10,8 +10,10 @@
 <body>
     <!-- navigation bar with absolute and relative links -->
      <header>
-        <h1>RU Stylish</h1>
-        <img src="images/rustylishlogo.jpeg" alt="RU Stylish Logo" width="100px" height="120px">
+        <h1 style="color:rgb(33, 116, 103)">RU Stylish</h1>
+        <a href="index.html">
+        <img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="150px" height="170px">
+        </a>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About us</a>
@@ -19,12 +21,12 @@
             <a href="Create_Acount.html">Create Account</a>
             <a href="listing.html">Create Listing</a>
             <a href="Contact.html">Contact us</a>
-            <a href="Cart.html">Cart</a>
             <a href="review.html">Reviews</a>
+            <a href="report.html">Report</a>
         </nav>
     </header>
 
-    <h2> New Listing </h2>
+    <h2 style="color:rgb(33, 116, 103)"> New Listing </h2>
     <br>
 
     <!-- form to create post -->
@@ -45,7 +47,19 @@
         <input type="text" id="colour" name="colour">
         <br>
 
-        <!-- creative feature- drop down menu -->
+          <!-- creative feature- drop down menus -->
+
+        <label for="condition">Choose a condition</label>
+        <br>
+        <select name="condition" id="condition">
+        <option value="new">New</option>
+        <option value="excellent">Excellent</option>
+        <option value="good">Good</option>
+        <option value="fair">Fair</option>
+        </select>
+        <br>
+        <br>
+
 
         <label for="tag">Choose a category</label>
         <br>
@@ -61,6 +75,9 @@
         <br>
 
         <button type="post">Post</button>
+
+        <p> Time of Listing: </p>
+        
 
     </form>
     
