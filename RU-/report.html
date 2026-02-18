@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=!, initial-scale=1.0">
+    <title>Home Page</title>
+
+</head>
+
+
+<body>
+
+
+  <header>
+        <h1>RU Stylish</h1>
+        <img src="images/rustylishlogo.jpeg" alt="RU Stylish Logo" width="100px" height="120px">
+        <br>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About us</a>
+            <a href="SignIn.html">Sign in</a>
+            <a href="Create_Acount.html">Create Account</a>
+            <a href="listing.html">Create Listing</a>
+            <a href="Contact.html">Contact us</a>
+            <a href="review.html">Reviews</a>
+            <a href="report.html">Report</a>
+
+        </nav>
+        <br>
+        <input type="text" placeholder="Search...">
+    </header>
+    <br>
+
+    <section id="report">
+        <h2>Report a Misconduct</h2>
+        <form action="submit_report" method="post">
+        <label for="misconduct"><b>Select the type of misconduct:</b></label><br>
+        <label>
+            <input type="checkbox" name="scam" value="value1"> Scam
+        </label><br>
+        <label>
+            <input type="checkbox" name="damaged goods" value="value2"> Damaged Goods
+        </label><br>
+        <label>
+            <input type="checkbox" name="theft" value="value3"> Theft
+        </label><br>
+        <label>
+            <input type="checkbox" name="phishing" value="value4"> Phishing
+
+                <br>  
+            <div>
+                <input type="text" placeholder="username of reported user" id="name" name="name" required>
+            </div>
+            <br>
+            <div>
+                <textarea placeholder="Describe the misconduct experience..." id="problem" name="problem" required ></textarea>
+            </div>
+            <br>
+            <button type="submit">Submit Report</button>
+        </form>
