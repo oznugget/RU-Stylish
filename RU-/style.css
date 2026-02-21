@@ -5,37 +5,46 @@ body{
 }
 
 header{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    background-color: #000000;
-    text-align: left;
-    font-size: 20px;
-    color: white;
-    padding: 0px;
     position: sticky;
     top: 0;
 }
 
+
 .logo{
     float: left;
-    margin-right: 10px;
-    padding: 0;
-    margin-top: 0px;
-    padding-top: 0px;
     display: block;
 }
 
 .search-bar {
     padding: 10px;
     font-size: 10px;
+    border-radius: 30px;
     border: none;
-    border-radius: 7px;
     margin-left: 20px;
     float: right;
 }
 
-nav a{
-    color: white;
+nav{
+    width: 100%;
+    padding: 0.5rem;
+    background-color: rgb(0, 0, 0);
+
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
     text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: relative;
 }
