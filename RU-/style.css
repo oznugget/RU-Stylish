@@ -2,6 +2,7 @@ body{
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: rgb(243, 241, 241);
 }
 
 header{
@@ -44,18 +45,37 @@ nav{
 }
 
 .nav-links {
-    list-style: none;
+    
+    list-style: none; ;
     display: flex;
     gap: 1rem;
     border-radius: 30%;
+    
+    
+   
+
 }
 
 .nav-links a {
+    background-size: 50px 20px;
+    padding: 50px 50px;
+    width: 50px;
+    height: 20px;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(24, 83, 73);
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 700;
     position: relative;
     
+    
     padding: 0.5rem 1rem;
+}
+.store img{
+
+    border-radius: 30%;
+    
+}
+.member_imgs td img{
+    border-radius: 50%;
+
 }
