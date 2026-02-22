@@ -2,6 +2,7 @@ body{
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: rgb(243, 241, 241);
 }
 
 header{
@@ -9,6 +10,37 @@ header{
     padding-top: 0% ;
     position: sticky;
     top: 0;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    gap: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+}
+
+#footerMap{
+    margin-left: 13%;
+    margin-top: 2%;
+}
+
+#footerRight{
+    margin-left: 15%;
+}
+
+#footerMiddle{
+    margin-left: 5%;
+    margin-top: 3%;
+    text-decoration: none;
+    color: rgb(212, 212, 212);
+}
+
+#footerBottom{
+    bottom: 0%;
+    position: absolute;
+   
 }
 
 
@@ -34,7 +66,8 @@ header{
 nav{
     width: 100%;
     padding: 0.5rem;
-    background-color: rgb(238, 216, 144);
+    background-image: url('images/nav.png');
+
 
 
     display: flex;
@@ -44,18 +77,37 @@ nav{
 }
 
 .nav-links {
-    list-style: none;
+    
+    list-style: none; ;
     display: flex;
     gap: 1rem;
     border-radius: 30%;
+    
+    
+   
+
 }
 
 .nav-links a {
+    background-size: 50px 20px;
+    padding: 50px 50px;
+    width: 50px;
+    height: 20px;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(24, 83, 73);
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 700;
     position: relative;
     
+    
     padding: 0.5rem 1rem;
+}
+.store img{
+
+    border-radius: 30%;
+    
+}
+.member_imgs td img{
+    border-radius: 50%;
+
 }
