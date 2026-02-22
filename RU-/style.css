@@ -19,15 +19,23 @@ footer{
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 1%;
+    background-image: url(images/footer_bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
 }
 
 #footerMap{
     margin-left: 13%;
     margin-top: 2%;
+    color: white;
+    
 }
 
 #footerRight{
     margin-left: 15%;
+    color: white;
 }
 
 #footerMiddle{
@@ -35,6 +43,7 @@ footer{
     margin-top: 3%;
     text-decoration: none;
     color: rgb(212, 212, 212);
+    
 }
 
 #footerBottom{
@@ -43,7 +52,16 @@ footer{
    
 }
 
-
+#footerMiddle a{
+    text-decoration: none;
+    color: rgb(212, 212, 212);
+    text-decoration: underline;
+    
+}
+#footerLeft a{
+    color: rgb(212, 212, 212);
+    text-decoration: underline;
+}
 
 
 .logo{
