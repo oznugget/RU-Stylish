@@ -1,0 +1,6 @@
+{
+    "editor.snippetSuggestions": "none",
+    "editor.wordBasedSuggestions": "off",
+    "html.suggest.hideEndTagSuggestions": true,
+    "editor.acceptSuggestionOnEnter": "off"
+}
