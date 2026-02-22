@@ -9,6 +9,37 @@ header{
     top: 0;
 }
 
+footer{
+    display: flex;
+    justify-content: space-between;
+    gap: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+}
+
+#footerMap{
+    margin-left: 13%;
+    margin-top: 2%;
+}
+
+#footerRight{
+    margin-left: 15%;
+}
+
+#footerMiddle{
+    margin-left: 5%;
+    margin-top: 3%;
+    text-decoration: none;
+    color: rgb(212, 212, 212);
+}
+
+#footerBottom{
+    bottom: 0%;
+    position: absolute;
+   
+}
+
 
 .logo{
     float: left;
