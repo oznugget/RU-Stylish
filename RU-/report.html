@@ -41,7 +41,7 @@
 
     <section id="report">
         <h2 style="color:rgb(33, 116, 103)">Report a Misconduct</h2>
-        <form action="submit_report" method="post">
+        <form  id = "report_form" action="submit_report" method="post">
         <label for="misconduct"><b>Select the type of misconduct:</b></label><br>
         <label>
             <input type="checkbox" name="scam" value="value1"> Scam
@@ -57,11 +57,11 @@
 
                 <br>  
             <div>
-                <input type="text" placeholder="username of reported user" id="name" name="name" required>
+                <input type="text" placeholder="username of reported user" id="reported_user" name="name" required>
             </div>
             <br>
             <div>
-                <textarea placeholder="Describe the misconduct experience..." id="problem" name="problem" required ></textarea>
+                <textarea id = "describe_misconduct" placeholder="    Describe the misconduct experience"  name="problem" required ></textarea>
             </div>
             <br>
             <button type="submit">Submit Report</button>

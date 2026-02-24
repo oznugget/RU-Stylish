@@ -75,8 +75,9 @@ footer{
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*LOGOS*/
 
-/* logo across all pages */
+/*RU Stylish logo across all pages */
 .logo{
     width: 45px;
     height: 45px;
@@ -84,7 +85,17 @@ footer{
     padding-bottom: 30px;
     
 }
+/*ig and linkedin logos from about page*/
+.iglogo, .linklogo{
+    width: 45px;
+    height: 45px;
+}
+
+
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*ABOUT PAGE*/
 
 .search-bar input{
     padding: 12px;
@@ -141,6 +152,13 @@ nav{
 
 }
 
+#member_links{
+    align-content: center;
+}
+
+.members{
+    padding-top: 10rem;
+}
 
 /* Items for sale page ------------------------------------------------------------*/
 
@@ -223,7 +241,7 @@ h2 {
 /*.store td{
     gap: 5%;
     border-radius: 10%;       
-    background-image: url('images/nav.png');
+    background-image: url("images/card_bg.png");
     text-align: center; 
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); 
     color: rgb(0, 0, 0);
@@ -256,7 +274,12 @@ h2 {
  }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*ABOUT PAGE*/
-
+.hero-video {
+    width: 100vw; /* 100% of the Viewport Width */
+    height: 30vh; /* Takes up 60% of the screen height. Adjust as needed! */
+    object-fit: contain; /* Forces the video to fill the space without stretching the pixels */
+    display: block;
+  }
 .siteDetails{
     margin: 10rem;
     align-content: center;
@@ -287,7 +310,7 @@ h2 {
     font-size: 2rem ;
     float: center;
 }
-dl{ background-color: rgb(250, 235, 193);
+dl{background-image: url("images/member_bg.png");
 }
 
 #member_names td{
@@ -307,4 +330,94 @@ dl{ background-color: rgb(250, 235, 193);
     
     font-size: 2rem;
     font-weight: bold;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*REVIEWS PAGE*/
+
+.usericon{
+    width: 45px;
+    height: 45px;
+}
+
+.box{
+    border-style: solid;
+    border-color:  rgb(33, 116, 103);
+    background-color: #ffffff;
+    height: 15rem;
+    width: 80rem;
+    justify-content: space-around;
+    padding: 2rem 2rem 0.5rem 2rem;
+
+}
+
+#reviews{
+    
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-bottom: 25rem;
+    column-width: 5fr;
+}
+
+.username{
+    flex-wrap: wrap;
+}
+
+#reviewh1{
+    font-size: x-large;
+    color: rgb(6, 44, 38);
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+}
+
+#reviewh2{
+    font-size: medium;
+    color: rgb(33, 116, 103);
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+#reviewbody{
+    background-color:  #f1f1f1;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*forms across all pages*/
+
+form{
+    background-image: url('images/nav.png');
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    text-align: center;}
+
+#login-header{
+    text-align: center;
+    margin-bottom: 20px;
+} 
+
+#describe_misconduct{
+    height: 28rem;
+    width: 20rem;
+    border-radius: 30px;
+}
+
+#report_form{
+    height: 40rem;
+    width: 30rem;
+    font-size: large;
+    
+}
+
+#reported_user{
+    height:1rem;
+    width:12rem;
+    padding: 0.5rem;
+    font-size: 12px;
+    border-radius: 30px;
+    border: none;
+    margin-left: 30px;
+    
 }
