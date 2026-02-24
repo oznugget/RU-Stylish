@@ -175,7 +175,7 @@ nav{
     background-color: rgb(235, 198, 33);
     text-align: center; 
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); 
-    color: white;
+    color: rgb(0, 0, 0);
 }
 .ItemsForSale h2{
     text-align: left;    
@@ -199,21 +199,24 @@ h2 {
 }
     
 
-
+.line{
+    border-top: 2px solid rgb(33, 116, 103);
+    margin: 2rem 0;
+}
 .store td{
     gap: 5%;
     border-radius: 10%;       
-    background-color: rgb(44, 139, 123);
+    background-image: url('images/nav.png');
     text-align: center; 
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); 
-    color: white;
+    color: rgb(0, 0, 0);
 }    
 
 .store h2{
     
     
     text-align: left;    
-    background-color: #d1cfcf;
+    
     
 }
  figcaption{
