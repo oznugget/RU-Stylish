@@ -206,7 +206,7 @@ h2 {
 .store td{
     gap: 5%;
     border-radius: 10%;       
-    background-image: url('images/nav.png');
+    background-image: url("images/card_bg.png");
     text-align: center; 
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); 
     color: rgb(0, 0, 0);
@@ -340,3 +340,18 @@ dl{ background-color: rgb(250, 235, 193);
     background-color: rgb(250, 235, 193);
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* sign in page--------------------------------------------------------------------------------------------------------------- */
+
+form{
+    background-image: url('images/nav.png');
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    text-align: center;}
+
+#login-header{
+    text-align: center;
+    margin-bottom: 20px;
+}
