@@ -238,7 +238,12 @@ h2 {
  }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*ABOUT PAGE*/
-
+.hero-video {
+    width: 100vw; /* 100% of the Viewport Width */
+    height: 30vh; /* Takes up 60% of the screen height. Adjust as needed! */
+    object-fit: contain; /* Forces the video to fill the space without stretching the pixels */
+    display: block;
+  }
 .siteDetails{
     margin: 10rem;
     align-content: center;
@@ -269,7 +274,7 @@ h2 {
     font-size: 2rem ;
     float: center;
 }
-dl{ background-color: rgb(250, 235, 193);
+dl{background-image: url("images/member_bg.png");
 }
 
 #member_names td{
