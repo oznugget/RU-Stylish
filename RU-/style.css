@@ -302,6 +302,7 @@ dl{ background-color: rgb(250, 235, 193);
 .box{
     border-style: solid;
     border-color:  rgb(33, 116, 103);
+    background-color: #ffffff;
     height: 15rem;
     width: 80rem;
     justify-content: space-around;
@@ -337,10 +338,10 @@ dl{ background-color: rgb(250, 235, 193);
 }
 
 #reviewbody{
-    background-color: rgb(250, 235, 193);
+    background-color:  #f1f1f1;
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/* sign in page--------------------------------------------------------------------------------------------------------------- */
+/*forms across all pages*/
 
 form{
     background-image: url('images/nav.png');
@@ -354,4 +355,28 @@ form{
 #login-header{
     text-align: center;
     margin-bottom: 20px;
+} 
+
+#describe_misconduct{
+    height: 28rem;
+    width: 20rem;
+    border-radius: 30px;
+}
+
+#report_form{
+    height: 40rem;
+    width: 30rem;
+    font-size: large;
+    
+}
+
+#reported_user{
+    height:1rem;
+    width:12rem;
+    padding: 0.5rem;
+    font-size: 12px;
+    border-radius: 30px;
+    border: none;
+    margin-left: 30px;
+    
 }
