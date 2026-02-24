@@ -75,8 +75,9 @@ footer{
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*LOGOS*/
 
-/* logo across all pages */
+/*RU Stylish logo across all pages */
 .logo{
     width: 45px;
     height: 45px;
@@ -84,7 +85,17 @@ footer{
     padding-bottom: 30px;
     
 }
+/*ig and linkedin logos from about page*/
+.iglogo, .linklogo{
+    width: 45px;
+    height: 45px;
+}
+
+
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*ABOUT PAGE*/
 
 .search-bar input{
     padding: 12px;
@@ -141,6 +152,13 @@ nav{
 
 }
 
+#member_links{
+    align-content: center;
+}
+
+.members{
+    padding-top: 10rem;
+}
 
 /* Items for sale page ------------------------------------------------------------*/
 
@@ -269,3 +287,49 @@ dl{ background-color: rgb(250, 235, 193);
     font-size: 2rem;
     font-weight: bold;
 }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*REVIEWS PAGE*/
+
+img{
+    width: 45px;
+    height: 45px;
+}
+
+.box{
+    border-style: solid;
+    border-color:  rgb(33, 116, 103);
+    height: 15rem;
+    width: 80rem;
+    justify-content: space-around;
+    padding: 2rem 2rem 0.5rem 2rem;
+
+}
+
+#reviews{
+    
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-bottom: 25rem;
+    column-width: 5fr;
+}
+
+.username{
+    flex-wrap: wrap;
+}
+
+#reviewh1{
+    font-size: x-large;
+    color: rgb(6, 44, 38);
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+}
+
+#reviewh2{
+    font-size: medium;
+    color: rgb(33, 116, 103);
+    text-align: center;
+    padding-bottom: 2rem;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
