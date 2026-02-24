@@ -4,30 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Listing</title>
+    <style>
+        @import url('style.css');
+    </style>
 </head>
 <body>
     
     <header>
-        <h1 style="color:rgb(33, 116, 103)">RU Stylish</h1>
-        <a href="index.html">
-        <img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="150px" height="170px">
-        </a>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About us</a>
-            <a href="SignIn.html">Sign in</a>
-            <a href="Create_Acount.html">Create Account</a>
-            <a href="MyAccount.html">Account</a>
-            <a href="listing.html">Create Listing</a>
-            <a href="Contact.html">Contact us</a>
-            <a href="review.html">Reviews</a>
-            <a href="report.html">Report</a>
-            <a href="CampusMap.html">Map</a>
+            <div class="logo">
+                <img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="65px" height="85px" class="logo-left">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="SignIn.html">Sign in</a></li>
+                <li><a href="Create_Acount.html">Create Account</a></li>
+                <li><a href="MyAccount.html">Account</a></li>
+                <li><a href="listing.html">Create Listing</a></li>
+                <li><a href="Contact.html">Contact us</a></li>
+                <li><a href="review.html">Reviews</a></li>
+                <li><a href="report.html">Report</a></li>
+                <li><a href="CampusMap.html">Map</a></li>
+            </ul>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+
         </nav>
     </header>
 
 <section id="view">
-    <h2 style="color:rgb(33, 116, 103)">Listing Title</h2>
+    <table>
+        <h2 style="color:rgb(33, 116, 103)">Listing Title</h2>
+        <tr>
+            <td>
+    
     <img src="images/loafers.jpg" alt="Clothing Item" width="300px" height="400px">
     <aside id="description">
 
@@ -36,4 +49,73 @@
         <p>discription....</p>
         <p>Price: R100</p>
     <button type="button">Contact Seller</button>
+    </td>
+
+    <td>
+        <!--to be edited by A-->
+
+    </td>
+
+    </tr>
+    </table>
+
+
 </section>
+
+
+<footer style = "color:rgb(212, 212, 212)">
+
+    
+    <div id = "footerLeft">
+        <h3> RU Stylish </h3>
+        <p> RU stylish? Add items to your wishlist.</p>
+        <a href = "index.html"> read more &#x2192 </a>
+        <br>
+        <p id = "footerBottom">2026 &copy:RUStylish.com</p>
+    </div> 
+
+    <div>
+        <table id = "footerMiddle">
+            <tr>
+            <th> Purchasing </th> <th> About </th> <th> Social</th>
+            </tr>
+
+            <tr>
+                <td> <a href = "index.html">Buy</a></td>
+                <td> <a href = "about.html#aboutSite"> Website </a></td>
+                <td> <a href = "https://www.instagram.com/ru_stylish/">Instagram</a></li></td>
+            </tr>
+
+            <tr>
+                <td> <a href = "listing.html"> Sell </a></td>
+                <td> <a href = "about.html#aboutCrew"> Crew </a></td>
+                <td> <a href = "#"> Youtube </a></td>
+            </tr>      
+        </table>
+    </div>
+    
+
+    <div>
+        <a id = "footerMap" href="CampusMap.html"> <img src="images/mapicon.png" height = "150px" width="150px" > </a>
+    </div>
+
+    <div id = "footerRight">
+        <p> Rhodes University <br>
+            Makhanda<br>
+            Gramahstown <br>
+            6139 <br>
+            Eastern Cape <br>
+            South-Africa <br>
+        </p> 
+
+
+        <p> &#x260F 0789011234 <br>
+        &#x2709 Tshikovhi@gmail.com <br>
+        </p>
+    </div>
+
+</footer>
+
+</body>
+
+</html>

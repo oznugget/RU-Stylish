@@ -1,0 +1,274 @@
+html{
+    font-size: 15px;
+}
+body{
+    font-family: Arial, sans-serif;
+    margin-left: 0;
+    padding: 0;
+    background-color: rgb(243, 241, 241);
+}
+
+header{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 0% ;
+    position: sticky;
+    top: 0;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* footer across all pages */
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 1rem;
+    background-image: url(images/footer_bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    bottom: 0;
+    position: relative;
+    
+}
+
+#footerMap{
+    margin-left: 13%;
+    margin-top: 2%;
+    color: white;
+}
+
+#footerRight{
+    margin-left: 15%;
+    color: white;
+}
+
+#footerMiddle{
+    margin-left: 5%;
+    margin-top: 3%;
+    padding-bottom: 10%;
+    text-decoration: none;
+    color: rgb(212, 212, 212);
+}
+
+#footerBottom{
+    padding-top: 8%;
+    bottom: 0%;
+    position: relative;
+}
+
+#footerMiddle a{
+    color: rgb(212, 212, 212);
+    text-decoration: underline;
+    
+}
+#footerLeft a{
+    color: rgb(212, 212, 212);
+    text-decoration: underline;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* logo across all pages */
+.logo{
+    width: 45px;
+    height: 45px;
+    float: left;
+    padding-bottom: 30px;
+    
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.search-bar input{
+    padding: 12px;
+    font-size: 12px;
+    border-radius: 30px;
+    border: none;
+    margin-left: 30px;
+    float: right;
+}
+
+nav{
+    width: 100%;
+    padding: 0.5rem;
+    background-image: url('images/nav.png');
+
+
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 0.95;
+}
+
+.nav-links {
+    
+    list-style: none; ;
+    display: flex;
+    gap: 1rem;
+    border-radius: 30%;
+
+}
+
+.nav-links a {
+    background-size: 50px 20px;
+    padding: 50px 50px;
+    width: 50px;
+    height: 20px;
+    text-decoration: none;
+    color: rgb(24, 83, 73);
+    font-size: 1.2rem;
+    font-weight: 700;
+    position: relative;
+    
+    
+    padding: 0.5rem 1rem;
+}
+.store img{
+
+    border-radius: 30%;
+    
+}
+.member_imgs td img{
+    border-radius: 50%;
+
+}
+
+
+/* Items for sale page ------------------------------------------------------------*/
+
+.ItemsForSale table{
+    border-collapse: separate; 
+    border-spacing: 1rem;       
+    margin: 0 auto;
+    width: 100%;  
+    table-layout: fixed;  
+}
+.ItemsForSale td{
+    gap: 5%;
+    border-radius: 10%;       
+    background-color: rgb(235, 198, 33);
+    text-align: center; 
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); 
+    color: rgb(0, 0, 0);
+}
+.ItemsForSale h2{
+    text-align: left;    
+    background-color: #d1cfcf;
+}
+
+
+/*store page ------------------------------------------------------------*/
+
+h2 {
+    margin-left: 1rem;  
+}
+
+/* STORE PAGE */
+.store table{
+    border-collapse: separate; 
+    border-spacing: 1rem;       
+    margin: 0 auto;
+    width: 100%;  
+    table-layout: fixed;  
+}
+    
+
+.line{
+    border-top: 2px solid rgb(33, 116, 103);
+    margin: 2rem 0;
+}
+.store td{
+    gap: 5%;
+    border-radius: 10%;       
+    background-image: url('images/nav.png');
+    text-align: center; 
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); 
+    color: rgb(0, 0, 0);
+}    
+
+.store h2{
+    
+    
+    text-align: left;    
+    
+    
+}
+ figcaption{
+    block-size: auto;
+    font-size: 0.8rem;
+    
+ }
+
+ select{
+    padding: 10px;
+    
+    font-size: 1rem;
+    border-radius: 30px;
+    border: none;
+    margin-left:0.5%;
+    float: left;
+    color: rgb(24, 83, 73);
+    font-weight: bold;
+ }
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*ABOUT PAGE*/
+
+.siteDetails{
+    margin: 10rem;
+    align-content: center;
+    text-align: center;
+}
+
+.members_pics{
+     border-collapse: separate; 
+    border-spacing: 1rem;       
+    margin: 0 auto;
+    width: 100%;  
+    table-layout: fixed;
+    
+    text-align: center;
+    float : center;
+}
+.member_imgs td img {
+    width: 250px;          
+    height: 250px;          
+    object-fit: cover;      
+    border-radius: 50%;     
+    border: 4px solid rgb(44, 145, 129);  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+}
+#teamMembers{
+    text-align: center;
+    font-size: 2rem ;
+    float: center;
+}
+dl{ background-color: rgb(250, 235, 193);
+}
+
+#member_names td{
+    color: rgb(33, 116, 103);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+#bio{
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    font-weight: normal;
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+#aboutSite{
+    
+    font-size: 2rem;
+    font-weight: bold;
+}

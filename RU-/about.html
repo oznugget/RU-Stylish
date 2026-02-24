@@ -4,63 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About RU Stylish</title>
+    <style>
+        @import url('style.css');
+    </style>
 </head>
 <body>
 
     <!-- About page for the crew -->
 
     <header>
-        <h1 style="color:rgb(33, 116, 103)">RU Stylish</h1>
-        <a href="index.html">
-        <img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="150px" height="170px">
-        </a>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About us</a>
-            <a href="SignIn.html">Sign in</a>
-            <a href="Create_Acount.html">Create Account</a>
-            <a href="MyAccount.html">Account</a>
-            <a href="listing.html">Create Listing</a>
-            <a href="Contact.html">Contact us</a>
-            <a href="review.html">Reviews</a>
-            <a href="report.html">Report</a>
-            <a href="CampusMap.html">Map</a>
+            <div class="logo">
+                <img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="65px" height="85px" class="logo-left">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="SignIn.html">Sign in</a></li>
+                <li><a href="Create_Acount.html">Create Account</a></li>
+                <li><a href="MyAccount.html">Account</a></li>
+                <li><a href="listing.html">Create Listing</a></li>
+                <li><a href="Contact.html">Contact us</a></li>
+                <li><a href="review.html">Reviews</a></li>
+                <li><a href="report.html">Report</a></li>
+                <li><a href="CampusMap.html">Map</a></li>
+            </ul>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+
         </nav>
     </header>
 
+    <div class = "siteDetails">
     <h2 id = "aboutSite" style="color:rgb(33, 116, 103)">What is RU Stylish?</h2>
-    <p>RU Stylish is a platform for everyone involved in the Rhodes University community to buy and sell second-hand clothing and accessories. <br>
-        We are a student-run marketplace that promotes sustainability and community engagement.</p>
+    <p >RU Stylish is a platform for everyone involved in the Rhodes University community to buy and sell second-hand clothing and accessories. <br>
+        We are a student-run marketplace that promotes sustainability and community engagement.
+        You as our customer, can create a listing of item you would like to sell. You can also view more details about each listing by clicking on the 
+        item that you see. You can also create a wishlist as a collection of things you like, then put in a bid when you are ready.<br>
+         <a href = "SignIn.html">Click here </a>to sign up for an account, press releases, and updates from our website.
+        This website was designed to put you, our customer, first in all services because you matter. <br> In the event of any misconduct
+        , <a href="report.html">report it here </a> and we will investigate it. Thank you for visiting us. Stick around for a purchase or a listing.</p>
+
+        <video width="1600" height="240" controls autoplay muted>
+        <source src= "AboutVideo.mp4" type="video/mp4">
+        Video format not supported. 
+        </video>
+    </div>
 
     <h2 id = "aboutCrew" style="color:rgb(33, 116, 103)"> Meet the crew CHOCA - Cara - Nilla </h2>
     <dl>
-
     <section id="members">
-        <table>
-            <th><h2 style="color:rgb(33, 116, 103)">Team Members</h2></th>
+        <h2 id = "teamMembers" style="color:rgb(33, 116, 103)">Team Members</h2>
+        <table class="members_pics">
+            
+           
 
-        <tr>
-            <article id="member_imgs">
+        <tr class="member_imgs">
+        
                   <td><img src="images/Shumi.JPG" alt="Shumirai" width="220px" height="150px"></td>
                   <td><img src="images/chrisphoto.jpeg" alt="Christopher" width="200px" height="150px"></td>
                   <td><img src="images/Kovhi.jpeg" alt="Kovhi" width="200px" height="150px"></td>
                   <td><img src="images/pranay.JPG" alt="Pranay" width="220px" height="150px"></td>
                   <td><img src="images/Abonaphoto.jpeg" alt="Abona" width="150px" height="150px"></td>
-        </article>
+       
         </tr>
 
-        <tr>
-            <article id="member_names">
+        <tr id="member_names">
+           
                   <td><h4 style="color:rgb(33, 116, 103)">Shumirai</h4></td>
                   <td><h4 style="color:rgb(33, 116, 103)">Christopher</h4></td>
                   <td><h4 style="color:rgb(33, 116, 103)">Ntsumbedzeni</h4></td>
                   <td><h4 style="color:rgb(33, 116, 103)">Pranay</h4></td>
                   <td><h4 style="color:rgb(33, 116, 103)">Abona</h4></td>
 
-            </article>
+    
         </tr>
-        <tr>
-            <article id="member_positions">
+        <tr id="member_pos">
+            
                   <td><dt><b>Position:</b></dt>
                       <dd>Web development project <br>manager</dd></td>
                   <td><dt><b>Position:</b></dt>
@@ -72,11 +94,11 @@
                   <td><dt><b>Position:</b></dt>
                       <dd>Analyst</dd></td>
 
-            </article>
+    
         </tr>
 
-        <tr>
-            <article id="member_links">
+        <tr id="member_links">
+            
                   <td><ul>
                       <li><a href="https://www.instagram.com/ru_stylish/">Instagram</a></li>
                       <li> linkedin</li>
@@ -100,13 +122,13 @@
 
 
 
-            </article>
+            
 
         </table>
     </dl>
 
         <section id="bio">
-            <h3 style="color:rgb(33, 116, 103)"> The Origin and Story of CHOCA-cara-nilla</h3><br>
+            <h3 style="color:rgb(33, 116, 103)"> The Origin and Story of CHOCA-cara-nilla</h3>
             <p> The team was formed by an unlikely combination of different individuals from different backgrounds. The team was formed in 
                 2024 and has been working together for the past 2 years. The team is now focused on developing multiple projects that are recognised and 
                 modern. 
@@ -121,51 +143,60 @@
     </section>
 </body>
 
-    <footer>
-<footer style = "background-color:#047575; color:rgb(212, 212, 212)">
+<footer style = "color:rgb(212, 212, 212)">
 
     
+    <div id = "footerLeft">
+        <h3> RU Stylish </h3>
+        <p> RU stylish? Add items to your wishlist.</p>
+        <a href = "index.html"> read more &#x2192 </a>
+        <br>
+        <p id = "footerBottom">2026 &copy:RUStylish.com</p>
+    </div> 
 
-    <h3> RUStylish.com </h3>
-    <p> RU stylish? Connect with RU friends</p>
-    <a href = "about.html"> read more &#x2192 </a>
+    <div>
+        <table id = "footerMiddle">
+            <tr>
+            <th> Purchasing </th> <th> About </th> <th> Social</th>
+            </tr>
 
-    <table>
+            <tr>
+                <td> <a href = "index.html">Buy</a></td>
+                <td> <a href = "about.html#aboutSite"> Website </a></td>
+                <td> <a href = "https://www.instagram.com/ru_stylish/">Instagram</a></li></td>
+            </tr>
 
-        <tr>
-        <th> Purchasing </th> <th> About </th> <th> Social</th>
-        </tr>
+            <tr>
+                <td> <a href = "listing.html"> Sell </a></td>
+                <td> <a href = "about.html#aboutCrew"> Crew </a></td>
+                <td> <a href = "#"> Youtube </a></td>
+            </tr>      
+        </table>
+    </div>
+    
 
-        <tr>
-            <td> <a href = "index.html">Buy</a></td>
-            <td> <a href = "about.html#aboutSite"> Website </a></td>
-            <td> <a href = "https://www.instagram.com/ru_stylish/">Instagram</a></li></td>
-        </tr>
+    <div>
+        <a id = "footerMap" href="CampusMap.html"> <img src="images/mapicon.png" height = "150px" width="150px" > </a>
+    </div>
 
-        <tr>
-            <td> <a href = "listing.html"> Sell </a></td>
-            <td> <a href = "about.html#aboutCrew"> Crew </a></td>
-            <td> <a href = "#"> Youtube </a></td>
-        </tr>
-            
-    </table>
-     <a href="CampusMap.html">Map</a>
-
-    <p> Rhodes University <br>
-        Makhanda<br>
-        Gramahstown <br>
-        6139 <br>
-        Eastern Cape <br>
-        South-Africa <br>
-    </p> 
+    <div id = "footerRight">
+        <p> Rhodes University <br>
+            Makhanda<br>
+            Gramahstown <br>
+            6139 <br>
+            Eastern Cape <br>
+            South-Africa <br>
+        </p> 
 
 
-    &#x260F 0789011234 <br>
-    &#x2709 Tshikovhi@gmail.com <br>
+        <p> &#x260F 0789011234 <br>
+        &#x2709 Tshikovhi@gmail.com <br>
+        </p>
+    </div>
 
-    <p>2026 &copy:RUStylish.com<p>
 </footer>
-    
     
 </body>
 </html>
+    
+ 
