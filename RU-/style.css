@@ -1,5 +1,5 @@
 html{
-    font-size: 18px;
+    font-size: 1rem;
     font-family: "TikTok Sans";
 }
 body{
@@ -10,7 +10,7 @@ body{
 }
 
 header{
-    padding-top: 0% ;
+    padding-top: 0%;
     position: sticky;
     top: 0;
 }
@@ -546,6 +546,7 @@ form{
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+<<<<<<< HEAD
 /*Map PAGE*/
 .TheMap body{
             background-image: url("images/mapicon.png");
@@ -577,3 +578,35 @@ form{
     padding-bottom: 10px;
 
 }
+=======
+/*SIGN IN*/
+
+.signin-username input, .signin-password input{
+    padding: 12px;
+    font-size: 12px;
+    border-radius: 30px;
+    border: none;
+    width: 80%;
+}
+
+.btn{
+    padding: 0.6rem;
+    background-color: teal;
+    font-size: medium;
+    border-radius: 2rem;
+    color: #f6f3f3;
+    width: 50%;
+    margin-top: 1rem;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*CREATE ACCOUNT*/
+
+.createacc-firstname input, .createacc-lastname input, .createacc-password input, .createacc-cpassword input{
+    padding: 12px;
+    font-size: 12px;
+    border-radius: 30px;
+    border: none;
+    width: 80%;
+}
+>>>>>>> 5ccb55c6b85a09dd0d562c069f69b894cda8a809
