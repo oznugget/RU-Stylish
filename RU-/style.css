@@ -1,3 +1,23 @@
+/*
+General styles across all pages-----------------------line 19 to line 53
+Footer across all pages-------------------------------line 55 to line 92
+RU Stylish logo across all pages   -------------------line 94 to line 102
+ig and linkedin logos from about page ----------------line 104 to line 110
+ABOUT PAGE -------------------------------------------line 112 to line 269
+Items for sale page ----------------------------------line 271 to line 290
+store page -------------------------------------------line 292 to line 348
+WISHLIST PAGE ----------------------------------------line 350 to line 361
+MY ACCOUNT PAGE --------------------------------------line 363 to line 380
+CONTACT US PAGE --------------------------------------line 382 to line 410
+REVIEWS PAGE -----------------------------------------line 412 to line 439
+forms across all pages -------------------------------line 441 to line 470
+*/
+
+
+
+
+/*General styles across all pages*/
+
 html{
     font-size: 1rem;
     font-family: "TikTok Sans";
@@ -29,8 +49,11 @@ header{
     "wdth" 100;
 }
 
+/*General styles across all pages*/
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+
 /* footer across all pages */
 footer{
     display: flex;
@@ -90,8 +113,9 @@ footer{
 }
 
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*LOGOS*/
+/* footer across all pages */
+
+
 
 /*RU Stylish logo across all pages */
 .logo{
@@ -103,6 +127,10 @@ footer{
     margin-right: 2%;
     
 }
+/*RU Stylish logo across all pages */
+
+
+
 /*ig and linkedin logos from about page*/
 .iglogo, .linklogo{
     width: 45px;
@@ -111,9 +139,110 @@ footer{
 
 
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*ig and linkedin logos from about page*/
+
 
 /*ABOUT PAGE*/
+
+
+#aboutRUlogo{
+    padding:none;
+}
+.hero-video {
+    width: 100vw; 
+    height: 30vh;
+    object-fit: contain; 
+    display: block;
+  }
+
+.siteDetails{
+    align-content: center;
+    text-align: center;
+}
+
+.members_pics{
+    border-collapse: separate; 
+    border-spacing: 1rem;       
+    margin: 0 auto;
+    width: 100%;  
+    table-layout: fixed;
+    
+    text-align: center;
+    float : center;
+}
+.member_imgs{
+    width: 250px;          
+    height: 250px;          
+    object-fit: cover;      
+    border-radius: 50%;     
+    border: 4px solid rgb(44, 145, 129);  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+}
+
+#members{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    justify-content: space-around;
+    align-items:center;
+    justify-content: center;
+}
+
+#teamMembers, #storyh3{
+    text-align: center;
+}
+
+.m{
+    text-align: center;
+    float: center;
+    padding-top: 3%;
+}
+
+dl{
+    background-image: url("images/member_bg.png");
+}
+
+#member_names td{
+    color: rgb(33, 116, 103);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+#bio{
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    font-weight: normal;
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+#aboutSiteh2{
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align:center;
+}
+
+#aboutSite{
+    padding-right: 20%;
+    padding-left: 20%;
+    text-align: justify;
+    
+}
+
+.About {
+     padding: 10px 30px 40px 30px;
+}
+
+.TheTeam{
+    text-align:center;
+    
+}
+
+.TheTeam .aboutCrew{
+    text-decoration-line: underline;
+    
+}
 
 .search-bar input{
     padding: 12px;
@@ -230,7 +359,11 @@ nav .nav-links li {
     padding-top: 10rem;
 }
 
-/* Items for sale page ------------------------------------------------------------*/
+/*About page*/
+
+
+
+/* Items for sale page*/
 
 .ItemsForSale table{
     border-collapse: separate; 
@@ -252,8 +385,11 @@ nav .nav-links li {
     background-color: #d1cfcf;
 }
 
+/*Items for sale page*/
 
-/*store page ------------------------------------------------------------*/
+
+
+/*store page */
 
 h2 {
     margin-left: 1rem; 
@@ -261,7 +397,6 @@ h2 {
 
 
 
-/* STORE PAGE */
 .store_items{
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
@@ -353,109 +488,14 @@ h2 {
     color: rgb(24, 83, 73);
     font-weight: bold;
  }
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*ABOUT PAGE*/
 
-#aboutRUlogo{
-    padding:none;
-}
-.hero-video {
-    width: 100vw; 
-    height: 30vh;
-    object-fit: contain; 
-    display: block;
-  }
+/*store page */
 
-.siteDetails{
-    align-content: center;
-    text-align: center;
-}
 
-.members_pics{
-    border-collapse: separate; 
-    border-spacing: 1rem;       
-    margin: 0 auto;
-    width: 100%;  
-    table-layout: fixed;
-    
-    text-align: center;
-    float : center;
-}
-.member_imgs{
-    width: 250px;          
-    height: 250px;          
-    object-fit: cover;      
-    border-radius: 50%;     
-    border: 4px solid rgb(44, 145, 129);  
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 
-}
 
-#members{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2%;
-    justify-content: space-around;
-    align-items:center;
-    justify-content: center;
-}
 
-#teamMembers, #storyh3{
-    text-align: center;
-}
 
-.m{
-    text-align: center;
-    float: center;
-    padding-top: 3%;
-}
-
-dl{
-    background-image: url("images/member_bg.png");
-}
-
-#member_names td{
-    color: rgb(33, 116, 103);
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-#bio{
-    color: rgb(0, 0, 0);
-    font-size: 1rem;
-    font-weight: normal;
-    text-align: center;
-    margin-left: 20%;
-    margin-right: 20%;
-}
-#aboutSiteh2{
-    font-size: 2rem;
-    font-weight: bold;
-    text-decoration: underline;
-    text-align:center;
-}
-
-#aboutSite{
-    padding-right: 20%;
-    padding-left: 20%;
-    text-align: justify;
-    
-}
-
-.About {
-     padding: 10px 30px 40px 30px;
-}
-
-.TheTeam{
-    text-align:center;
-    
-}
-
-.TheTeam .aboutCrew{
-    text-decoration-line: underline;
-    
-}
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*WISHLIST PAGE*/
 
 #mywish{
@@ -468,7 +508,10 @@ dl{
     margin-bottom: 10rem;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*WISHLIST PAGE*/
+
+
+
 /*MY ACCOUNT PAGE*/
 
 #listOfListings{
@@ -483,7 +526,9 @@ dl{
     margin-left: 5rem;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*MY ACCOUNT PAGE*/
+
+
 /*CONTACT US PAGE*/
 
 #contactUs{
@@ -541,7 +586,9 @@ dl{
 }
 
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*CONTACT US PAGE*/
+
+
 /*REVIEWS PAGE*/
 
 .usericon{
@@ -600,7 +647,10 @@ dl{
 #reviewbody{
     background-color:  #f1f1f1;
 }
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*REVIEWS PAGE*/
+
+
+
 /*forms across all pages*/
 
 
@@ -645,7 +695,10 @@ form{
     color:teal;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*forms across all pages*/
+
+
+
 /*REPORT PAGE*/
 
 #submitMisconduct{
@@ -662,7 +715,9 @@ form{
     border-radius: 30px;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*REPORT PAGE*/
+
+
 /*Map PAGE*/
 
 .MapHeading{
@@ -703,3 +758,5 @@ form{
     background-position: center;
 }
 */
+
+/*Map PAGE*/
