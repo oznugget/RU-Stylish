@@ -47,38 +47,51 @@
 
     <!-- form to create post -->
 
-    <form>
-        <button type="button"> Add Image </button>
+    <form class="listing-form">
+
+        <div class="addImageBtn">
+            <button type="button"> <img src="images/uploadIcon.png" width="50px" height="50px"> </button>
+        </div>
         <br>
 
         <label for="title"> Title </label><br>
-        <input type="text" id="title" name="title"><br>
+        <div class="listing-title">
+            <input type="text" id="title" name="title"><br>
+        </div>
         <br>
 
         <label for="descr"> Size </label><br>
-        <input type="text" id="size" name="size">
+        <div class="listing-size">
+            <input type="text" id="size" name="size">
+        </div>
         <br>
 
         <label for="colour"> Colour(s) </label><br>
-        <input type="text" id="colour" name="colour">
+        <div class="listing-colour">
+            <input type="text" id="colour" name="colour">
+        </div>
         <br>
 
           <!-- creative feature- drop down menus -->
 
         <label for="condition">Choose a condition</label>
         <br>
-        <select name="condition" id="condition">
-        <option value="new">New</option>
-        <option value="excellent">Excellent</option>
-        <option value="good">Good</option>
-        <option value="fair">Fair</option>
-        </select>
+
+        <div class="listing-condition">
+            <select name="condition" id="condition">
+                <option value="new">New</option>
+                <option value="excellent">Excellent</option>
+                <option value="good">Good</option>
+                <option value="fair">Fair</option>
+            </select>
+        </div>
         <br>
         <br>
 
 
         <label for="tag">Choose a category</label>
         <br>
+        <div class="listing-category">
         <select name="tag" id="tag">
         <option value="shirt">Shirts</option>
         <option value="shoes">Shoes</option>
@@ -86,14 +99,14 @@
         <option value="hoodie">Hoodies</option>
         <option value="caps_beanies">Caps & Beanies</option>
         </select>
+        </div>
 
         <br>
         <br>
 
+        <div class="postBtn">
         <button type="post">Post</button>
-
-        <p> Time of Listing: </p>
-        
+        </div>
 
     </form>
     
