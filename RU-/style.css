@@ -548,39 +548,6 @@ form{
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-<<<<<<< HEAD
-/*Map PAGE*/
-.TheMap body{
-            background-image: url("images/mapicon.png");
-
-        }
-.MapHeading{
-            background-color: white;
-            padding:10px;
-            width:100%;
-            
-        }
-        
-.map {
-    text-align: center;
-    border-radius:10%;
-    border-color: teal;
-    border-width: 10px;
-    border-style:none;
-    
-
-}
-
-
-.TheMap {
-    color:teal;
-    text-decoration: underline;
-    background-image: url("images/mapicon.png");
-    background-position: center;
-    padding-bottom: 10px;
-
-}
-=======
 /*SIGN IN*/
 
 .signin-username input, .signin-password input{
@@ -611,7 +578,6 @@ form{
     border: none;
     width: 80%;
 }
->>>>>>> 5ccb55c6b85a09dd0d562c069f69b894cda8a809
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
