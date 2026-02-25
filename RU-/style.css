@@ -115,6 +115,23 @@ footer{
 
 /*ABOUT PAGE*/
 
+
+/*for phones and tables- WILL BE MUCH BETTER WITH JAVASCRIPT SIDE PANEL*/ 
+@media screen and (max-width: 600px)  {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px
+    }
+
+    .nav-links a {
+        display: inline-block;
+    }
+
+}
+
 .search-bar input{
     padding: 12px;
     font-size: 12px;
@@ -127,25 +144,17 @@ footer{
 
 nav{
     width: 100%;
-    
     background-image: url('images/nav.png');
-
-
-
     display: flex;
     align-items: center;
     justify-content:flex-start;
-    
-
     opacity: 0.95;
 }
 
 .nav-links {
-    
-    
+
     list-style: none; 
     display: flex;
-  
     gap: 1rem;
     border-radius: 30%;
     text-align: center;
