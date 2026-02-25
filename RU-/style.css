@@ -225,7 +225,7 @@ h2 {
 
 .store_items .items{
     color:black;
-    border-color: black;
+    
    
     background-color: white;
     text-align: center;
@@ -237,8 +237,8 @@ h2 {
     background-image: url("images/card_bg.png");
     text-align: center; 
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); 
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size:xx-large;
+    
+    
 
     transition: opacity 0.5s ease;
     
@@ -246,12 +246,11 @@ h2 {
   
 }
 
-.store_items :hover{
+ .items:hover{
   
-    background-image: url("images/HoverBg2.gif");
+    
     background-size: cover;
-    background-position: center;
-
+    
     transform: scale(1.05);
     box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
 
