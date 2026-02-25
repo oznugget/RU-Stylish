@@ -13,6 +13,9 @@ header{
     padding-top: 0%;
     position: sticky;
     top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .TikTok_Sans{
@@ -95,7 +98,9 @@ footer{
     width: 45px;
     height: 45px;
     float: left;
-    padding-bottom: 30px;
+    padding:0.5%;
+    margin-bottom: 1.5%;
+    margin-right: 2%;
     
 }
 /*ig and linkedin logos from about page*/
@@ -117,43 +122,96 @@ footer{
     border: none;
     margin-left: 30px;
     float: right;
+    right: 0;
 }
 
 nav{
     width: 100%;
-    padding: 0.5rem;
+    
     background-image: url('images/nav.png');
 
 
 
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content:flex-start;
+    
+
     opacity: 0.95;
 }
 
 .nav-links {
     
+    
     list-style: none; 
     display: flex;
+  
     gap: 1rem;
     border-radius: 30%;
+    text-align: center;
 
 }
 
+nav .nav-links li {
+   
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links li:hover{
+    background-color: rgb(33, 116, 103);
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+.nav-links li a:hover{
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
 .nav-links a {
-    background-size: 50px 20px;
-    padding: 50px 50px;
-    width: 50px;
-    height: 20px;
+    width: 100%;
+    gap: 5%;
+    
     text-decoration: none;
     color: rgb(24, 83, 73);
     font-size: 1.2rem;
     font-weight: 700;
-    position: relative;
-
-    padding: 0.5rem 1rem;
+    
+    display: flex;
+    flex-wrap:nowrap;
+    align-items: center;
+    justify-content:center;
+    
+    
 }
+
+#myAicon{
+    position: fixed;
+    right: 0;
+    top: 1.5%;
+    margin: 1rem;
+
+}
+#myAicon:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+
+#WishIcon{
+    position: fixed;
+    right: 4%;
+    top: 2%;
+    margin: 1rem;
+}
+#WishIcon:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
 .store img{
 
     border-radius: 30%;
@@ -423,6 +481,63 @@ dl{
 
 #Acch2{
     margin-left: 5rem;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*CONTACT US PAGE*/
+
+#contactUs{
+    text-align: center;
+    color:  rgb(33, 116, 103);
+    font-size:x-large ;
+}
+
+.contactText{
+    text-align: center;
+}
+
+.AddyIcons{
+    width: 45px;
+    height: 45px;
+    float:left
+}
+
+.contactContainer{
+    height: 100%;
+    width: 10%;
+    border-style: solid;
+    
+    border-color:black;
+    float: left;
+    
+    
+    
+   
+    
+
+}
+
+.contact-info{
+    float: right;
+    width: auto;
+    
+    
+   
+
+}
+
+#contactAddy{
+    float:left;
+}
+
+#contactForm{
+
+    
+    float:center;
+    
+    width: 20rem;
+    align-content: center;
+
 }
 
 
