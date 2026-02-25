@@ -499,46 +499,25 @@ dl{
 .AddyIcons{
     width: 45px;
     height: 45px;
-    float:left
+  
 }
 
 .contactContainer{
     height: 100%;
     width: 10%;
-    border-style: solid;
-    
-    border-color:black;
-    float: left;
-    
-    
-    
-   
-    
-
+    margin-left: 40%;
 }
 
-.contact-info{
-    float: right;
-    width: auto;
-    
-    
-   
-
-}
-
-#contactAddy{
-    float:left;
-}
-
-#contactForm{
-
-    
-    float:center;
-    
-    width: 20rem;
+#contactTable{
+    align-items: center;
+    align-self: center;
     align-content: center;
-
+    padding-left: 20rem;
+    display: flex;
+   
 }
+
+
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -703,3 +682,35 @@ form{
     background-position: center;
 }
 */
+input{
+     height:1rem;
+    width:12rem;
+    padding: 0.5rem;
+    font-size: 12px;
+    border-radius: 30px;
+    border: none;
+    margin-left: 30px;
+}
+
+button{
+    padding: 0.6rem;
+    background-color: teal;
+    font-size: medium;
+    border-radius: 2rem;
+    color: #f6f3f3;
+}
+
+#lcategory, #condition{
+    padding: 10px;
+    
+    font-size: 1rem;
+    border-radius: 30px;
+    border: none;
+    margin-left:0.5%;
+    float: left;
+    color: rgb(24, 83, 73);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
