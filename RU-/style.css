@@ -186,7 +186,11 @@ nav{
 /*store page ------------------------------------------------------------*/
 
 h2 {
-    margin-left: 1rem;  
+    margin-left: 1rem; 
+    font-family:'Poppins', sans-serif;
+
+    /*font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
+
 }
 
 
@@ -197,7 +201,8 @@ h2 {
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
     width: 100%;
-
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:large;
     /*border-collapse: separate; 
     border-spacing: 1rem;       
     margin: 0 auto;
@@ -221,6 +226,7 @@ h2 {
 .store_items .items{
     color:black;
     border-color: black;
+   
     background-color: white;
     text-align: center;
     align-items: center;
@@ -231,9 +237,30 @@ h2 {
     background-image: url("images/card_bg.png");
     text-align: center; 
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); 
-    color: rgb(0, 0, 0);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:xx-large;
+
+    transition: opacity 0.5s ease;
+    
+
   
 }
+
+.store_items :hover{
+  
+    background-image: url("images/HoverBg2.gif");
+    background-size: cover;
+    background-position: center;
+
+    transform: scale(1.05);
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
+
+
+}
+
+
+
+
 
 
 
@@ -242,20 +269,13 @@ h2 {
     border-top: 2px solid rgb(33, 116, 103);
     margin: 2rem 0;
 }
-/*.store td{
-    gap: 5%;
-    border-radius: 10%;       
-    background-image: url("images/card_bg.png");
-    text-align: center; 
-    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); 
-    color: rgb(0, 0, 0);
-    padding: 10px; /* prevetn overlap*/
+
    
 
 .store h2{
-    
-    
-    text-align: left;    
+ 
+    text-align: left;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;   
     
     
 }
@@ -331,10 +351,41 @@ dl{background-image: url("images/member_bg.png");
     margin-right: 20%;
 }
 #aboutSite{
-    
+    font-family:'Times New Roman', Times, serif;
     font-size: 2rem;
     font-weight: bold;
+    text-decoration: underline;
+    text-align:center;
+   
+
 }
+
+.siteDetails{
+    background-color: white;
+    text-align:center;
+   
+}
+
+
+
+.About {
+     padding: 10px 30px 40px 30px;
+
+}
+
+.TheTeam{
+    text-align:center;
+    
+
+
+}
+
+.TheTeam .aboutCrew{
+    text-decoration-line: underline;
+    font-family:'Times New Roman', Times, serif;
+    
+}
+
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*REVIEWS PAGE*/
@@ -424,4 +475,31 @@ form{
     border: none;
     margin-left: 30px;
     
+}
+
+
+
+.map {
+    text-align: center;
+    border-radius:10%;
+    border-color: teal;
+    border-width: 10px;
+    border-style:none;
+    
+
+}
+
+.mainText {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:teal;
+}
+
+.TheMap {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:teal;
+    text-decoration: underline;
+    background-image: url("images/houses.webp");
+    background-position: center;
+    padding-bottom: 10px;
+
 }
