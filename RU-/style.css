@@ -151,8 +151,7 @@ nav{
     font-size: 1.2rem;
     font-weight: 700;
     position: relative;
-    
-    
+
     padding: 0.5rem 1rem;
 }
 .store img{
@@ -396,29 +395,39 @@ dl{background-image: url("images/member_bg.png");
 .usericon{
     width: 45px;
     height: 45px;
+    float:left
 }
 
 .box{
     border-style: solid;
     border-color:  rgb(33, 116, 103);
     background-color: #ffffff;
-    height: 15rem;
-    width: 80rem;
+    height: auto;
+    width: 100%;
     justify-content: space-around;
     padding: 2rem 2rem 0.5rem 2rem;
+    margin-left: 0;
+    box-sizing: border-box;
 
 }
 
 #reviews{
     
     display: grid;
-    grid-template-columns: auto auto;
-    margin-bottom: 25rem;
-    column-width: 5fr;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 4rem;
+    width: 100%;
+    max-width: 100%;
+    gap: 1rem;
+    justify-content: center;
+    margin-left: 1rem;
 }
 
 .username{
+    display: flex;
     flex-wrap: wrap;
+    gap: 20px;
+    clear: none;
 }
 
 #reviewh1{
