@@ -1,5 +1,5 @@
 html{
-    font-size: 15px;
+    font-size: 18px;
     font-family: "TikTok Sans";
 }
 body{
@@ -134,7 +134,7 @@ nav{
 
 .nav-links {
     
-    list-style: none; ;
+    list-style: none; 
     display: flex;
     gap: 1rem;
     border-radius: 30%;
@@ -257,7 +257,7 @@ h2 {
  .items:hover{
   
     
-    background-size: cover;
+    
     
     transform: scale(1.05);
     box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
