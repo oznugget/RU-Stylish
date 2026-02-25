@@ -561,3 +561,35 @@ form{
     width: 20rem;
     border-radius: 30px;
 }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*SIGN IN*/
+
+.signin-username input, .signin-password input{
+    padding: 12px;
+    font-size: 12px;
+    border-radius: 30px;
+    border: none;
+    width: 80%;
+}
+
+.btn{
+    padding: 0.6rem;
+    background-color: teal;
+    font-size: medium;
+    border-radius: 2rem;
+    color: #f6f3f3;
+    width: 50%;
+    margin-top: 1rem;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*CREATE ACCOUNT*/
+
+.createacc-firstname input, .createacc-lastname input, .createacc-password input, .createacc-cpassword input{
+    padding: 12px;
+    font-size: 12px;
+    border-radius: 30px;
+    border: none;
+    width: 80%;
+}
