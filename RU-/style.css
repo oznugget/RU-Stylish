@@ -546,12 +546,8 @@ form{
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-<<<<<<< HEAD
 /*Map PAGE*/
-.TheMap body{
-            background-image: url("images/mapicon.png");
 
-        }
 .MapHeading{
             background-color: white;
             padding:10px;
@@ -570,43 +566,23 @@ form{
 }
 
 
-.TheMap {
+.TheMap  {
     color:teal;
+    background-image: url('images/Aerial_residence.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     text-decoration: underline;
-    background-image: url("images/mapicon.png");
     background-position: center;
     padding-bottom: 10px;
-
-}
-=======
-/*SIGN IN*/
-
-.signin-username input, .signin-password input{
-    padding: 12px;
-    font-size: 12px;
-    border-radius: 30px;
-    border: none;
-    width: 80%;
+    margin:0;
+   
 }
 
-.btn{
-    padding: 0.6rem;
-    background-color: teal;
-    font-size: medium;
-    border-radius: 2rem;
-    color: #f6f3f3;
-    width: 50%;
-    margin-top: 1rem;
+/*
+.construction body{
+    background-image: url('images/under_construction.jpeg');
+    margin:0;
+    background-size: cover;
+    background-position: center;
 }
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*CREATE ACCOUNT*/
-
-.createacc-firstname input, .createacc-lastname input, .createacc-password input, .createacc-cpassword input{
-    padding: 12px;
-    font-size: 12px;
-    border-radius: 30px;
-    border: none;
-    width: 80%;
-}
->>>>>>> 5ccb55c6b85a09dd0d562c069f69b894cda8a809
+*/
