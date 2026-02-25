@@ -284,7 +284,7 @@ h2 {
     
  }
 
- select{
+ .home-select select{
     padding: 10px;
     
     font-size: 1rem;
@@ -488,6 +488,7 @@ dl{
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*forms across all pages*/
 
+
 form{
     background-image: url('images/nav.png');
     width: 300px;
@@ -495,7 +496,8 @@ form{
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 50px auto;
-    text-align: center;}
+    text-align: center;
+}
 
 #login-header{
     text-align: center;
@@ -546,6 +548,7 @@ form{
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+<<<<<<< HEAD
 /*Map PAGE*/
 
 .MapHeading{
@@ -576,6 +579,16 @@ form{
     padding-bottom: 10px;
     margin:0;
    
+=======
+/*SIGN IN*/
+
+.signin-username input, .signin-password input{
+    padding: 12px;
+    font-size: 12px;
+    border-radius: 30px;
+    border: none;
+    width: 80%;
+>>>>>>> 24439556ebaf450459b3245c6549619c61ac6194
 }
 
 /*
@@ -585,4 +598,56 @@ form{
     background-size: cover;
     background-position: center;
 }
+<<<<<<< HEAD
 */
+=======
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*CREATE ACCOUNT*/
+
+.createacc-firstname input, .createacc-lastname input, .createacc-password input, .createacc-cpassword input{
+    padding: 12px;
+    font-size: 12px;
+    border-radius: 30px;
+    border: none;
+    width: 80%;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*CREATE LISTING*/
+
+.listing-title input, .listing-size input, .listing-colour input{
+    padding: 12px;
+    font-size: 12px;
+    border-radius: 30px;
+    border: none;
+    width: 80%;
+}
+
+.listing-condition select{
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 30px;
+    border: none;
+    width: 80%;
+}
+
+.listing-category select{
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 30px;
+    border: none;
+    width: 80%;
+}
+
+.postBtn button{
+    padding: 0.6rem;
+    background-color: teal;
+    font-size: medium;
+    border-radius: 2rem;
+    color: #f6f3f3;
+    width: 50%;
+    margin-top: 1rem;
+}
+>>>>>>> 24439556ebaf450459b3245c6549619c61ac6194
