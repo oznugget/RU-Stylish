@@ -1,16 +1,31 @@
+
+
 /*
-General styles across all pages-----------------------line 19 to line 53
-Footer across all pages-------------------------------line 55 to line 92
-RU Stylish logo across all pages   -------------------line 94 to line 102
-ig and linkedin logos from about page ----------------line 104 to line 110
-ABOUT PAGE -------------------------------------------line 112 to line 269
-Items for sale page ----------------------------------line 271 to line 290
-store page -------------------------------------------line 292 to line 348
-WISHLIST PAGE ----------------------------------------line 350 to line 361
-MY ACCOUNT PAGE --------------------------------------line 363 to line 380
-CONTACT US PAGE --------------------------------------line 382 to line 410
-REVIEWS PAGE -----------------------------------------line 412 to line 439
-forms across all pages -------------------------------line 441 to line 470
+Layouts used:
+Grid layouts - display grid and grid template columns
+Flexbox layouts- display flex and justify content
+*/
+
+
+/*
+General styles across all pages -------------------------------------line 1 to line 50
+footer across all pages ---------------------------------------------line 51 to line 100
+RU Stylish logo across all pages ------------------------------------line 101 to line 150
+ig and linkedin logos from about page -------------------------------line 151 to line 200
+ABOUT PAGE ----------------------------------------------------------line 201 to line 250
+Interface for phones and tablets ------------------------------------line 251 to line 300
+Items for sale page -------------------------------------------------line 301 to line 350
+store page ----------------------------------------------------------line 351 to line 400
+WISHLIST PAGE   -----------------------------------------------------line 401 to line 450
+MY ACCOUNT PAGE -----------------------------------------------------line 451 to line 500
+CONTACT US PAGE -----------------------------------------------------line 501 to line 550
+REVIEWS PAGE --------------------------------------------------------line 551 to line 600
+forms across all pages ----------------------------------------------line 601 to line 650
+REPORT PAGE ---------------------------------------------------------line 651 to line 700
+Map PAGE ------------------------------------------------------------line 701 to line 750
+
+
+
 */
 
 
@@ -243,8 +258,10 @@ dl{
     text-decoration-line: underline;
     
 }
+/*ABOUT PAGE*/
 
-/*for phones and tables- WILL BE MUCH BETTER WITH JAVASCRIPT SIDE PANEL*/ 
+/*Interface for phones and tablets*/
+
 @media screen and (max-width: 600px)  {
     .nav-links {
         display: flex;
@@ -367,8 +384,7 @@ nav .nav-links li {
     padding-top: 10rem;
 }
 
-/*About page*/
-
+/*Interface for phones and tablets*/
 
 
 /* Items for sale page*/
