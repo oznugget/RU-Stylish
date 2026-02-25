@@ -1,3 +1,38 @@
+
+
+/*
+Layouts used:
+Grid layouts - display grid and grid template columns
+Flexbox layouts- display flex and justify content
+*/
+
+
+/*
+General styles across all pages -------------------------------------line 1 to line 50
+footer across all pages ---------------------------------------------line 51 to line 100
+RU Stylish logo across all pages ------------------------------------line 101 to line 150
+ig and linkedin logos from about page -------------------------------line 151 to line 200
+ABOUT PAGE ----------------------------------------------------------line 201 to line 250
+Interface for phones and tablets ------------------------------------line 251 to line 300
+Items for sale page -------------------------------------------------line 301 to line 350
+store page ----------------------------------------------------------line 351 to line 400
+WISHLIST PAGE   -----------------------------------------------------line 401 to line 450
+MY ACCOUNT PAGE -----------------------------------------------------line 451 to line 500
+CONTACT US PAGE -----------------------------------------------------line 501 to line 550
+REVIEWS PAGE --------------------------------------------------------line 551 to line 600
+forms across all pages ----------------------------------------------line 601 to line 650
+REPORT PAGE ---------------------------------------------------------line 651 to line 700
+Map PAGE ------------------------------------------------------------line 701 to line 750
+
+
+
+*/
+
+
+
+
+/*General styles across all pages*/
+
 html{
     font-size: 1rem;
     font-family: "TikTok Sans";
@@ -29,8 +64,11 @@ header{
     "wdth" 100;
 }
 
+/*General styles across all pages*/
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+
 /* footer across all pages */
 footer{
     display: flex;
@@ -90,8 +128,9 @@ footer{
 }
 
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*LOGOS*/
+/* footer across all pages */
+
+
 
 /*RU Stylish logo across all pages */
 .logo{
@@ -103,6 +142,10 @@ footer{
     margin-right: 2%;
     
 }
+/*RU Stylish logo across all pages */
+
+
+
 /*ig and linkedin logos from about page*/
 .iglogo, .linklogo{
     width: 45px;
@@ -111,250 +154,11 @@ footer{
 
 
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*ig and linkedin logos from about page*/
+
 
 /*ABOUT PAGE*/
 
-.search-bar input{
-    padding: 12px;
-    font-size: 12px;
-    border-radius: 30px;
-    border: none;
-    margin-left: 30px;
-    float: right;
-    right: 0;
-}
-
-nav{
-    width: 100%;
-    
-    background-image: url('images/nav.png');
-
-
-
-    display: flex;
-    align-items: center;
-    justify-content:flex-start;
-    
-
-    opacity: 0.95;
-}
-
-.nav-links {
-    
-    
-    list-style: none; 
-    display: flex;
-  
-    gap: 1rem;
-    border-radius: 30%;
-    text-align: center;
-
-}
-
-nav .nav-links li {
-   
-    padding: 0.5rem 1rem;
-    border-radius: 30px;
-    transition: background-color 0.3s ease;
-}
-
-.nav-links li:hover{
-    background-color: rgb(33, 116, 103);
-    font-weight: bold;
-    color: white;
-    transition: background-color 0.3s ease;
-}
-.nav-links li a:hover{
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.nav-links a {
-    width: 100%;
-    gap: 5%;
-    
-    text-decoration: none;
-    color: rgb(24, 83, 73);
-    font-size: 1.2rem;
-    font-weight: 700;
-    
-    display: flex;
-    flex-wrap:nowrap;
-    align-items: center;
-    justify-content:center;
-    
-    
-}
-
-#myAicon{
-    position: fixed;
-    right: 0;
-    top: 1.5%;
-    margin: 1rem;
-
-}
-#myAicon:hover{
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
-}
-
-
-#WishIcon{
-    position: fixed;
-    right: 4%;
-    top: 2%;
-    margin: 1rem;
-}
-#WishIcon:hover{
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
-}
-
-.store img{
-
-    border-radius: 30%;
-    
-}
-.member_imgs td img{
-    border-radius: 50%;
-
-}
-
-#member_links{
-    align-content: center;
-}
-
-.members{
-    padding-top: 10rem;
-}
-
-/* Items for sale page ------------------------------------------------------------*/
-
-.ItemsForSale table{
-    border-collapse: separate; 
-    border-spacing: 1rem;       
-    margin: 0 auto;
-    width: 100%;  
-    table-layout: fixed;  
-}
-.ItemsForSale td{
-    gap: 5%;
-    border-radius: 10%;       
-    background-color: rgb(235, 198, 33);
-    text-align: center; 
-    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); 
-    color: rgb(0, 0, 0);
-}
-.ItemsForSale h2{
-    text-align: left;    
-    background-color: #d1cfcf;
-}
-
-
-/*store page ------------------------------------------------------------*/
-
-h2 {
-    margin-left: 1rem; 
-}
-
-
-
-/* STORE PAGE */
-.store_items{
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-    width: 100%;
-    font-size:large;
-    /*border-collapse: separate; 
-    border-spacing: 1rem;       
-    margin: 0 auto;
-    width: 100%;  
-    table-layout: fixed;*/ 
-}
-    
-
-/*.store_items {
-    flex:1 1 250px;
-    color:black;
-    min-width:200px;
-    max-width:300px;
-    text-align:center;
-    padding: 15px;
-    border-radius:20%;
-    
-    
-}*/
-
-.store_items .items{
-    color:black;
-    
-   
-    background-color: white;
-    text-align: center;
-    align-items: center;
-    padding:20px;
-    border-color:black;
-    gap: 5%;
-    border-radius: 10%;       
-    background-image: url("images/card_bg.png");
-    text-align: center; 
-    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); 
-    
-    
-
-    transition: opacity 0.5s ease;
-    
-
-  
-}
-
- .items:hover{
-  
-    
-    
-    
-    transform: scale(1.05);
-    box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
-
-
-}
-
-
-.line{
-    border-top: 2px solid rgb(33, 116, 103);
-    margin: 2rem 0;
-}
-
-   
-
-.store h2{
- 
-    text-align: left;   
-    
-    
-}
- figcaption{
-    block-size: auto;
-    font-size: 0.8rem;
-    
- }
-
- .home-select select{
-    padding: 10px;
-    
-    font-size: 1rem;
-    border-radius: 30px;
-    border: none;
-    margin-left:0.5%;
-    float: left;
-    color: rgb(24, 83, 73);
-    font-weight: bold;
- }
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*ABOUT PAGE*/
 
 #aboutRUlogo{
     padding:none;
@@ -454,8 +258,268 @@ dl{
     text-decoration-line: underline;
     
 }
+/*ABOUT PAGE*/
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*Interface for phones and tablets*/
+
+@media screen and (max-width: 600px)  {
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px
+    }
+
+    .nav-links a {
+        display: inline-block;
+    }
+
+}
+
+.search-bar input{
+    padding: 12px;
+    font-size: 12px;
+    border-radius: 30px;
+    border: none;
+    margin-left: 30px;
+    float: right;
+    right: 0;
+}
+
+nav{
+    width: 100%;
+    background-image: url('images/nav.png');
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    opacity: 0.95;
+}
+
+.nav-links {
+
+    list-style: none; 
+    display: flex;
+    gap: 1rem;
+    border-radius: 30%;
+    text-align: center;
+
+}
+
+nav .nav-links li {
+   
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links li:hover{
+    background-color: rgb(33, 116, 103);
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+.nav-links li a:hover{
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a {
+    width: 100%;
+    gap: 5%;
+    
+    text-decoration: none;
+    color: rgb(24, 83, 73);
+    font-size: 1.2rem;
+    font-weight: 700;
+    
+    display: flex;
+    flex-wrap:nowrap;
+    align-items: center;
+    justify-content:center;
+    
+    
+}
+
+#myAicon{
+    position: fixed;
+    right: 0;
+    top: 1.5%;
+    margin: 1rem;
+
+}
+#myAicon:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+
+#WishIcon{
+    position: fixed;
+    right: 4%;
+    top: 2%;
+    margin: 1rem;
+}
+#WishIcon:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.store img{
+
+    border-radius: 30%;
+    
+}
+.member_imgs td img{
+    border-radius: 50%;
+
+}
+
+#member_links{
+    align-content: center;
+}
+
+.members{
+    padding-top: 10rem;
+}
+
+/*Interface for phones and tablets*/
+
+
+/* Items for sale page*/
+
+.ItemsForSale table{
+    border-collapse: separate; 
+    border-spacing: 1rem;       
+    margin: 0 auto;
+    width: 100%;  
+    table-layout: fixed;  
+}
+.ItemsForSale td{
+    gap: 5%;
+    border-radius: 10%;       
+    background-color: rgb(235, 198, 33);
+    text-align: center; 
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); 
+    color: rgb(0, 0, 0);
+}
+.ItemsForSale h2{
+    text-align: left;    
+    background-color: #d1cfcf;
+}
+
+/*Items for sale page*/
+
+
+
+/*store page */
+
+h2 {
+    margin-left: 1rem; 
+}
+
+
+
+.store_items{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    width: 100%;
+    font-size:large;
+    /*border-collapse: separate; 
+    border-spacing: 1rem;       
+    margin: 0 auto;
+    width: 100%;  
+    table-layout: fixed;*/ 
+}
+    
+
+/*.store_items {
+    flex:1 1 250px;
+    color:black;
+    min-width:200px;
+    max-width:300px;
+    text-align:center;
+    padding: 15px;
+    border-radius:20%;
+    
+    
+}*/
+
+.store_items .items{
+    color:black;
+    
+   
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    padding:20px;
+    border-color:black;
+    gap: 5%;
+    border-radius: 10%;       
+    background-image: url("images/card_bg.png");
+    text-align: center; 
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); 
+    
+    
+
+    transition: opacity 0.5s ease;
+    
+
+  
+}
+
+ .items:hover{
+  
+    
+    
+    
+    transform: scale(1.05);
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
+
+
+}
+
+
+.line{
+    border-top: 2px solid rgb(33, 116, 103);
+    margin: 2rem 0;
+}
+
+   
+
+.store h2{
+ 
+    text-align: left;   
+    
+    
+}
+ figcaption{
+    block-size: auto;
+    font-size: 0.8rem;
+    
+ }
+
+ .home-select select{
+    padding: 10px;
+    
+    font-size: 1rem;
+    border-radius: 30px;
+    border: none;
+    margin-left:0.5%;
+    float: left;
+    color: rgb(24, 83, 73);
+    font-weight: bold;
+ }
+
+/*store page */
+
+
+
+
+
+
 /*WISHLIST PAGE*/
 
 #mywish{
@@ -468,7 +532,10 @@ dl{
     margin-bottom: 10rem;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*WISHLIST PAGE*/
+
+
+
 /*MY ACCOUNT PAGE*/
 
 #listOfListings{
@@ -483,7 +550,9 @@ dl{
     margin-left: 5rem;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*MY ACCOUNT PAGE*/
+
+
 /*CONTACT US PAGE*/
 
 #contactUs{
@@ -512,15 +581,15 @@ dl{
     align-items: center;
     align-self: center;
     align-content: center;
-    padding-left: 20rem;
-    display: flex;
-   
+
 }
 
 
 
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*CONTACT US PAGE*/
+
+
 /*REVIEWS PAGE*/
 
 .usericon{
@@ -579,7 +648,10 @@ dl{
 #reviewbody{
     background-color:  #f1f1f1;
 }
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*REVIEWS PAGE*/
+
+
+
 /*forms across all pages*/
 
 
@@ -624,7 +696,10 @@ form{
     color:teal;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*forms across all pages*/
+
+
+
 /*REPORT PAGE*/
 
 #submitMisconduct{
@@ -641,7 +716,9 @@ form{
     border-radius: 30px;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*REPORT PAGE*/
+
+
 /*Map PAGE*/
 
 .MapHeading{
@@ -714,3 +791,4 @@ button{
     justify-content: center;
     align-items: center;
 }
+/*Map PAGE*/
