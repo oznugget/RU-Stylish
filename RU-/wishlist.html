@@ -1,33 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campus Map</title>
-    <style>
-        @import url('style.css');
-
-        body{
-            background-image: url("images/houses.webp");
-
-        }
-        .MapHeading{
-            background-color: white;
-            padding:10px;
-            width:100%;
-            
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- for linkedin icon-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
-</head>
+    <title>About RU Stylish</title>
+    <style>
+        @import url('style.css');
 
-<header>
+    
+    </style>
+</head>
+<body>
+
+    <!-- Wishlist page. Future sidebar -->
+
+        <header>
         <nav>
             <div class="logo">
                 <img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left">
@@ -43,7 +35,6 @@
                 <li><a href="report.html">Report</a></li>
                 <li><a href="CampusMap.html">Map</a></li>
                 <li><a href="MyAccount.html"><img src = "images\AccountIcon.png" width = "50px" height = "50px"/></a></li>
-                <li><a href = "wishlist.html"><img src = "images/wishlist_heart.png" width="50px" height="40px"/> </a></li>
             </ul>
 
             <div class="search-bar">
@@ -51,30 +42,26 @@
             </div>
 
         </nav>
-</header>
-        
-<body >
+    </header>
 
-<section class="TheMap">
-    <div class="MapHeading">
-    <h2>Campus Map:<h2>
-    <p>RU.. going the right way.</p>
-    </div>
-    <br>
-    <br>
+    <h1 id = "mywish"> My Wishlist</h1>
 
-        
-    <div class="map"  style=  height:150vh>
-
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3334.199822270974!2d26.51373857639768!3d-33.313591073443995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e645dd0c6d4fc47%3A0x9982445ffb8737af!2sRhodes%20University!5e0!3m2!1sen!2sza!4v1771439483833!5m2!1sen!2sza" width="600" height="450" style="border:0;"  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-
-    </div>
-  
-</section>
-
+        <section class = "wishitems">
+                <div id="picture">
+                <a href="view_listing.html" class="listing-link">
+                <img src="images/loafers.jpg" alt="Loafers" width="200px" height="200px" class="store_img">
+                </a>
+                <figcaption>
+                    <p>Loafers <p>
+                    <p>R300</p>
+                    <p>Seller: ...</p>
+                </figcaption>
+                </div>
+                
+        </section>
 
 </body>
+
 <footer style = "color:rgb(212, 212, 212)">
 
     
@@ -126,9 +113,9 @@
         </p>
     </div>
 
-
 </footer>
-
     
-
+</body>
 </html>
+    
+ 
