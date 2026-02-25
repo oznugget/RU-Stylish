@@ -44,19 +44,76 @@
 
        <!-- creative feature- hex icons -->
 
-    <section class="contact-info">
-        <ul>
-        <h2 style="color:rgb(33, 116, 103)">Contact Us</h2>
-        <p>Feel free to reach out to us with any questions or feedback!</p>
-        <li>Email: <a href="mailto:help@rustylish.com">help@rustylish.com</a></li>
-        <li>Phone: 0789011234</li>
-        <li>Address: Rhodes University, Eastern Cape, Makhanda</li>
-        <li>&#x260F 0789011234 </li>
-        <li>&#x2709 Tshikovhi@gmail.com</li>
-        <p>Follows on :</p>
-        <ul>
-            <li><a href="https://www.instagram.com/ru_stylish/">Instagram</a></li>
-        </ul>
+    <h2 id = "contactUs" style="color:rgb(33, 116, 103)">Contact Us</h2>
+    <p class = "contactText">Feel free to reach out to us with any questions or feedback!</p>
+
+    <article class= "contactContainer">
+        
+        <div class = "contact-info">
+        <img class = "AddyIcons" src = "images\AddressIcon.png"  width = "50px" height = "50px" />
+        <p id = "contactAddy"> Rhodes University <br>
+            Makhanda<br>
+            Gramahstown <br>
+            6139 <br>
+            Eastern Cape <br>
+            South-Africa <br>
+        </p> 
+        </div>
+        <br>
+
+        <div class = "contact-info">
+        <img class = "AddyIcons" src = "images\EmailIcon.png" width = "50px" height = "50px" />
+        <a href="mailto:help@rustylish.com">help@rustylish.com</a>
+        </div>
+
+        <br>
+
+        <div class = "contact-info">
+        <img class = "AddyIcons" src = "images\PhoneIcon.png" width = "50px" height = "50px" />
+        <p> 0789011234</p>
+        </div>
+        <br>
+
+        <div class = "contact-info">
+        <img class = "AddyIcons" src = "images\instagram_logo-removebg-preview.png" width = "50px" height = "50px" />
+        <a href="https://www.instagram.com/ru_stylish/">@ru_stylish</a>
+        </div>
+
+
+    </article>
+
+    <section class = contactRight>
+
+    
+    <form id = "contactForm" action="" method="post">
+            <h2 style="color:rgb(33, 116, 103)" id="contactPage-header">Send Us A Message</h2>
+
+        <section>
+
+            <div>
+            <input type="text" placeholder="Full Name" name="name" required>
+            </div>
+            <br>
+
+            <div>
+            <input type="text" placeholder="Email Address" name="eAddy" required>
+            </div>
+            <br>
+
+            <div>
+            <input type="text" placeholder="Type your message..." name="msg" required>
+            </div>
+            <br>
+
+            
+            <button type="submit" class="send">Send </button>
+
+        </section>
+
+    </form>
+
+
+
     </section>
 
 <footer style = "color:rgb(212, 212, 212)">

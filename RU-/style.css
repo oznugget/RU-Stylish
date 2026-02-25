@@ -425,6 +425,63 @@ dl{
     margin-left: 5rem;
 }
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*CONTACT US PAGE*/
+
+#contactUs{
+    text-align: center;
+    color:  rgb(33, 116, 103);
+    font-size:x-large ;
+}
+
+.contactText{
+    text-align: center;
+}
+
+.AddyIcons{
+    width: 45px;
+    height: 45px;
+    float:left
+}
+
+.contactContainer{
+    height: 100%;
+    width: 10%;
+    border-style: solid;
+    
+    border-color:black;
+    float: left;
+    
+    
+    
+   
+    
+
+}
+
+.contact-info{
+    float: right;
+    width: auto;
+    
+    
+   
+
+}
+
+#contactAddy{
+    float:left;
+}
+
+#contactForm{
+
+    
+    float:center;
+    
+    width: 20rem;
+    align-content: center;
+
+}
+
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*REVIEWS PAGE*/
