@@ -760,13 +760,17 @@ form{
 }
 */
 input{
-     height:1rem;
+    height:1rem;
     width:12rem;
     padding: 0.5rem;
     font-size: 12px;
     border-radius: 30px;
     border: none;
-    margin-left: 30px;
+    
+}
+
+.postBtn button{
+    margin-top: 1rem;
 }
 
 button{
@@ -775,6 +779,19 @@ button{
     font-size: medium;
     border-radius: 2rem;
     color: #f6f3f3;
+}
+
+.listing-condition, .listing-category{
+    padding: 10px;
+    
+    font-size: 1rem;
+    border-radius: 30px;
+    border: none;
+    color: rgb(24, 83, 73);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #lcategory, #condition{
