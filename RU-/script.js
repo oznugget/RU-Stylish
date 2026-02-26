@@ -9,7 +9,7 @@ function closeSidebar(){
 }
 
 //function for typing effect in about page
-//number 3 and 9s
+//number 3 and 9
 let varForTyping = 0;
 function typing(){
     const line = "What is RU Stylish?";
@@ -17,7 +17,7 @@ function typing(){
     if(varForTyping < line.length){
         document.getElementById("aboutSiteh2").innerHTML += line.charAt(varForTyping);
         varForTyping++;
-        setTimeout(typing, 110);
+        setTimeout(typing, 110); //rerun function
     }
 }
-window.onload = typing;
+window.onload = typing; //exe function after page loaded
