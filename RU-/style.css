@@ -287,6 +287,7 @@ dl{
     right: 0;
 }
 
+
 nav{
     width: 100%;
     background-image: url('images/nav.png');
@@ -297,20 +298,34 @@ nav{
 }
 
 .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.945);
+    backdrop-filter: blur(10px);
+    box-shadow: 10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
 
-    list-style: none; 
-    display: flex;
-    gap: 1rem;
-    border-radius: 30%;
-    text-align: center;
-
+.menu-icon{
+    top: 1.5%;
+    margin-left: 1rem;
+    cursor: pointer;
 }
 
 nav .nav-links li {
-   
-    padding: 0.5rem 1rem;
-    border-radius: 30px;
+    list-style-type: none;
+    text-decoration: none;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     transition: background-color 0.3s ease;
+    width: 100%;
 }
 
 .nav-links li:hover{
@@ -325,21 +340,11 @@ nav .nav-links li {
     transition: color 0.3s ease;
 }
 
-.nav-links a {
-    width: 100%;
-    gap: 5%;
-    
+.nav-links a{
     text-decoration: none;
     color: rgb(24, 83, 73);
     font-size: 1.2rem;
     font-weight: 700;
-    
-    display: flex;
-    flex-wrap:nowrap;
-    align-items: center;
-    justify-content:center;
-    
-    
 }
 
 #myAicon{

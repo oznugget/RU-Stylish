@@ -7,6 +7,7 @@
     <style>
         @import url('style.css');
     </style>
+    <script src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
@@ -19,10 +20,15 @@
 
     <header>
         <nav>
+            <div class="menu-icon">
+                <a href="#" onclick = "showSidebar()"> <img src="images/menuicon.png" alt="Menu Icon" width="30px" height="30px" id="menu-icon"> </a>
+            </div>
+            
             <div class="logo">
                 <img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left">
             </div>
             <ul class="nav-links">
+                <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="SignIn.html">Sign in</a></li>
@@ -32,7 +38,6 @@
                 <li><a href="review.html">Reviews</a></li>
                 <li><a href="report.html">Report</a></li>
                 <li><a href="CampusMap.html">Map</a></li>
-                
             </ul>
 
             <div class="search-bar">
