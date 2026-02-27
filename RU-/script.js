@@ -8,6 +8,8 @@ function closeSidebar(){
     navLinks.style.display = 'none';
 }
 
+//__________________________________________________________________________________________________________________
+
 //function for typing effect in about page
 //number 3 and 9
 let varForTyping = 0;
@@ -21,3 +23,12 @@ function typing(){
     }
 }
 window.onload = typing; //exe function after page loaded
+
+//__________________________________________________________________________________________________________________
+
+
+//footer last modified function
+//number 3
+document.getElementById("lastModified").innerHTML = "Last modified " + document.lastModified;
+
+//__________________________________________________________________________________________________________________

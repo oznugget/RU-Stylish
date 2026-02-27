@@ -7,7 +7,7 @@
     <style>
         @import url('style.css');
     </style>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script> <!-- defer so it loads html first then js -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
@@ -71,11 +71,6 @@
 
 
 <div class="line"></div>
-
-<p> 
-       Some number 2 requirements can only be met with Javascript for our website, as the menu in the navigation bar will become the responsive Sidebar and Slide Down a Bar.
-</p>
-
 
 <section  class="store">
  <h2 style="color:rgb(33, 116, 103)">Featured Listings</h2>   
@@ -359,6 +354,7 @@
         <a href = "index.html"> read more &#x2192 </a>
         <br>
         <p id = "footerBottom">2026 &copy:RUStylish.com</p>
+        <p id = "lastModified"></p>
     </div> 
 
     <div>
