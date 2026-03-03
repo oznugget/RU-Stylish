@@ -32,3 +32,6 @@ window.onload = typing; //exe function after page loaded
 document.getElementById("lastModified").innerHTML = "Last modified " + document.lastModified;
 
 //__________________________________________________________________________________________________________________
+
+//Number 8 validation of the inputs in forms
+
