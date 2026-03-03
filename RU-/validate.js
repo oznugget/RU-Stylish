@@ -11,11 +11,11 @@ form.addEventListener('submit',(e) =>{
 
     //Check weather we are in signUp or Login page
     if(FirstName){
-        errors=CreateAccErr(LastName.value,FirstName.value,Password.value,Cpassword.value){
+        errors=CreateAccErr(LastName.value,FirstName.value,Password.value,Cpassword.value)
 
     
     }else{
-        errors=SigErr(username.value,Password.value)
+        //errors=SigErr(username.value,Password.value)
     }
 
        if(errors.length > 0){
@@ -26,32 +26,33 @@ form.addEventListener('submit',(e) =>{
 
     //e.preventDefault()
 
-})
+});
 
 
 
-function CreateAccErr(LastName,FirstName,Password,Cpassword){
+function CreateAccErr(LastNameV,FirstNameV,PasswordV,CpasswordV){
     let errors=[]
 
-    if(FirstName ==''||FirstName==null){
+    if(FirstNameV ==''||FirstNameV==null){
         errors.push('Firstname is required')
-        FirstName.parentElement.claassList.add('incorrect')
+        FirstName.parentElement.classList.add('incorrect')
     }
-     if(LastName ==''||LastName==null){
+     if(LastNameV ==''||LastNameV==null){
         errors.push('LastName is required')
-        FirstName.parentElement.claassList.add('incorrect')
+        FirstName.parentElement.classList.add('incorrect')
     }
-     if(Password ==''||Password==null){
+     if(PasswordV ==''||PasswordV==null){
         errors.push('Password is required')
-        Password.parentElement.claassList.add('incorrect')
+        Password.parentElement.classList.add('incorrect')
     }
-     if(Cpassword ==''||Cpassword==null){
+     if(CpasswordV ==''||CpasswordV==null){
         errors.push('Confirm Password is required')
-        Cpassword.parentElement.claassList.add('incorrect')
+        Cpassword.parentElement.classList.add('incorrect')
     }
-     if(Password ==''||Cpassword==null){
+     if(PasswordV !==CpasswordV){
         errors.push('Firstname is required')
-        Cpassword.parentElement.claassList.add('incorrect')
+        Cpassword.parentElement.classList.add('incorrect')
+        Password.parentElement.classList.add('incorrect')
     }
 
 
