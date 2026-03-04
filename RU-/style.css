@@ -575,6 +575,21 @@ h2 {
     margin-left: 5rem;
 }
 
+
+
+i{
+    font-size: 0px;
+    margin-right:10px;
+    cursor: pointer;
+    padding: 100px;
+    align-items: right;
+}
+
+
+.hide{
+    display: none;
+}
+
 /*MY ACCOUNT PAGE*/
 
 
