@@ -400,7 +400,10 @@ nav .nav-links li {
     display: flex;
     align-items: center;
     gap: 1rem; 
+    margin-top: 20px;
+    margin-bottom: 20px;
     margin-left: auto; 
+    background-color:  rgb(243, 241, 241);
 }
 
 
