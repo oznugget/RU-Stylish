@@ -172,7 +172,7 @@ footer{
 
 
 #aboutRUlogo{
-    padding:none;
+    padding: 0;
 }
 .hero-video {
     width: 100vw; 
@@ -601,6 +601,20 @@ h2 {
     margin-left: 5rem;
 }
 
+
+
+i{
+    font-size: 18px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#passwordButton{ 
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
 /*MY ACCOUNT PAGE*/
 
 
@@ -646,7 +660,7 @@ h2 {
 .usericon{
     width: 45px;
     height: 45px;
-    float:left
+    float: left;    
 }
 
 .box{
@@ -710,17 +724,60 @@ form{
     background-image: url('images/nav.png');
     width: 300px;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 0px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 50px auto;
     text-align: center;
 }
 
+#username::after{
+    height:1rem;
+    width:12rem;
+    padding: 0.5rem;
+    font-size: 12px;
+    border-radius: 30px;
+    border: none;
+    margin-left: 0px; 
+    text-align: left;
+    float: left;
+ 
+}
+
+
+
+/* .remember{
+    gap:8px;
+    display:8px;
+    align-items: center;
+} */
+
+input[type="checkbox"]{
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+label{
+    vertical-align: middle;
+    line-height: 0.5;
+}
+
+
+#password{
+    float:left;
+    height:1rem;
+    width:12rem;
+    padding-left: 0;
+    padding: 0.5rem;
+    font-size: 12px;
+    border-radius: 30px;
+    border: none;
+    margin-left: 50px;
+    }
+
 #login-header{
     text-align: center;
     margin-bottom: 20px;
 } 
-
 
 #report_form{
     height: 40rem;
@@ -736,8 +793,7 @@ form{
     font-size: 12px;
     border-radius: 30px;
     border: none;
-    margin-left: 30px;
-    
+    margin-left: 30px; 
 }
 
 
