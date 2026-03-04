@@ -1,3 +1,5 @@
+//number 1
+//sidebar functions
 function showSidebar(){
     const navLinks = document.querySelector('.nav-links');
     navLinks.style.display = 'flex';
@@ -7,6 +9,54 @@ function closeSidebar(){
     const navLinks = document.querySelector('.nav-links');
     navLinks.style.display = 'none';
 }
+
+//message that displays if user is in South Africa or not
+const message = document.getElementById("welcomeMessage");
+
+if (navigator.language === "en-ZA") {
+    message.textContent = "Welcome fellow South African! 🇿🇦";
+} else {
+    message.textContent = "RU Stylish unfortunately only supported in South Africa 🇿🇦";
+}
+
+//message that displays if user is offline
+const status = document.getElementById("connectionStatus");
+
+  function updateStatus() {
+    if (navigator.onLine) {
+      status.textContent = "";
+    } else {
+      status.textContent = "⚠️ You are offline. Some features may not work. ⚠️";
+    }
+  }
+
+  window.addEventListener("online", updateStatus);
+  window.addEventListener("offline", updateStatus);
+
+  updateStatus();
+
+  //message that displays if cookies are enabled or not
+  const cookieWarning = document.getElementById("cookieWarning");
+
+  if (!navigator.cookieEnabled) {
+    cookieWarning.textContent =
+      "Cookies have not been enabled. Please enable cookies to use all features of this site.";
+  }else{
+    cookieWarning.textContent =
+        "This site uses cookies to enhance your experience. By continuing to browse, you consent to our use of cookies.";
+  }
+
+//message that displays user's browser
+const browserInfo = document.getElementById("browser");
+
+  browserInfo.textContent =
+    "You are browsing Rustylish using: " + navigator.userAgent;
+
+//function to copy website link to clipboard
+function copyLink() {
+    navigator.clipboard.writeText("https://www.rustylish.com");
+    alert("Website link copied!");
+  }
 
 //__________________________________________________________________________________________________________________
 
@@ -127,9 +177,31 @@ function adminCheck(){
 }   
 
 //__________________________________________________________________________________________________________________
-//Hide and show password function
 
-//Exracts the show and hide icons and the password input, then adds event listeners to the icons to toggle the password input type between text and password, and also toggles the visibility of the icons.
+//using navigator to check if java is enabled and browser language
+
+function isJavaEnabled(){
+    document.getElementById("enabled").innerHTML = navigator.isJavaEnabled;
+}
+
+function whatLanguage(){
+    document.getElementById("lang").innerHTML = navigator.language;
+}
+
+ 
+//__________________________________________________________________________________________________________________
+
+ 
+//_number 6 multi coloumns//
+
+const container = document.querySelector('.article_container'); 
+const nextBtn = document.getElementById('nextBtn');
+
+function nextPage() {
+  if (container && nextBtn) {
+    container.scrollLeft += container.clientWidth;
+  }
+};password input type between text and password, and also toggles the visibility of the icons.
 const showIcon = document.querySelector('.fa-eye');
 const hideIcon = document.querySelector('.fa-eye-slash');
 const passwordInput = document.getElementById('password');
@@ -150,3 +222,15 @@ hideIcon.addEventListener('click', () => {
 
 
 //___________________________________________________________________________________________________________________
+
+ 
+//_number 6 multi coloumns//
+
+const container = document.querySelector('.article_container'); 
+const nextBtn = document.getElementById('nextBtn');
+
+function nextPage() {
+  if (container && nextBtn) {
+    container.scrollLeft += container.clientWidth;
+  }
+};
