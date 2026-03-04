@@ -419,6 +419,25 @@ nav .nav-links li {
 
 }
 
+/*welcome message on homepage*/
+#welcomeMessage{
+    display: flex;
+    color: rgb(33, 116, 103);
+    padding-bottom: 0;
+    padding-left: 3rem;
+    z-index: 999;
+}
+
+/*cookies message*/
+#cookieWarning{
+    display: flex;
+    color: rgb(33, 116, 103);
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+}
+
+
+
 /*Interface for phones and tablets*/
 
 
