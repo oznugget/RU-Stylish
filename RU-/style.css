@@ -150,7 +150,7 @@ footer{
     float: left;
     padding:0.5%;
     margin-bottom: 1.5%;
-    margin-right: 75%;
+    margin-right: 0.9vw;
     
 }
 /*RU Stylish logo across all pages */
@@ -364,30 +364,55 @@ nav .nav-links li {
     font-weight: 700;
 }
 
-#myAicon{
+#myAicon {
+    flex-wrap: wrap;
     position: relative;
     right: 0;
     top: 1.5%;
+    float: right;
     margin-right: 1rem;
     z-index: 1000;
-
+    
+    transition: transform 0.3s ease; 
 }
-#myAicon:hover{
+
+#myAicon:hover {
     transform: scale(1.1);
-    transition: transform 0.3s ease;
 }
 
-
-#WishIcon{
-    position:relative;
+#WishIcon {
+    flex-wrap: wrap;
+    position: relative;
     right: 4%;
-    top: 2%;
+    
+    float: right;
     margin-right: 1rem;
+    margin-left: 1rem;
     z-index: 1000;
-}
-#WishIcon:hover{
-    transform: scale(1.1);
+    
     transition: transform 0.3s ease;
+}
+
+#WishIcon:hover {
+    transform: scale(1.1);
+}
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+    margin-left: auto; 
+}
+
+
+@media (max-width: 768px) {
+    #myAicon, #WishIcon {
+       float:left; 
+    }
+    
+    #WishIcon {
+       
+        top: 1.5%;
+    }
 }
 
 .store img{

@@ -171,11 +171,19 @@ function whatLanguage(){
  
 //_number 6 multi coloumns//
 
-const container = document.querySelector('.article_container'); 
-const nextBtn = document.getElementById('nextBtn');
 
 function nextPage() {
-  if (container && nextBtn) {
-    container.scrollLeft += container.clientWidth;
+  
+  const container = document.querySelector('.scroll_window');
+  
+  
+  if (container) {
+    container.scrollBy({
+      left: container.clientWidth,
+      behavior: 'smooth'
+    });
+  } else {
+    
+    console.error("Could not find the .scroll_window element!");
   }
-};
+}
