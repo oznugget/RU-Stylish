@@ -148,11 +148,11 @@ function CreateAccErr(LastNameV,FirstNameV,PasswordV,CpasswordV){
 //using navigator to check if java is enabled and browser language
 
 function isJavaEnabled(){
-    return document.writeln(navigator.isJavaEnabled);
+    document.getElementById("enabled").innerHTML = navigator.isJavaEnabled;
 }
 
 function whatLanguage(){
-    return document.writeln(navigator.language);
+    document.getElementById("lang").innerHTML = navigator.language;
 }
 
  
