@@ -767,6 +767,15 @@ form{
     border-radius: 30px;
 }
 
+#bearContainer{
+    position: relative;
+}
+
+#misconductBear{
+    position: absolute;
+}
+
+
 /*REPORT PAGE*/
 
 
@@ -947,3 +956,4 @@ button{
 /* Button styling */
 .controls { margin-top: 15px; text-align: right; }
 button { padding: 10px 20px; cursor: pointer; }
+

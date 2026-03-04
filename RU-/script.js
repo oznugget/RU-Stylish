@@ -169,3 +169,28 @@ function nextPage() {
     container.scrollLeft += container.clientWidth;
   }
 };
+
+//____________________________________________________________________________________________________________________
+//bear animation
+//cite: W3 schools
+//https://www.w3schools.com/howto/howto_js_animate.asp
+
+var id = null;
+function moving(){
+    
+    var bear = document.getElementById("misconductBear"); //to move bear specifically
+    var pos = 0;
+    clearInterval(id);
+    id = setInterval(frame, 10); //frame runs every 10ms
+
+    function frame(){
+        if (pos == 350){
+            clearInterval(id); //max movement
+        } else{
+            pos++;
+            bear.style.top = pos + 'px';
+            bear.style.left = pos + 'px'; //diagonal motion with increasing top and left values
+        }
+    }
+
+}
