@@ -92,5 +92,50 @@ function CreateAccErr(LastNameV,FirstNameV,PasswordV,CpasswordV){
     return errors;
 }
 
- 
 //__________________________________________________________________________________________________________________
+//Validation for sign in page
+
+function SignInErr(PasswordV){
+    let errors=[];
+        if(PasswordV ==''||PasswordV==null){
+        errors.push('Password is required');
+        Password.parentElement.classList.add('incorrect');
+    }
+    if(PasswordV.length < 8){
+        errors.push('Password must be at least 8 characters long');
+        Password.parentElement.classList.add('incorrect');
+    }
+
+    return errors;
+}
+
+//Cannot fully validate the sign in page without a database, but I can add a simple check for admin login.
+function adminCheck(){
+    const adminCheckbox = document.getElementById('admin');
+    if(adminCheckbox.checked && Password.value[0] === "#"){
+        alert("Admin login successful");
+    }
+}   
+
+//__________________________________________________________________________________________________________________
+//Hide and show password function
+
+const showIcon = document.querySelector('.fa-eye');
+const hideIcon = document.querySelector('.fa-eye-slash');
+const passwordInput = document.getElementById('password');
+
+showIcon.addEventListener('click', () => {
+    passwordInput.type = 'text';
+    hideIcon.classList.remove("hide");
+    showIcon.classList.add("hide");
+});
+
+hideIcon.addEventListener('click', () => {
+    passwordInput.type = 'password';
+    hideIcon.classList.add("hide");
+    showIcon.classList.remove("hide");
+   
+});
+
+
+//___________________________________________________________________________________________________________________
