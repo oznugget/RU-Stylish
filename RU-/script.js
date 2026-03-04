@@ -158,16 +158,6 @@ function whatLanguage(){
  
 //__________________________________________________________________________________________________________________
 
-//using navigator to check if java is enabled and browser language
-
-function isJavaEnabled(){
-    return document.writeln(navigator.isJavaEnabled);
-}
-
-function whatLanguage(){
-    return document.writeln(navigator.language);
-}
-
  
 //_number 6 multi coloumns//
 
