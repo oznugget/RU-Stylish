@@ -15,7 +15,7 @@
 </head>
 
 <!--report any issues on the page -->
-<body>
+<body onclick = "moving()">
 
 
   <header>
@@ -25,7 +25,7 @@
             </div>
             
             <div class="logo">
-                <img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left">
+                <a href="index.html"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left"></a>
             </div>
             <ul class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
@@ -53,9 +53,12 @@
     </header>
     <br>
 
+    <div id = "bearContainer">
+        <img id = "misconductBear" src = "images\bearMisconduct.png"  alt = "bear moving" width = "400" height = "400"/>
+    </div>
     
 
-    <section id="report">
+    <section id="report" >
         <h2 style="color:rgb(33, 116, 103)">Report a Misconduct</h2>
         <form  id = "report_form" action="submit_report" method="post">
         <label for="misconduct"><b>Select the type of misconduct:</b></label><br>

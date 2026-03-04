@@ -10,8 +10,9 @@
     <script src="script.js" defer></script> <!-- defer so it loads html first then js -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- for eye icon-->
     
 
 
@@ -26,7 +27,7 @@
             </div>
             
             <div class="logo">
-                <img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left">
+                <a href="index.html"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left"></a>
             </div>
             <ul class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
@@ -65,19 +66,29 @@
               <br>
 
             <div class="signin-password">
-                <input type="password" placeholder="Password" id="password" name="password" required>
+                <input type="password" placeholder="Password" id="password" name="password" style="position:relative;" required>
+                <dic class=""></dic><i class="fa fa-eye hide"></i>
+                <i class="fa fa-eye-slash hide" ></i>
+
             </div>
+
+
             <br>
               <div>
-                <div class="remember/forgot">
-                    <label><input type="checkbox">Remember Me </label>
+                <div class="remember">
+                     <div class="admin" id="adminCheck">
+                    <input type="checkbox" id="admin">
+                    <label> Admin </label>
+                    </div>
+                   
+                    <input type="checkbox">
+                    <label>Remember Me </label>
                     <br>
                     <a href="#" >Forgot password?</a>
 
-                </div>
-            
+                </div>            
                 <button type="submit" class="btn">Login </button>
-
+                
                 <div class="register">
                     <p>Dont have an Account yet? <a href="Create_Acount.html">Register Now</a></p>
                     </div>
