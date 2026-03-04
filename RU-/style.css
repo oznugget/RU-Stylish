@@ -893,3 +893,38 @@ button{
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
+
+/*multi columm css*/
+.reader-layout {
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+/* THE NEW SCROLL WINDOW */
+.scroll_window {
+  width: 100%;
+  height: 250px; 
+  overflow-x: hidden;  
+  overflow-y: hidden;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+/* THE COLUMN GENERATOR */
+.article_container {
+  height: 100%;  
+  column-width: 100vw;  
+  column-gap: 0px; 
+}
+
+.article_container p {
+  padding: 1rem 2rem;
+  margin: 0; 
+  line-height: 1.6;
+}
+
+/* Button styling */
+.controls { margin-top: 15px; text-align: right; }
+button { padding: 10px 20px; cursor: pointer; }

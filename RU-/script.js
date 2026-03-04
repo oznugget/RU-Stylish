@@ -93,4 +93,13 @@ function CreateAccErr(LastNameV,FirstNameV,PasswordV,CpasswordV){
 }
 
  
-//__________________________________________________________________________________________________________________
+//_number 6 multi coloumns//
+
+const container = document.querySelector('.article_container'); 
+const nextBtn = document.getElementById('nextBtn');
+
+function nextPage() {
+  if (container && nextBtn) {
+    container.scrollLeft += container.clientWidth;
+  }
+};
