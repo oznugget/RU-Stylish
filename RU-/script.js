@@ -183,7 +183,6 @@ function nextPage() {
       behavior: 'smooth'
     });
   } else {
-    
     console.error("Could not find the .scroll_window element!");
   }
 }
