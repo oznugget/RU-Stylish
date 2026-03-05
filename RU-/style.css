@@ -290,18 +290,19 @@ dl{
 
 }
 
-.search-bar input{
+.search-bar {
+    display: flex;
+    justify-content: flex-end; 
+    width: 100%; 
+}
+
+.search-bar input[type="text"] {
     padding: 12px;
     font-size: 12px;
     border-radius: 30px;
     border: none;
-    margin-left: 30px;
-    float: right;
-    right: 0;
-    
-    position: relative;
+    margin-left: 30px; 
 }
-
 
 nav{
     width: 100%;
@@ -675,6 +676,15 @@ i{
     align-self: center;
     align-content: center;
 
+}
+
+/*multi columm css*/
+.contactpage{
+height: 100%;  
+  column-width: 50vw;  
+  column-gap: 0px; 
+  padding-top: 0.2%;
+  padding-bottom: 0.5%;
 }
 
 
