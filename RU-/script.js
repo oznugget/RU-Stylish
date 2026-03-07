@@ -2,9 +2,6 @@
 //number 1
 //sidebar functions
 
-console.log('script.js loaded');
-console.log('Initial items:', items);
-
 function showSidebar() {
   const navLinks = document.querySelector(".nav-links");
   if (navLinks) {
