@@ -29,6 +29,7 @@ function loadItems(){
 
 
 
+
 function saveItems() {
     localStorage.setItem('market',JSON.stringify(items));
 }
@@ -72,12 +73,6 @@ function AllProducts(){
     section.appendChild(newContainer);
 });
 }
-
-
-
-
-
-
 
 
 
@@ -141,26 +136,6 @@ function CreateProd(item, container){
 
 
 
-/*document.getElementById('imageUpload').addEventListener('change', function(e){
-    const file = e.target.files[0];
-    if (file){
-        document.getElementById('imageName').textContent = file.name;
-        uploadedImageUrl = URL.createObjectURL(file);
-
-
-        const PastPrev = document.querySelector('.image-preview');
-        if (PastPrev) PastPrev.remove();
-
-        const prev = document.createElement('img');
-        prev.src = uploadedImageUrl;
-        prev.width=100;
-        prev.className= 'image-preview';
-        document.querySelector('.addImageBtn').appendChild(prev);
-
-
-
-    }
-});*/
 
 
 
