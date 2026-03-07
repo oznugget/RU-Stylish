@@ -7,7 +7,8 @@
     <style>
         @import url('style.css');
     </style>
-    <script src="script.js" defer></script> <!-- defer so it loads html first then js -->
+     <script src="script.js" defer></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
@@ -29,23 +30,27 @@
             <ul class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="SignIn.html">Sign in</a></li>
-                <li><a href="Create_Acount.html">Create Account</a></li>
                 <li><a href="listing.html">Create Listing</a></li>
+                <li><a href="Create_Acount.html">Create Account</a></li>
+                <li><a href="SignIn.html">Sign in</a></li>
+                <li><a href="CampusMap.html">Map</a></li>
+                <li><a href="about.html">About Us</a></li>
                 <li><a href="Contact.html">Contact us</a></li>
                 <li><a href="review.html">Reviews</a></li>
                 <li><a href="report.html">Report</a></li>
-                <li><a href="CampusMap.html">Map</a></li>
+                <li><a href="Dummy.html">Dummy Page</a></li>
             </ul>
 
             <div class="search-bar">
                 <input type="text" placeholder="Search...">
             </div>
 
-            <a href="MyAccount.html"><img src = "images\AccountIcon.png" width = "50px" height = "50px" id="myAicon"/></a>
-            <a href = "wishlist.html"><img src = "images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/> </a>
+          
         </nav>
+         <div class="nav-icons">
+    <a href="MyAccount.html"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
+    <a href="wishlist.html"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
+    </div>
     </header>
 
     <h2 style="color:rgb(33, 116, 103)"> New Listing </h2>
@@ -55,10 +60,13 @@
 
     <form class="listing-form">
 
-        <div class="addImageBtn">
-            <button type="button"> <img src="images/uploadIcon.png" width="50px" height="50px"> </button>
-        </div>
-        <br>
+    <div class="addImageBtn">
+    <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+    <button type="button" onclick="document.getElementById('imageUpload').click()">
+    <img src="images/uploadIcon.png" width="50px" height="50px">
+    </button>
+    <span id="imageName">No file chosen</span>
+    </div>
 
         <label for="title"> <b>Title</b></label><br>
         <div class="listing-title">
@@ -66,7 +74,7 @@
         </div>
         <br>
 
-        <label for="descr"> <b>Size</b> </label><br>
+        <label for="size"> <b>Size</b> </label><br>
         <div class="listing-size">
             <input type="text" id="size" name="size">
         </div>
@@ -80,7 +88,15 @@
 
           <!-- creative feature- drop down menus -->
 
-        <label for="condition"><b>Choose a condition</b></label>
+     
+
+        <label for="price"> <b>Price (R)</b> </label><br>
+        <div class="listing-price">
+        <input type="number" id="price" name="price" min="0" step="0.01">
+        </div>
+        <br>
+
+         <label for="condition"><b>Choose a condition</b></label>
         <br>
 
         <div class="listing-condition">
@@ -95,7 +111,7 @@
         <br>
 
 
-        <label for="tag"><b>Choose a category</b></label>
+        <label for="lcategory"><b>Choose a category</b></label>
         <br>
         <div class="listing-category">
         <select name="tag" id="lcategory">
@@ -111,11 +127,18 @@
         <br>
 
         <div class="postBtn">
-        <button type="post">Post</button>
+        <button type="submit">Post</button>
         </div>
 
     </form>
-    
+
+
+<h2 style="color:rgb(33, 116, 103); margin-top: 40px;">Your Listings Preview</h2>
+<div class="store">
+
+</div>
+
+
 
 <footer style = "color:rgb(212, 212, 212)">
 
@@ -138,7 +161,7 @@
             <tr>
                 <td> <a href = "index.html">Buy</a></td>
                 <td> <a href = "about.html#aboutSite"> Website </a></td>
-                <td> <a href = "https://www.instagram.com/ru_stylish/">Instagram</a></li></td>
+                <td> <a href = "https://www.instagram.com/ru_stylish/">Instagram</a></td>
             </tr>
 
             <tr>
@@ -172,7 +195,6 @@
 </footer>
     
 
-    
 
     
 </body>

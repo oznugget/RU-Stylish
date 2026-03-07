@@ -40,6 +40,7 @@ html{
     font-family: "TikTok Sans";
     padding: 0;
     margin: 0;
+    background-color: teal;
 }
 body{
     font-family: "TikTok Sans", sans-serif;
@@ -150,7 +151,7 @@ footer{
     float: left;
     padding:0.5%;
     margin-bottom: 1.5%;
-    margin-right: 75%;
+    margin-right: 0.9vw;
     
 }
 /*RU Stylish logo across all pages */
@@ -290,18 +291,19 @@ dl{
 
 }
 
-.search-bar input{
+.search-bar {
+    display: flex;
+    justify-content: flex-end; 
+    width: 100%; 
+}
+
+.search-bar input[type="text"] {
     padding: 12px;
     font-size: 12px;
     border-radius: 30px;
     border: none;
-    margin-left: 30px;
-    float: right;
-    right: 0;
-    
-    position: relative;
+    margin-left: 30px; 
 }
-
 
 nav{
     width: 100%;
@@ -364,30 +366,58 @@ nav .nav-links li {
     font-weight: 700;
 }
 
-#myAicon{
+#myAicon {
+    flex-wrap: wrap;
     position: relative;
     right: 0;
     top: 1.5%;
+    float: right;
     margin-right: 1rem;
     z-index: 1000;
-
+    
+    transition: transform 0.3s ease; 
 }
-#myAicon:hover{
+
+#myAicon:hover {
     transform: scale(1.1);
-    transition: transform 0.3s ease;
 }
 
-
-#WishIcon{
-    position:relative;
+#WishIcon {
+    flex-wrap: wrap;
+    position: relative;
     right: 4%;
-    top: 2%;
+    
+    float: right;
     margin-right: 1rem;
+    margin-left: 1rem;
     z-index: 1000;
-}
-#WishIcon:hover{
-    transform: scale(1.1);
+    
     transition: transform 0.3s ease;
+}
+
+#WishIcon:hover {
+    transform: scale(1.1);
+}
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto; 
+    background-color:  rgb(243, 241, 241);
+}
+
+
+@media (max-width: 768px) {
+    #myAicon, #WishIcon {
+       float:left; 
+    }
+    
+    #WishIcon {
+       
+        top: 1.5%;
+    }
 }
 
 .store img{
@@ -649,6 +679,15 @@ i{
 
 }
 
+/*multi columm css*/
+.contactpage{
+height: 100%;  
+  column-width: 50vw;  
+  column-gap: 0px; 
+  padding-top: 0.2%;
+  padding-bottom: 0.5%;
+}
+
 
 
 
@@ -822,6 +861,15 @@ label{
     width: 20rem;
     border-radius: 30px;
 }
+
+#bearContainer{
+    position: relative;
+}
+
+#misconductBear{
+    position: absolute;
+}
+
 
 /*REPORT PAGE*/
 
@@ -1003,3 +1051,4 @@ button{
 /* Button styling */
 .controls { margin-top: 15px; text-align: right; }
 button { padding: 10px 20px; cursor: pointer; }
+
