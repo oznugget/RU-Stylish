@@ -93,7 +93,7 @@ function CreateProd(item, container){
 
         const img = document.createElement('img');
         img.src = item.image;
-        img.alt = item.alt||item.title;
+        img.alt = item.alt||item.title; 
         img.width = 200;
         img.height = 200;
         img.className = 'store_img';
