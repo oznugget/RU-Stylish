@@ -56,6 +56,8 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url('images/nav.png');
+    opacity: 0.95;
 }
 
 .TikTok_Sans{
@@ -152,6 +154,7 @@ footer{
     padding:0.5%;
     margin-bottom: 1.5%;
     margin-right: 0.9vw;
+   
     
 }
 /*RU Stylish logo across all pages */
@@ -965,7 +968,7 @@ button{
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1; /* Pushes it entirely behind the rest of your website */
+    z-index: 1; /* Pushes it entirely behind the rest of your website */
     margin: 0;
     overflow: hidden;
 }
