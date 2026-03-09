@@ -402,10 +402,10 @@ nav .nav-links li {
     display: flex;
     align-items: center;
     gap: 1rem; 
-    margin-top: 20px;
-    margin-bottom: 20px;
+    
     margin-left: auto; 
     background-color:  rgb(243, 241, 241);
+    padding: 1%;
 }
 
 
@@ -551,10 +551,6 @@ h2 {
 }
 
  .items:hover{
-  
-    
-    
-    
     transform: scale(1.05);
     box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
     z-index: 1;
@@ -574,15 +570,14 @@ h2 {
  
     text-align: left;   
     
-    
 }
- figcaption{
+figcaption{
     block-size: auto;
     font-size: 0.8rem;
     
- }
+}
 
- .home-select select{
+.home-select select{
     padding: 10px;
     
     font-size: 1rem;
@@ -592,7 +587,7 @@ h2 {
     float: left;
     color: rgb(24, 83, 73);
     font-weight: bold;
- }
+}
 
 /*store page */
 
