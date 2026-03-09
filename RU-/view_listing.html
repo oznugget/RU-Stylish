@@ -12,6 +12,100 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
+
+
+
+
+    <style>
+
+        body{
+
+        padding:50px;
+
+        }
+
+     .product{
+    color:black;
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    padding:20px;
+    border-color:black;
+    gap: 5%;
+    border-radius: 10%;       
+    background-image: url("images/card_bg.png");
+    text-align: center; 
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); 
+    transition: opacity 0.5s ease;
+    z-index: 0;
+    width:300px;
+            border-style: double;
+        }
+
+
+    .ProdDetails{
+          font-family:serif;
+        display:flex;
+         flex-direction:column;
+        align-items: center;
+        padding: 10 px;
+        border-radius: 20px;
+        border-style: double;
+        justify-content: center;
+        text-align:center;
+         width:350px;
+         padding-bottom:50px ;
+         background-color: white;
+
+          flex-direction:column;
+         
+
+            }
+
+        .ContactSeller{
+        display: flex;
+        grid-template-columns: 1fr 1fr;
+        gap:10px
+
+
+        }
+
+.button{
+    margin:10px;
+    padding:10px 20px;
+    font-size:16px;
+    cursor:pointer;
+    
+
+    }
+
+
+    button:hover {
+    background-color: #0f766e;
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.2);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+.head{
+    padding-bottom: 50px;
+    padding-top: 40px;
+    color:teal;
+
+}
+
+.footer{
+    padding-top: 40px;
+}
+
+
+         
+        </style>
+
+
 </head>
 <body>
     
@@ -51,423 +145,45 @@
     </header>
 
 
-<section id="view" class="construction">
-    <a href="index.html">
-    <img src="images/under_construction.png" alt="Page still needs to be updated using javascript" height = "1000px" width="1900px">
-</a>
-    <!-- Page to desribe the item chosen by the user to view. Cannot be done until we have a database to pull the information from. For now, it will be under construction.
 
-    <table>
-        <h2 style="color:rgb(33, 116, 103)">Listing Title</h2>
-        <tr>
-            <td>
+    <div class="head">
+    <h1>Get in Contact</h1>
+    <div>
+
+    <section class="ContactSeller">
+
+
+        <div class="product">
+            <img src="pic.html" >
+            </div>
+
+        <div class="ProdDetails">
+        <h5 class="location"> Adamson House</h5>
+
+        <figcaption class="prodinfo">
+        <p><strong>Item:</strong> Flower printed dress</p>
+        <p><strong>Size:</strong> M</p>
+        <p><strong>Colour:</strong> Blue</p>
+        <p><strong>Condition:</strong> Good</p>
+        <p><strong>Seller:</strong> Username</p>
+         <p><strong>Price:</strong> Price</p>
+
+            </figcaption>
+
+
+        <div class="contact">
+        <p><strong>Username:</strong> seller123</p>
+        <p><strong>Email:</strong> seller@email.com</p>
+        <button class="contact-btn">Contact Seller</button>
+        </div>
+
+        </div>
+
+    </section>
+
+
+
     
-    <img src="images/loafers.jpg" alt="Clothing Item" width="300px" height="400px">
-    <figcaption id="description">
-
-        <h3>Description</h3>
-        <p>size..</p>
-        <p>discription....</p>
-        <p>Price: R100</p>
-    <button type="button">Contact Seller</button>
-    </figcaption>
-    </td>
-
-   
-    <td>
-        <img src="images/Baseballvap.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-        <h3>Description:</h3>
-        <p>size..</p>
-        <p>discription....</p>
-        <p>Price: R100</p>
-    <button type="button">Contact Seller</button>
-    </figcaption>
-    </td>
-
-    <td>
-        <img src="images/belt.jpeg" alt="Clothing Item" width="300px" height="400px">
-    <figcaption id="description">
-
-        <h3>Description:</h3>
-        <p>size..</p>
-        <p>discription....</p>
-        <p>Price: R2000</p>
-        <button type="button">Contact Seller</button>
-        </figcaption>
-    </td>
-
-    <td>
-        <img src="images/Blackwomenjacket.jpeg" alt="Clothing Item" width="300px" height="400px">
-    <figcaption id="description">
-        <h3>Description:</h3>
-        <p>size..</p>
-        <p>discription....</p>
-        <p>Price: R550</p>
-        <button type="button">Contact Seller</button>           
-    
-    </figcaption>
-
-    <td>
-        <img src="images/brownbreastedblazer.jpeg" alt="Clothing Item" width="300px" height="400px">
-    <figcaption id="description">
-        <h3>Description:</h3>
-        <p>size..</p>
-        <p>discription....</p>
-        <p>Price: R400</p>
-        <button type="button">Contact Seller</button>
-    </figcaption>
-    </td>
-
-    <td>
-        <img src="images/Chelseaboot.jpeg" alt="Clothing Item" width="300px" height="400px">
-    <figcaption id="description">
-        <h3>Description:</h3>
-        <p>size..</p>
-        <p>discription....</p>
-        <p>Price: R450</p>
-    </figcaption>
-    </td>
-
-    </tr>
-
-    <tr>
-        <td>
-            <img src="images/cowboyhat.jpg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R300</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-
-        <td>
-            <img src="images/cupidhomershirt.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R120</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-
-        <td>
-            <img src="images/DFXFDsliders.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R60</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-
-        <td>
-            <img src="images/Flowerdress.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R220</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-
-        <td>
-            <img src="images/flowershorts.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R100</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-
-        <td>
-            <img src="images/Gladiatorsandal.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R210</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-        </tr>
-        <tr>
-
-        <td>
-            <img src="images/Gucciscarf.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R4500</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-
-        <td>
-            <img src="images/hoodie.jpg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R250</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-
-        <td>
-            <img src="images/loafers.jpg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R300</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-
-        <td>
-            <img src="images/loosejorts.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R250</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-
-        <td>
-            <img src="images/Narutoshirt.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R200</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-
-        <td>
-            <img src="images/navyjorts.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R250</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-        </tr>
-
-        <tr>
-        <td>
-            <img src="images/Niikefootball.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R1600</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-
-        <td>
-            <img src="images/Niikestructuretekkie.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R1200</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-
-        <td>
-            <img src="images/Nike26.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R800</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-
-        <td>
-            <img src="images/Nikeairmax.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R900</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-
-        <td>
-            <img src="images/NikeP6000tekkie.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R1700</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-
-        <td>
-            <img src="images/Nikeshirt.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R750</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-        </tr>
-        <tr>
-        <td>
-            <img src="images/Niketech.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">   
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R1200</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-
-        <td>
-            <img src="images/Niketracksuit.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R1500</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-
-        <td>
-            <img src="images/orangetshirt.jpg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R160</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-
-        <td>
-            <img src="images/RedXstoneshorts.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R300</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-
-        <td>
-            <img src="images/Shortboot.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R400</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-
-        <td>
-            <img src="images/Silettoheeel.jpeg" alt="Clothing Item" width="300px" height="400px">
-        <figcaption id="description">
-            <h3>Description:</h3>
-            <p>size..</p>
-            <p>discription....</p>
-            <p>Price: R350</p>
-            <button type="button">Contact Seller</button>
-        </figcaption>
-        </td>
-        </tr>
-
-        <tr>
-            <td>
-                <img src="images/Taupeloosepant.jpeg" alt="Clothing Item" width="300px" height="400px">
-            <figcaption id="description">
-                <h3>Description:</h3>
-                <p>size..</p>
-                <p>discription....</p>
-                <p>Price: R300</p>
-                <button type="button">Contact Seller</button>
-            </figcaption>
-            </td>
-
-            <td>
-                <img src="images/Tupacshirt.jpeg" alt="Clothing Item" width="300px" height="400px">
-            <figcaption id="description">
-                <h3>Description:</h3>
-                <p>size..</p>
-                <p>discription....</p>
-                <p>Price: R150</p>
-                <button type="button">Contact Seller</button>
-            </td>
-
-            <td>
-                <img src="images/whiteblazerdress.jpeg" alt="Clothing Item" width="300px" height="400px">
-            <figcaption id="description">
-                <h3>Description:</h3>
-                <p>size..</p>
-                <p>discription....</p>
-                <p>Price: R350</p>
-                <button type="button">Contact Seller</button>
-            </figcaption>
-            </td>
-
-            <td>
-                <img src="images/whitecap.jpg" alt="Clothing Item" width="300px" height="400px">
-            <figcaption id="description">
-                <h3>Description:</h3>
-                <p>size..</p>
-                <p>discription....</p>
-                <p>Price: R100</p>
-                <button type="button">Contact Seller</button>
-            </figcaption>
-            </td>
-
-            <td>
-                <img src="images/Zimmerhat.jpeg" alt="Clothing Item" width="300px" height="400px">
-            <figcaption id="description">
-                <h3>Description:</h3>
-                <p>size..</p>
-                <p>discription....</p>
-                <p>Price: R250</p>
-                <button type="button">Contact Seller</button>
-            </figcaption>
-            </td>
-        </tr>
-        
-
-
-    </table>
-
-
--->
-
-
-</section>
-
-
 <footer style = "color:rgb(212, 212, 212)">
 
     
