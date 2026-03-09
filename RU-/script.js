@@ -1,4 +1,4 @@
-// @ts-check
+
 //number 1
 //sidebar functions
 
