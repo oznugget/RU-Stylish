@@ -56,6 +56,8 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url('images/nav.png');
+    opacity: 0.95;
 }
 
 .TikTok_Sans{
@@ -152,6 +154,7 @@ footer{
     padding:0.5%;
     margin-bottom: 1.5%;
     margin-right: 0.9vw;
+   
     
 }
 /*RU Stylish logo across all pages */
@@ -402,10 +405,10 @@ nav .nav-links li {
     display: flex;
     align-items: center;
     gap: 1rem; 
-    margin-top: 20px;
-    margin-bottom: 20px;
+    
     margin-left: auto; 
     background-color:  rgb(243, 241, 241);
+    padding: 1%;
 }
 
 
@@ -551,10 +554,6 @@ h2 {
 }
 
  .items:hover{
-  
-    
-    
-    
     transform: scale(1.05);
     box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
     z-index: 1;
@@ -574,15 +573,14 @@ h2 {
  
     text-align: left;   
     
-    
 }
- figcaption{
+figcaption{
     block-size: auto;
     font-size: 0.8rem;
     
- }
+}
 
- .home-select select{
+.home-select select{
     padding: 10px;
     
     font-size: 1rem;
@@ -592,7 +590,7 @@ h2 {
     float: left;
     color: rgb(24, 83, 73);
     font-weight: bold;
- }
+}
 
 /*store page */
 
@@ -936,7 +934,18 @@ button{
     color: #f6f3f3;
 }
 
-.listing-condition, .listing-category{
+#tag{
+     padding: 10px;
+    
+    font-size: 1rem;
+    border-radius: 30px;
+    border: none;
+    color: rgb(24, 83, 73);
+    font-weight: bold;
+    display: flex;
+    
+}
+.listing-condition{
     padding: 10px;
     
     font-size: 1rem;
@@ -955,7 +964,7 @@ button{
     font-size: 1rem;
     border-radius: 30px;
     border: none;
-    margin-left:0.5%;
+    margin-left:2%;
     float: left;
     color: rgb(24, 83, 73);
     font-weight: bold;
@@ -970,7 +979,7 @@ button{
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1; /* Pushes it entirely behind the rest of your website */
+    z-index: 1; /* Pushes it entirely behind the rest of your website */
     margin: 0;
     overflow: hidden;
 }

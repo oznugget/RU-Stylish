@@ -25,5 +25,5 @@ function autoSlides() {
     slides[slideIndex - 1].style.display = "block";
     
     // Automatically run this function again every 5 seconds (5000ms)
-    setTimeout(autoSlides, 5000); 
+    setTimeout(autoSlides, 10000); 
 }

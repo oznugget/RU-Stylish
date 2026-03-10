@@ -4,14 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms and Condititions</title>
+
+    <style>
+    body{
+        padding:100px;
+        align-items: center;
+        justify-content: center;
+        
+        
+        background-image: url("images/card_bg.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover; 
+
+
+    }
+
+    #termsSection{
+        background-color: white;
+        padding:20;
+        border-radius: 5px;
+       
+        border-style: double;
+
+        align-items: center;
+        justify-content: center;
+   
+    }
+    h1{
+        align-items: center;
+      
+    }
+
+
+
+
+    </style>
 </head>
 
 
 <body>
-    <section id="termsSection" style="display:none;">
+    <div class="heading">
+    <h1>Terms and Conditions</h1>
+    </div>
+
+    <section id="termsSection"  >
 
     <div class="T_header">
-    <h1>Terms and Conditions<h1>
+  
         <h5 class="Update"> Last Updated: March 2, 2026</h5>
     </div>
 
@@ -24,7 +64,7 @@
 
     <h2>2.Platform Overview and Role</h2>
 
-    </p>RU-Stylish is a neutral platform designed specifically to connect
+    <p>RU-Stylish is a neutral platform designed specifically to connect
      university students for the purpose of 
     listing, discovering, and expressing interest in second-hand clothing.
     </p>
@@ -81,7 +121,7 @@
                 </ul>
 
             
-        <h2>5. Expressing Interest (For Buyers)<h2>
+        <h2>5. Expressing Interest (For Buyers)</h2>
                 <h6>If you express interest in an item listed by another user, you agree to the following:</h6>
                             <ul><li>Communication: You will communicate with the seller in a respectful and timely manner.</li>
 
@@ -90,7 +130,7 @@
 
         <h2>6. Prohibited Items and Activities</h2>
             <h6>To ensure the safety and legality of our community, the following are strictly prohibited on the Platform:</h6>
-        <h4>Prohibited Items:<h4>
+        <h4>Prohibited Items:</h4>
             <ul>
 
             <li>Alcohol, tobacco, cannabis, or any related paraphernalia .</li>
@@ -107,7 +147,7 @@
                 <li>Using the Platform for any commercial or business purposes without explicit permission .</li>
                 <li>Collecting personal information of other users for unauthorized purposes .</li>
                 <li>Attempting to manipulate or disrupt the Platform's functionality.</li>
-                <ul>
+                </ul>
                 
                 <p>We reserve the right to remove any listings or suspend any users found to be in violation 
                     of these prohibitions,without notice, and to report serious violations to the appropriate
@@ -124,7 +164,7 @@
                 <li>Arranging Exchange: Any logistics regarding the exchange of the item (e.g., meeting point, time) must be arranged privately 
                     between the buyer and seller. We encourage users to meet in safe, public, well-lit locations on or near campus for their safety .</li>
 
-                </li>Sole Responsibility: We are not responsible for ensuring that a buyer pays or that a seller delivers an item as described.
+                <li>Sole Responsibility: We are not responsible for ensuring that a buyer pays or that a seller delivers an item as described.
                  All sales are final as agreed upon by the users involved. We do not mediate disputes, issue refunds, or guarantee the outcome of
                   any user-to-user transaction .</li></ul>
 
@@ -170,11 +210,102 @@
 
 
                
+    
+
+
+    <div class="scroll-progress">
+    <div class="scroll-progress-bar" id="Scrollp"></div>
+    </div>
+
+
+    <div   class="Terms">
+        <label class="checkT">
+            <input type="checkbox" id="AgreeBx">
+             <span>I have read and agree to the <a href="#">Terms and Conditions</a></span>
+
+        </label>
+
+         <button class="decline" onclick="window.location.href='index.html'">Decline</button>
+        <button class="accept" id="AgreeBtn" 
+        disabled onclick="acceptTerms()" >Accept & Continue</button>
+
+        </div>
+    </div>
+    <div>
+        
     </section>
+
+
+<script>
+
+    const termsContent = document.getElementById('termsSection');
+    const Scrollp = document.getElementById('Scrollp');
+     const AgreeBx = document.getElementById('AgreeBx');
+      const AgreeBtn = document.getElementById('AgreeBtn');
+
+         if (termsContent) {
+        termsContent.addEventListener('scroll', function() {
+            const scrollHeight = this.scrollHeight - this.clientHeight;
+            const scrollTop = this.scrollTop;
+            const prg = (scrollTop / scrollHeight) * 100;
+            if (Scrollp) {
+                Scrollp.style.width = prg + '%';
+            }
+        });
+    }
+
+    if (AgreeBx) {
+        AgreeBx.addEventListener('change', function() {
+            if (AgreeBtn) {
+                AgreeBtn.disabled = !this.checked;
+                console.log('Checkbox changed, button disabled:', AgreeBtn.disabled); // Debug log
+            }
+        });
+    }
+
+
+    termsContent.addEventListener('scroll', function() {
+            const scrollHeight = this.scrollHeight - this.clientHeight;
+            const scrollTop = this.scrollTop;
+            const prg = (scrollTop / scrollHeight) * 100;
+            Scrollp.style.width = prg + '%';
+        });
+
+
+    AgreeBx.addEventListener('change', function() {
+            AgreeBtn.disabled = !this.checked;
+        });
+
+    function acceptTerms() {
+            if (Agreebx.checked && Agreebx) {
+    
+                localStorage.setItem('termsAccepted', 'true');
+                localStorage.setItem('termsAcceptedDate', new Date().toISOString());
+                
+                // Redirect to create account page
+                window.location.href = "MyAccount.html";
+
+            }else{
+                console.log('Checkbox is not checked');
+            alert('Please check the box to accept the terms and conditions.');
+            }
+        }
+
+         window.onload = function() {
+            if (localStorage.getItem('termsAccepted') === 'true') {
+                console.log('Terms already accepted on: ' + localStorage.getItem('termsAcceptedDate'));
+            }
+
+            if (AgreeBtn && AgreeBx) {
+            AgreeBtn.disabled = !AgreeBx.checked;
+        }
+        }
+
+
+</script>
     
 
 </body>
-
 
 
 </html>

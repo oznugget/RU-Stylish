@@ -27,19 +27,20 @@
              </div>
 
             <div class="logo">
-                <img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="65px" height="85px" class="logo-left">
+                <a href="index.html"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left"></a>
             </div>
             <ul class="nav-links">
+                <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About us</a></li>
-                <li><a href="SignIn.html">Sign in</a></li>
-                <li><a href="Create_Acount.html">Create Account</a></li>
-                <li><a href="MyAccount.html">Account</a></li>
                 <li><a href="listing.html">Create Listing</a></li>
+                <li><a href="Create_Acount.html">Create Account</a></li>
+                <li><a href="SignIn.html">Sign in</a></li>
+                <li><a href="CampusMap.html">Map</a></li>
+                <li><a href="about.html">About Us</a></li>
                 <li><a href="Contact.html">Contact us</a></li>
                 <li><a href="review.html">Reviews</a></li>
                 <li><a href="report.html">Report</a></li>
-                <li><a href="CampusMap.html">Map</a></li>
+                <li><a href="Dummy.html">Dummy Page</a></li>
             </ul>
 
             <div class="search-bar">
@@ -62,18 +63,21 @@
 
         
         <h2 style="color:rgb(33, 116, 103)">Shop by category</h2>
-        
-        <select name="tag" id="tag" placeholder="category">
-        <option value="shirt">Shirts</option>
-        <option value="shoes">Shoes</option>
-        <option value="pants">Pants</option>
-        <option value="hoodie">Hoodies</option>
-        <option value="caps_beanies">Caps & Beanies</option>
+        <div class="listing-category">
+            <select name="tag" id="tag" placeholder="category">
+            <option value="shirt">Shirts</option>
+            <option value="dresses">Dresses</option>
+            <option value="shoes">Shoes</option>
+            <option value="pants">Pants</option>
+            <option value="hoodie">Hoodies</option>
+            <option value="caps_beanies">Caps & Beanies</option>
+        </div>
         </select>
+        
 
     </article>
-    <br>
-    <br>
+    <p id="welcomeMessage"></p> <!--Welcome message for users in South Africa-->
+    <p id="connectionStatus"></p> 
 
 
 
@@ -83,6 +87,8 @@
 
 <div class="line"></div>
 
+<p id="cookieWarning"></p> <!-- cookie warning message -->
+
 
 
 
@@ -91,21 +97,24 @@
 
 <div class="store_items">
 
-                <div class ="items">
-                <a href="view_listing.html">
-                <img src="images/loafers.jpg" alt="Loafers" width="200px" height="200px">
+                 <div id= items class ="items">
+                <div id="picture">
+                <a href="view_listing.html" class="listing-link">
+                <img src="images/loafers.jpg" alt="Loafers" width="200px" height="200px" class="store_img">
                 </a>
                 <figcaption>
                     <p>Loafers <p>
                     <p>R300</p>
                     <p>Seller: ...</p>
                 </figcaption>
+                </div>
+                
             </div>
        
             <div class ="items">
         
-            <a href="view_listing.html">
-                <img src="images/hoodie.jpg" alt="hoodie" width="200px" height="200px">
+            <a href="view_listing.html" class="listing-link">
+                <img src="images/hoodie.jpg" alt="hoodie" width="200px" height="200px" class="store_img">
                 </a>
             <figcaption>
                 <p>Black Hoodie<p>
@@ -118,8 +127,8 @@
         
            <div class ="items">
             
-                <a href="view_listing.html">
-                <img src="images/whitecap.jpg" alt="whitecap" width="200px" height="200px">
+                <a href="view_listing.html" class="listing-link">
+                <img src="images/whitecap.jpg" alt="whitecap" width="200px" height="200px" class="store_img">
                 </a>
             <figcaption>
                 <p>White Adidas Cap<p>
@@ -130,34 +139,43 @@
         </div>
 
                     
-                <div class ="items">
-                <a href="view_listing.html">
-                <img src="images/loafers.jpg" alt="Loafers" width="200px" height="200px">
+            <div class ="items">
+                <a href="view_listing.html" class="listing-link">
+                <img src="images/Narutoshirt.jpeg" alt="Naruto printed shirt" width="200px" height="200px" class="store_img">
                 </a>
                 <figcaption>
-                    <p>Loafers <p>
-                    <p>R300</p>
+                    <p>Naruto Printed Shirt <p>
+                    <p>R200</p>
                     <p>Seller: ...</p>
                 </figcaption>
             </div>
        
             <div class ="items">
         
-            <a href="view_listing.html">
-                <img src="images/hoodie.jpg" alt="hoodie" width="200px" height="200px">
+            <a href="view_listing.html" class="listing-link">
+                <img src="images/Niikefootball.jpeg" alt="Nike football" width="200px" height="200px" class="store_img">
                 </a>
             <figcaption>
-                <p>Black Hoodie<p>
-                <p>R250</p>
+                <p>Nike Football boots<p>
+                <p>R800</p>
                 <p>Seller: ...</p>
             </figcaption>
             
         </div>
+        <div class ="items">
+                <a href="view_listing.html" class="listing-link">
+                    <img src="images/RedXstoneshorts.jpeg" alt="Red X stone shorts" width="200px" height="200px" class="store_img">
+                </a>
+                <figcaption>
+                    <p>Red X Stone Shorts <p>
+                    <p>R300</p>
+                    <p>Seller: ...</p>
+                </figcaption>
+            </div>
 
 
 </div>
-
-
+</section>
 
 
 
@@ -355,6 +373,7 @@
         <a href = "index.html"> read more &#x2192 </a>
         <br>
         <p id = "footerBottom">2026 &copy:RUStylish.com</p>
+        <p id = "lastModified"></p>
     </div> 
 
     <div>
@@ -396,7 +415,7 @@
         &#x2709 Tshikovhi@gmail.com <br>
         </p>
     </div>
-
+<p id="browser"></p> <!-- displays user's browser -->
 </footer>
     
 </body>
