@@ -2,28 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=!, initial-scale=1.0">
-    <title>Report Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
     <style>
         @import url('style.css');
     </style>
-    <script src="script.js" defer></script> <!-- defer so it loads html first then js -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="script.js" defer></script>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
+   
+
 </head>
 
-<!--report any issues on the page -->
-<body onclick = "moving()">
+<!-- Home Page. navigation bar with absolute and relative links -->
+<body>
 
 
   <header>
         <nav>
-            <div class="menu-icon">
+             <div class="menu-icon">
                 <a href="#" onclick = "showSidebar()"> <img src="images/menuicon.png" alt="Menu Icon" width="30px" height="30px" id="menu-icon"> </a>
-            </div>
-            
+             </div>
+
             <div class="logo">
                 <a href="index.html"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left"></a>
             </div>
@@ -45,52 +47,60 @@
                 <input type="text" placeholder="Search...">
             </div>
 
-            
         </nav>
-         <div class="nav-icons">
+                 <div class="nav-icons">
     <a href="MyAccount.html"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
     <a href="wishlist.html"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
     </div>
     </header>
+        <br>
+
+    </header>
     <br>
 
-    <div id = "bearContainer">
-        <img id = "misconductBear" src = "images\bearMisconduct.png"  alt = "bear moving" width = "400" height = "400"/>
-    </div>
-    
+    <body>
+        <h1 id="adminh2"> Admin Page </h1>
+        <p id="adminp"> This page is for admin use only. </p>
 
-    <section id="report" >
-        <h2 style="color:rgb(33, 116, 103)">Report a Misconduct</h2>
-        <form  id = "report_form" action="submit_report" method="post">
-        <label for="misconduct"><b>Select the type of misconduct:</b></label><br>
-        <label>
-            <input type="radio" name="misconduct" value="value1"> Scam
-        </label><br>
-        <label>
-            <input type="radio" name="misconduct" value="value2"> Damaged Goods
-        </label><br>
-        <label>
-            <input type="radio" name="misconduct" value="value3"> Theft
-        </label><br>
-        <label>
-            <input type="radio" name="misconduct" value="value4"> Phishing
-        </label><br>
+        <div id="statistics">
+            <h2 id="adminh2"> Site Statistics </h2>
+            <p id="adminp"> Total number of users: 1000 </p>
+            <p id="adminp"> Total number of listings: 500 </p>
+            <p id="adminp"> Total number of sales: 200 </p>
+        </div>
 
-                <br>  
-            <div>
-                <input type="text" placeholder="username of reported user" id="reported_user" name="name" required>
-            </div>
-            <br>
-            <div>
-                <textarea id = "describe_misconduct" placeholder="    Describe the misconduct experience"  name="problem" required ></textarea>
-            </div>
-            <br>
-            <button id = "submitMisconduct" type="submit"><b>Submit Report</b></button>
-        </form>
+        <div id="userManagement">
+            <h2 id="adminh2"> User Management </h2>
+            <p id="adminp"> Here you can manage users, view reports, and handle any issues that arise. </p>
+            <br/>
 
-        </section>
+            <form id="deleteUser">
+                <label for="userId">Delete User by username:</label>
+                <input type="text" id="userId" name="userId" placeholder="Enter username">
+                <button type="submit">Delete User</button>
+            </form>
 
-<footer style = "color:rgb(212, 212, 212)">
+            <form id="removeListing">
+                <label for="listingId">Remove Listing by ID:</label>
+                <input type="text" id="listingId" name="listingId" placeholder="Enter listing ID">
+                <button type="submit">Remove Listing</button>
+            </form>
+
+            <form id="deleteReview">
+                <label for="reviewId">Delete Review by ID:</label>
+                <input type="text" id="reviewId" name="reviewId" placeholder="Enter review ID">
+                <button type="submit">Delete Review</button>
+            </form>
+
+            <h2 id="adminh2"> View Reports </h2>
+            <p id="adminp"> Here you can view user reports and take appropriate action. </p>
+        </div>
+    </body>
+
+
+
+
+    <footer style = "color:rgb(212, 212, 212)">
 
     
     <div id = "footerLeft">
@@ -141,9 +151,5 @@
         &#x2709 Tshikovhi@gmail.com <br>
         </p>
     </div>
-
+<p id="browser"></p> <!-- displays user's browser -->
 </footer>
-
-        </body>
-
-        </html>

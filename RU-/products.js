@@ -2,16 +2,19 @@
 let uploadedImageUrl = 'images/placeholder.jpg';
 
 
-
+//Array to store items
 let items =[];
 
-function loadItems(){
 
+//Load items from local storage,runs when page loads to store prevois items
+function loadItems(){
+    //get saved items for browsers 
     const saved= localStorage.getItem('market');
     if (saved){
-        items = JSON.parse(saved);
+        items = JSON.parse(saved); //if item exists
     }else{
- items =[{
+        //else 
+ items =[{ 
     image: 'images/loafers.jpg',
     alt: 'Loafers',
     title: 'Loafers',
@@ -32,13 +35,16 @@ function loadItems(){
 
 function saveItems() {
     localStorage.setItem('market',JSON.stringify(items));
+    // Convert items array to JSON string and store in localStorage
 }
 
 
-loadItems();
+loadItems(); //run function when pg loasds
 
 
 
+
+//dipslay all products in the Store Section
 function AllProducts(){
     const StoreSection = document.querySelectorAll('.store');
 
@@ -52,23 +58,27 @@ function AllProducts(){
     if (oldItems){
         oldItems.remove();
     }
-
+    //create new div for item
     const newContainer = document.createElement('div');
     newContainer.className = 'store_items';
 
     if ( index===0 ){
         items.forEach(item =>{
-            CreateProd(item,newContainer);
+            CreateProd(item,newContainer);  // Create each product and add it to the new container
         });
     }else{
+        //duplicate sections 
         const OgItems = section.querySelectorAll('.items');
+
+         // Clone each original item and add to new container
         OgItems.forEach(item => {
             newContainer.appendChild(item.cloneNode(true));
 
         });
     }
-
+    // Clear the entire section content
     section.innerHTML='';
+
     section.appendChild(heading);
     section.appendChild(newContainer);
 });
@@ -77,20 +87,22 @@ function AllProducts(){
 
 
 
-
+//Create item template and add it
 
 function CreateProd(item, container){
         const itemDiv = document.createElement('div');
         itemDiv.className = 'items';
 
+        //image item
         const picDiv =document.createElement('div');
         picDiv.className = 'picture';
 
+        //link to listing.html
         const link = document.createElement('a');
         link.href = item.link || 'listing.html';
         link.className = 'listing-link';
 
-
+    //create item
         const img = document.createElement('img');
         img.src = item.image;
         img.alt = item.alt||item.title; 
@@ -103,21 +115,21 @@ function CreateProd(item, container){
         picDiv.appendChild(link);
 
         const figcaption = document.createElement('figcaption');
-
+    //Titel
         const ItemTitle = document.createElement('p');
         ItemTitle.textContent = item.title;
-
+    //Price
         const ItemPrice = document.createElement('p');
         ItemPrice.textContent = item.price;
 
-
+    //item detsails
         const ItemDetails = document.createElement('p');
         ItemDetails.textContent = `Size: ${item.size} | Colour: ${item.colour}`;
         ItemDetails.style.fontSize = '0.9em';
         ItemDetails.style.color ='#666';
    
 
-
+    //Seller details
         const Seller = document.createElement('p');
         Seller.textContent = item.seller || 'Seller: ...';
 
@@ -129,7 +141,7 @@ function CreateProd(item, container){
         figcaption.appendChild(Seller);
         picDiv.appendChild(figcaption);
         itemDiv.appendChild(picDiv);
-        container.appendChild(itemDiv);
+        container.appendChild(itemDiv); //add item
 
 
 }
@@ -138,11 +150,11 @@ function CreateProd(item, container){
 
 
 
-
+//event listener for sunmit action
 document.querySelector('.listing-form').addEventListener('submit', function(e){
-    e.preventDefault();
+    e.preventDefault(); //Prevetn deafult
 
-
+    //form feilds
     const title = document.getElementById('title')?.value;
     const price = document.getElementById('price')?.value;
     const size = document.getElementById('size')?.value;
@@ -151,14 +163,14 @@ document.querySelector('.listing-form').addEventListener('submit', function(e){
     const category = document.getElementById('lcategory')?.value;
 
 
-
+    //validate requirwed feilds
     if(!title|| !price){
         alert('Please enter title and price');
         return;
 
     }
 
-
+    //create new object
     const NewItem = {
         image: uploadedImageUrl,
         alt: title,
@@ -174,8 +186,10 @@ document.querySelector('.listing-form').addEventListener('submit', function(e){
 
     };
 
-    items.push(NewItem);
+    items.push(NewItem); //add item
     saveItems();
+
+    //debugging
     console.log('Item added:', NewItem);
     console.log('Total items:', items.length);
     alert('Item successfuly posted');
@@ -199,17 +213,20 @@ document.querySelector('.listing-form').addEventListener('submit', function(e){
 
 document.addEventListener('DOMContentLoaded', function(){
     loadItems()
+     // Load saved items from localStorage when page starts
+
     if(document.querySelector('.store')){
-        AllProducts();
+        AllProducts(); //dislay all products
     }
 
     const lastModified = document.getElementById('lastModified');
     if(lastModified){
+        // Show when the document was last updated
         lastModified.textContent = 'Last modified: '+document.lastModified;
     }
 });
 
-
+//Handlwe uploading of images
 document.getElementById('imageUpload').addEventListener('change', function(e){
     const file = e.target.files[0];
     if (file){
@@ -219,7 +236,7 @@ document.getElementById('imageUpload').addEventListener('change', function(e){
 
         const PastPrev = document.querySelector('.image-preview');
         if (PastPrev) PastPrev.remove();
-
+          // Create new preview image element
         const prev = document.createElement('img');
         prev.src = uploadedImageUrl;
         prev.width=100;
