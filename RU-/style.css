@@ -57,7 +57,7 @@ header{
     justify-content: center;
     align-items: center;
     background-image: url('images/nav.png');
-    opacity: 0.95;
+
 }
 
 .TikTok_Sans{
@@ -298,14 +298,18 @@ dl{
     display: flex;
     justify-content: flex-end; 
     width: 100%; 
+
+    
 }
 
 .search-bar input[type="text"] {
     padding: 12px;
     font-size: 12px;
     border-radius: 30px;
-    border: none;
+    border-style: solid;
     margin-left: 30px; 
+    border-color:rgb(46, 110, 96) ;
+    
 }
 
 nav{
@@ -315,6 +319,7 @@ nav{
     align-items: center;
     justify-content:flex-start;
     opacity: 0.95;
+   
 }
 
 .nav-links {
@@ -407,7 +412,7 @@ nav .nav-links li {
     gap: 1rem; 
     
     margin-left: auto; 
-    background-color:  rgb(243, 241, 241);
+    background-image:url('images/nav2.png');;
     padding: 1%;
 }
 
