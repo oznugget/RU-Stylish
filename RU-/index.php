@@ -27,21 +27,21 @@
              </div>
 
             <div class="logo">
-                <a href="index.html"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left"></a>
+                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left"></a>
             </div>
             <ul class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="listing.html">Create Listing</a></li>
-                <li><a href="Create_Acount.html">Create Account</a></li>
-                <li><a href="SignIn.html">Sign in</a></li>
-                <li><a href="CampusMap.html">Map</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="Contact.html">Contact us</a></li>
-                <li><a href="review.html">Reviews</a></li>
-                <li><a href="report.html">Report</a></li>
-                <li><a href="admin.html">Admin</a></li>
-                <li><a href="Dummy.html">Dummy Page</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="listing.php">Create Listing</a></li>
+                <li><a href="Create_Acount.php">Create Account</a></li>
+                <li><a href="SignIn.php">Sign in</a></li>
+                <li><a href="CampusMap.php">Map</a></li>
+                <li><a href="about.php">About Us</a></li>
+                <li><a href="Contact.php">Contact us</a></li>
+                <li><a href="review.php">Reviews</a></li>
+                <li><a href="report.php">Report</a></li>
+                <li><a href="admin.php">Admin</a></li>
+                <li><a href="Dummy.php">Dummy Page</a></li>
             </ul>
 
             <div class="search-bar">
@@ -50,8 +50,8 @@
 
         </nav>
                  <div class="nav-icons">
-    <a href="MyAccount.html"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-    <a href="wishlist.html"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
+    <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
+    <a href="wishlist.php"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
     </div>
     
     </header>
@@ -101,7 +101,7 @@
 
                  <div id= items class ="items">
                 <div id="picture">
-                <a href="view_listing.html" class="listing-link">
+                <a href="view_listing.php" class="listing-link">
                 <img src="images/loafers.jpg" alt="Loafers" width="200px" height="200px" class="store_img">
                 </a>
                 <figcaption>
@@ -115,7 +115,7 @@
        
             <div class ="items">
         
-            <a href="view_listing.html" class="listing-link">
+            <a href="view_listing.php" class="listing-link">
                 <img src="images/hoodie.jpg" alt="hoodie" width="200px" height="200px" class="store_img">
                 </a>
             <figcaption>
@@ -129,7 +129,7 @@
         
            <div class ="items">
             
-                <a href="view_listing.html" class="listing-link">
+                <a href="view_listing.php" class="listing-link">
                 <img src="images/whitecap.jpg" alt="whitecap" width="200px" height="200px" class="store_img">
                 </a>
             <figcaption>
@@ -142,7 +142,7 @@
 
                     
             <div class ="items">
-                <a href="view_listing.html" class="listing-link">
+                <a href="view_listing.php" class="listing-link">
                 <img src="images/Narutoshirt.jpeg" alt="Naruto printed shirt" width="200px" height="200px" class="store_img">
                 </a>
                 <figcaption>
@@ -154,7 +154,7 @@
        
             <div class ="items">
         
-            <a href="view_listing.html" class="listing-link">
+            <a href="view_listing.php" class="listing-link">
                 <img src="images/Niikefootball.jpeg" alt="Nike football" width="200px" height="200px" class="store_img">
                 </a>
             <figcaption>
@@ -165,7 +165,7 @@
             
         </div>
         <div class ="items">
-                <a href="view_listing.html" class="listing-link">
+                <a href="view_listing.php" class="listing-link">
                     <img src="images/RedXstoneshorts.jpeg" alt="Red X stone shorts" width="200px" height="200px" class="store_img">
                 </a>
                 <figcaption>
@@ -191,7 +191,7 @@
     <div class="store_items">
   
         <div class="items">
-            <a href="view_listing.html">
+            <a href="view_listing.php">
                 <img src="images/belt.jpeg" alt="belt" width="200px" height="200px">
                 </a>
             <figcaption>
@@ -203,7 +203,7 @@
         </div>
    
           <div class="items">
-            <a href="view_listing.html">
+            <a href="view_listing.php">
                 <img src="images/Blackwomenjacket.jpeg" alt="black jacket" width="200px" height="200px">
                 </a>
             <figcaption>
@@ -215,7 +215,7 @@
     
 
         <div class="items">
-            <a href="view_listing.html">
+            <a href="view_listing.php">
                 <img src="images/brownbreastedblazer.jpeg" alt="brown blazer" width="200px" height="200px">
                 </a>
             <figcaption>
@@ -229,7 +229,7 @@
    
           <div class="items">
 
-        <a href="view_listing.html">
+        <a href="view_listing.php">
                 <img src="images/cupidhomershirt.jpeg" alt="white shirt" width="200px" height="200px">
             </a>
             <figcaption>
@@ -241,7 +241,7 @@
                 
   <div class="items">
 
-        <a href="view_listing.html">
+        <a href="view_listing.php">
                 <img src="images/Flowerdress.jpeg" alt="Flower printe dress" width ="200px" height ="200px">
             </a>
             <figcaption>
@@ -252,7 +252,7 @@
         </div>
   
           <div class="items">
-            <a href="view_listing.html">
+            <a href="view_listing.php">
                 <img src="images/flowershorts.jpeg" alt ="Flower printed shorts" width ="200px" height ="200px">
                 </a>
             <figcaption>
@@ -281,7 +281,7 @@
 
 
        <div class="items">
-            <a href="view_listing.html">
+            <a href="view_listing.php">
                 <img src="images/Chelseaboot.jpeg" alt="Women's boot" width="200px" height="200px">
                 </a>
             <figcaption>
@@ -294,7 +294,7 @@
 
   
         <div class="items">
-            <a href=" view_listing.html">
+            <a href=" view_listing.php">
                 <img src = "images/cowboyhat.jpg" alt="Cowboy hat" width ="200px" height ="200px">
                 </a>
             <figcaption>
@@ -305,7 +305,7 @@
         </div>
    
          <div class="items">
-            <a href="view_listing.html">
+            <a href="view_listing.php">
                 <img src="images/DFXFDsliders.jpeg" alt="White and black sliders" width="200px" height="200px">
                 </a>
                 <figcaption>
@@ -318,7 +318,7 @@
 
 
          <div class="items">
-            <a href="view_listing.html">
+            <a href="view_listing.php">
                 <img src="images/Gladiatorsandal.jpeg" alt="Galdiator sandal" width="200px" height ="200px">
             </a>
 
@@ -330,7 +330,7 @@
         </div>
  
          <div class="items">
-            <a href ="view_listing.html">
+            <a href ="view_listing.php">
                 <img src="images/Gucciscarf.jpeg" alt="Gucci Scarf" width="200px" height="200px">
             </a>
             <figcaption>
@@ -341,7 +341,7 @@
         </div>
   
          <div class="items">
-            <a href="view_listing.html">
+            <a href="view_listing.php">
                 <img src="images/Narutoshirt.jpeg" alt="Naruto printed shirt" width="200px" height="200px">
             </a>
             <figcaption>
@@ -372,7 +372,7 @@
     <div id = "footerLeft">
         <h3> RU Stylish </h3>
         <p> RU stylish? Add items to your wishlist.</p>
-        <a href = "index.html"> read more &#x2192 </a>
+        <a href = "index.php"> read more &#x2192 </a>
         <br>
         <p id = "footerBottom">2026 &copy:RUStylish.com</p>
         <p id = "lastModified"></p>
@@ -385,14 +385,14 @@
             </tr>
 
             <tr>
-                <td> <a href = "index.html">Buy</a></td>
-                <td> <a href = "about.html#aboutSite"> Website </a></td>
+                <td> <a href = "index.php">Buy</a></td>
+                <td> <a href = "about.php#aboutSite"> Website </a></td>
                 <td> <a href = "https://www.instagram.com/ru_stylish/">Instagram</a></li></td>
             </tr>
 
             <tr>
-                <td> <a href = "listing.html"> Sell </a></td>
-                <td> <a href = "about.html#aboutCrew"> Crew </a></td>
+                <td> <a href = "listing.php"> Sell </a></td>
+                <td> <a href = "about.php#aboutCrew"> Crew </a></td>
                 <td> <a href = "#"> Youtube </a></td>
             </tr>      
         </table>
@@ -400,7 +400,7 @@
     
 
     <div>
-        <a id = "footerMap" href="CampusMap.html"> <img src="images/mapicon.png" height = "150px" width="150px" > </a>
+        <a id = "footerMap" href="CampusMap.php"> <img src="images/mapicon.png" height = "150px" width="150px" > </a>
     </div>
 
     <div id = "footerRight">
