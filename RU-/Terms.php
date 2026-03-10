@@ -226,7 +226,7 @@
 
         </label>
 
-         <button class="decline" onclick="window.location.href='index.html'">Decline</button>
+         <button class="decline" onclick="window.location.href='index.php'">Decline</button>
         <button class="accept" id="AgreeBtn" 
         disabled onclick="acceptTerms()" >Accept & Continue</button>
 
@@ -284,7 +284,7 @@
                 localStorage.setItem('termsAcceptedDate', new Date().toISOString());
                 
                 // Redirect to create account page
-                window.location.href = "MyAccount.html";
+                window.location.href = "MyAccount.php";
 
             }else{
                 console.log('Checkbox is not checked');

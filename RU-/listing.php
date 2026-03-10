@@ -28,22 +28,22 @@
             </div>
 
             <div class="logo">
-                <a href="index.html"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px"
+                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px"
                         height="75px" class="logo-left"></a>
             </div>
             <ul class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px"
                             height="30px"></a></li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="listing.html">Create Listing</a></li>
-                <li><a href="Create_Acount.html">Create Account</a></li>
-                <li><a href="SignIn.html">Sign in</a></li>
-                <li><a href="CampusMap.html">Map</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="Contact.html">Contact us</a></li>
-                <li><a href="review.html">Reviews</a></li>
-                <li><a href="report.html">Report</a></li>
-                <li><a href="Dummy.html">Dummy Page</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="listing.php">Create Listing</a></li>
+                <li><a href="Create_Acount.php">Create Account</a></li>
+                <li><a href="SignIn.php">Sign in</a></li>
+                <li><a href="CampusMap.php">Map</a></li>
+                <li><a href="about.php">About Us</a></li>
+                <li><a href="Contact.php">Contact us</a></li>
+                <li><a href="review.php">Reviews</a></li>
+                <li><a href="report.php">Report</a></li>
+                <li><a href="Dummy.php">Dummy Page</a></li>
             </ul>
 
             <div class="search-bar">
@@ -53,8 +53,8 @@
 
         </nav>
         <div class="nav-icons">
-            <a href="MyAccount.html"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon" /></a>
-            <a href="wishlist.html"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon" /></a>
+            <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon" /></a>
+            <a href="wishlist.php"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon" /></a>
         </div>
     </header>
 
@@ -62,7 +62,8 @@
     <br>
 
     <!-- form to create post -->
-
+    <div id="listingpg">
+        <img src="images/listingbear.png" width="400px" height="400px" id="listingImage" alt="Listing Image">
     <form class="listing-form">
 
         <div class="addImageBtn">
@@ -139,7 +140,11 @@
     </form>
 
 
-    <h2 style="color:rgb(33, 116, 103); margin-top: 40px;">Your Listings Preview</h2>
+    
+    </div>
+
+
+    
     <div class="store">
 
     </div>
@@ -152,7 +157,7 @@
         <div id="footerLeft">
             <h3> RU Stylish </h3>
             <p> RU stylish? Add items to your wishlist.</p>
-            <a href="index.html"> read more &#x2192 </a>
+            <a href="index.php"> read more &#x2192 </a>
             <br>
             <p id="footerBottom">2026 &copy:RUStylish.com</p>
             <p id="lastModified"></p>
@@ -167,14 +172,14 @@
                 </tr>
 
                 <tr>
-                    <td> <a href="index.html">Buy</a></td>
-                    <td> <a href="about.html#aboutSite"> Website </a></td>
+                    <td> <a href="index.php">Buy</a></td>
+                    <td> <a href="about.php#aboutSite"> Website </a></td>
                     <td> <a href="https://www.instagram.com/ru_stylish/">Instagram</a></td>
                 </tr>
 
                 <tr>
-                    <td> <a href="listing.html"> Sell </a></td>
-                    <td> <a href="about.html#aboutCrew"> Crew </a></td>
+                    <td> <a href="listing.php"> Sell </a></td>
+                    <td> <a href="about.php#aboutCrew"> Crew </a></td>
                     <td> <a href="#"> Youtube </a></td>
                 </tr>
             </table>
@@ -182,7 +187,7 @@
 
 
         <div>
-            <a id="footerMap" href="CampusMap.html"> <img src="images/mapicon.png" height="150px" width="150px"> </a>
+            <a id="footerMap" href="CampusMap.php"> <img src="images/mapicon.png" height="150px" width="150px"> </a>
         </div>
 
         <div id="footerRight">
