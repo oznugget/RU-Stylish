@@ -25,20 +25,20 @@
             </div>
             
             <div class="logo">
-                <a href="index.html"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left"></a>
+                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left"></a>
             </div>
             <ul class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
-               <li><a href="index.html">Home</a></li>
-                <li><a href="listing.html">Create Listing</a></li>
-                <li><a href="Create_Acount.html">Create Account</a></li>
-                <li><a href="SignIn.html">Sign in</a></li>
-                <li><a href="CampusMap.html">Map</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="Contact.html">Contact us</a></li>
-                <li><a href="review.html">Reviews</a></li>
-                <li><a href="report.html">Report</a></li>
-                <li><a href="Dummy.html">Dummy Page</a></li>
+               <li><a href="index.php">Home</a></li>
+                <li><a href="listing.php">Create Listing</a></li>
+                <li><a href="Create_Acount.php">Create Account</a></li>
+                <li><a href="SignIn.php">Sign in</a></li>
+                <li><a href="CampusMap.php">Map</a></li>
+                <li><a href="about.php">About Us</a></li>
+                <li><a href="Contact.php">Contact us</a></li>
+                <li><a href="review.php">Reviews</a></li>
+                <li><a href="report.php">Report</a></li>
+                <li><a href="Dummy.php">Dummy Page</a></li>
             </ul>
 
             <div class="search-bar">
@@ -47,8 +47,8 @@
 
         </nav>
          <div class="nav-icons">
-    <a href="MyAccount.html"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-    <a href="wishlist.html"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
+    <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
+    <a href="wishlist.php"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
     </div>
     </header>
 
@@ -61,13 +61,13 @@
         We are a student-run marketplace that promotes sustainability and community engagement.
         You as our customer, can create a listing of item you would like to sell. You can also view more details about each listing by clicking on the 
         item that you see. You can also create a wishlist as a collection of things you like, then put in a bid when you are ready.<br>
-        Click <a href = "SignIn.html"> here </a>to sign up for an account, press releases, and updates from our website.
+        Click <a href = "SignIn.php"> here </a>to sign up for an account, press releases, and updates from our website.
         This website was designed to put you, our customer, first in all services because you matter.<br> 
         Need any assistance marketing, pricing or choosing what to sell? <br>
         <!--This is a YOUTUBE link for marketing-->
         <a href="https://youtu.be/4ajmfzj9G1g?si=Nml_kssisJcEpLGM" target="_blank"> 
         Click</a> on this link and visit the YouTube page for a proper insight into the business. <br> In the event of any misconduct
-        , <a href="report.html">report it here </a> and we will investigate it. Thank you for visiting us. Stick around for a purchase or a listing.</p>
+        , <a href="report.php">report it here </a> and we will investigate it. Thank you for visiting us. Stick around for a purchase or a listing.</p>
         
     </section>
 
@@ -165,7 +165,7 @@
     <div id = "footerLeft">
         <h3> RU Stylish </h3>
         <p> RU stylish? Add items to your wishlist.</p>
-        <a href = "index.html"> read more &#x2192 </a>
+        <a href = "index.php"> read more &#x2192 </a>
         <br>
         <p id = "footerBottom">2026 &copy:RUStylish.com</p>
         <p id = "lastModified"></p>
@@ -178,14 +178,14 @@
             </tr>
 
             <tr>
-                <td> <a href = "index.html">Buy</a></td>
-                <td> <a href = "about.html#aboutSite"> Website </a></td>
+                <td> <a href = "index.php">Buy</a></td>
+                <td> <a href = "about.php#aboutSite"> Website </a></td>
                 <td> <a href = "https://www.instagram.com/ru_stylish/">Instagram</a></li></td>
             </tr>
 
             <tr>
-                <td> <a href = "listing.html"> Sell </a></td>
-                <td> <a href = "about.html#aboutCrew"> Crew </a></td>
+                <td> <a href = "listing.php"> Sell </a></td>
+                <td> <a href = "about.php#aboutCrew"> Crew </a></td>
                 <td> <a href = "#"> Youtube </a></td>
             </tr>      
         </table>
@@ -193,7 +193,7 @@
     
 
     <div>
-        <a id = "footerMap" href="CampusMap.html"> <img src="images/mapicon.png" height = "150px" width="150px" > </a>
+        <a id = "footerMap" href="CampusMap.php"> <img src="images/mapicon.png" height = "150px" width="150px" > </a>
     </div>
 
     <div id = "footerRight">
