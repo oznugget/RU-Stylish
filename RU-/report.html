@@ -76,16 +76,18 @@
             <input type="radio" name="misconduct" value="value4"> Phishing
         </label><br>
 
-                <br>  
+                <br><br>  
             <div>
                 <input type="text" placeholder="username of reported user" id="reported_user" name="name" required>
+                <span class="error" ><?php echo $nameError;?></span>
             </div>
             <br>
             <div>
-                <textarea id = "describe_misconduct" placeholder="    Describe the misconduct experience"  name="problem" required ></textarea>
+                <textarea id = "describe_misconduct" placeholder="    Describe the misconduct experience"  name="description" required ></textarea>
+                <span class="error"><?php echo $description;?></span>
             </div>
             <br>
-            <button id = "submitMisconduct" type="submit"><b>Submit Report</b></button>
+            <button id = "submitMisconduct" type="submit" name="submit" value="Submit"><b>Submit Report</b></button>
         </form>
 
         </section>

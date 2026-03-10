@@ -755,6 +755,17 @@ height: 100%;
 #reviewbody{
     background-color:  #f1f1f1;
 }
+
+#reviewMessage{
+    width:80rem;
+}
+
+#contactUsForm{
+    width: 90rem;
+    padding: 20px;
+}
+
+
 /*REVIEWS PAGE*/
 
 
