@@ -51,7 +51,6 @@ function AllProducts(){
 
     StoreSection.forEach((section,index) => {
 
-    const heading = section.querySelector('h2');
     const oldItems = section.querySelector('.store_items');
 
 
@@ -77,9 +76,9 @@ function AllProducts(){
         });
     }
     // Clear the entire section content
-    section.innerHTML='';
 
-    section.appendChild(heading);
+
+    
     section.appendChild(newContainer);
 });
 }
@@ -148,65 +147,57 @@ function CreateProd(item, container){
 
 
 
+    const ListingForm = document.querySelector('.listing-form');
+    if (ListingForm){
+        ListingForm.addEventListener('submit',function(e) {
+                e.preventDefault();
+            
+                
+         const title = document.getElementById('title')?.value;
+        const price = document.getElementById('price')?.value;
+        const size = document.getElementById('size')?.value;
+        const colour = document.getElementById('colour')?.value;
+        const condition = document.getElementById('condition')?.value;
+        const category = document.getElementById('lcategory')?.value;
+        
+
+        if (!title || !price){
+            alert("Please Enter title and price");
+            return;
+        }
+
+        const NewItem = {
+             image: uploadedImageUrl,
+            alt: title,
+            title: title,
+            price: 'R' + price,
+            size: size || 'N/A',
+            colour: colour || 'N/A',
+            condition: condition || 'new',
+            category: category || 'other',
+            seller: 'Seller: .....',
+            link: 'listing.html'
+        }
+
+        items.push(NewItem);
+        saveItems();
 
 
-//event listener for sunmit action
-document.querySelector('.listing-form').addEventListener('submit', function(e){
-    e.preventDefault(); //Prevetn deafult
+        AllProducts();
 
-    //form feilds
-    const title = document.getElementById('title')?.value;
-    const price = document.getElementById('price')?.value;
-    const size = document.getElementById('size')?.value;
-    const colour = document.getElementById('colour')?.value;
-    const condition = document.getElementById('condition')?.value;
-    const category = document.getElementById('lcategory')?.value;
+        ListingForm.reset();
+        uploadedImageUrl = 'image/placeholder.jpg';
+        document.getElementById('imageName').textContent = 'No file chosen';
 
+        const preview = document.querySelector('.image-preview');
+        if (preview) preview.remove();
 
-    //validate requirwed feilds
-    if(!title|| !price){
-        alert('Please enter title and price');
-        return;
+        alert('Item successfylly posted')
 
-    }
-
-    //create new object
-    const NewItem = {
-        image: uploadedImageUrl,
-        alt: title,
-        title: title,
-        price: 'R' + price,
-
-        size: size ||'N/A',
-        colour: colour || 'N/A',
-        condition: condition || 'new',
-        category: category|| 'other',
-        seller: `Seller: .....`,
-        link: 'listing.html'
-
-    };
-
-    items.push(NewItem); //add item
-    saveItems();
-
-    //debugging
-    console.log('Item added:', NewItem);
-    console.log('Total items:', items.length);
-    alert('Item successfuly posted');
+    });
+}
 
 
-    if(document.querySelector('.store')){
-    AllProducts();
-    }
-
-    this.reset();
-     uploadedImageUrl = 'images/placeholder.jpg';
-    document.getElementById('imageName').textContent = 'No file chosen'
-
-     const preview = document.querySelector('.image-preview');
-    if (preview) preview.remove();
-
-});
 
 
 
@@ -249,18 +240,9 @@ document.getElementById('imageUpload').addEventListener('change', function(e){
 });
 
 
+//prevet page from refreshing
 
 
-
-
-
-/*
-document.querySelector('.postBtn button').addEventListener('click', function(e){
-    e.preventDefault();
-
-    document.querySelector('.listing-form').dispatchEvent(new Event('submit'));
-    
-});*/
 
 
 

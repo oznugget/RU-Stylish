@@ -7,7 +7,9 @@
     <style>
         @import url('style.css');
     </style>
+    
     <script src="script.js" defer></script> <!-- defer so it loads html first then js -->
+    <script src="products.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
@@ -56,56 +58,12 @@
 
 
 
-    <h2 style="color:rgb(33, 116, 103)">My Listings</h2>
+<h2 style="color:rgb(33, 116, 103)">My Listings</h2>
 
-<section  id="MyItems" >
+<h2 style="color:rgb(33, 116, 103); margin-top: 40px;">Your Listings Preview</h2>
+    <div class="store">
 
- <h2 style="color:rgb(33, 116, 103)">Selling Produncts: </h2>   
-
-<div class="store_items">
-
-                <div class ="items">
-                <a href="view_listing.php">
-                <img src="images/loafers.jpg" alt="Loafers" width="200px" height="200px">
-                </a>
-                <figcaption>
-                    <p>Loafers <p>
-                    <p>R300</p>
-                    <p>Seller: ...</p>
-                </figcaption>
-            </div>
-       
-            <div class ="items">
-        
-            <a href="view_listing.php">
-                <img src="images/hoodie.jpg" alt="hoodie" width="200px" height="200px">
-                </a>
-            <figcaption>
-                <p>Black Hoodie<p>
-                <p>R250</p>
-                <p>Seller: ...</p>
-            </figcaption>
-            
-        </div>
-
-        
-           <div class ="items">
-            
-                <a href="view_listing.php">
-                <img src="images/whitecap.jpg" alt="whitecap" width="200px" height="200px">
-                </a>
-            <figcaption>
-                <p>White Adidas Cap<p>
-                <p>R150</p>
-                <p>Seller: ...</p>
-            </figcaption>   
-            
-        </div>
-
- 
-
-</div>
-</section>
+    </div>
 
 
 

@@ -65,7 +65,7 @@
         .ContactSeller{
         display: flex;
         grid-template-columns: 1fr 1fr;
-        gap:10px
+        gap:30px
 
 
         }
@@ -101,6 +101,18 @@ button:active {
     padding-top: 40px;
 }
 
+.sendemail textarea {
+    width: 100%;       
+    height: 100px;     
+    font-size: 16px;    
+    padding: 10px;      
+    box-sizing: border-box; 
+}
+
+.sendeanil form {
+    max-width: 600px;
+    margin: 20px auto;
+}
 
          
         </style>
@@ -175,9 +187,28 @@ button:active {
         <p><strong>Username:</strong> seller123</p>
         <p><strong>Email:</strong> seller@email.com</p>
         <button class="contact-btn">Contact Seller</button>
-        </div>
 
         </div>
+
+
+
+
+        </div>
+
+    </section>
+
+
+
+    <section class="sendemail">
+
+    <form method="POST">
+
+    <input type="hidden" name="subject" >
+    <textarea name="message" placeholder="Write your message here"></textarea>
+    
+    <button type="submit" class="contact-btn">Send Message</button>
+
+        </form>
 
     </section>
 

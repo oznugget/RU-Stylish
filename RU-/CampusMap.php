@@ -14,6 +14,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
+
+
+<style>
+    iframe{
+        display: flex;
+          align-items: center;
+        justify-content: center;
+    }
+</style>
+
+
 </head>
 
 <header>
@@ -61,9 +72,7 @@
     <br>
     <br>
 
-        
-
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3334.199822270974!2d26.51373857639768!3d-33.313591073443995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e645dd0c6d4fc47%3A0x9982445ffb8737af!2sRhodes%20University!5e0!3m2!1sen!2sza!4v1771439483833!5m2!1sen!2sza" width="100%" height="800" style="border:0;"  loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3334.199822270974!2d26.51373857639768!3d-33.313591073443995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e645dd0c6d4fc47%3A0x9982445ffb8737af!2sRhodes%20University!5e0!3m2!1sen!2sza!4v1771439483833!5m2!1sen!2sza" width="100%" height="800" style="border:0;"  loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 
   

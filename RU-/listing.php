@@ -10,6 +10,9 @@
     </style>
     <script src="script.js" defer></script>
 
+    <script src="products.js" defer></script>
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap"
@@ -71,6 +74,8 @@
             <button id = "uploadIcon" type="button" onclick="document.getElementById('imageUpload').click()">
                 <img  src="images/uploadIcon.png" width="50px" height="50px">
             </button>
+
+
             <span id="imageName">No file chosen</span>
         </div>
 
