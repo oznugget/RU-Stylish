@@ -887,9 +887,18 @@ label{
     border-color: teal;
     border-width: 10px;
     border-style:none;
-    
+     background-size: contain;
 
+     display: block; 
+    margin: 20px auto; 
+    border-radius: 10%; 
+    border: 5px solid teal; 
+    max-width: 90%; 
+    height: auto; 
+    background-size: contain; 
 }
+
+
 
 
 .TheMap  {

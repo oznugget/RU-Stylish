@@ -105,6 +105,10 @@ document.getElementById("lastModified").innerHTML =
 
 //Number 8 validation of the inputs in forms
 
+
+
+
+
 //extracts all the labels for the form
 const form = document.getElementById("form");
 const LastName = document.getElementById("LastName");
