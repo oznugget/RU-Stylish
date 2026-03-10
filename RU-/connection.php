@@ -1,7 +1,7 @@
 <?php
 
 $servername= "cs3-dev.ict.ru.ac.za"; //stays the same for everyone
-$username="G24N9666 "; // student id all capitals e.g. G+stuent id
+$username="G24N9666"; // student id all capitals e.g. G+stuent id
 $password="NtsAbo24"; //Find this on the email sent by the instructor
 $dbname="group4";
 
@@ -16,7 +16,7 @@ echo "Connection was successful";
 // $result = conn->query($sql);
 
 // if($result->num_rows > 0){
-//     while($row = $result->fetch_assoc())
+//     while($row = $result->fetch_assoc()) {
 
 //     echo "<table>";
 //     echo "<tr><th>UserID</th><th>";
