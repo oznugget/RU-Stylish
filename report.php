@@ -20,6 +20,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $description=$_POST["description"];
     }
 }
+}
+
+
+
+
 
 
 function validate($input){
