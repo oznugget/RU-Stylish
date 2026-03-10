@@ -40,6 +40,7 @@
                 <li><a href="Contact.html">Contact us</a></li>
                 <li><a href="review.html">Reviews</a></li>
                 <li><a href="report.html">Report</a></li>
+                <li><a href="admin.html">Admin</a></li>
                 <li><a href="Dummy.html">Dummy Page</a></li>
             </ul>
 
@@ -52,6 +53,7 @@
     <a href="MyAccount.html"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
     <a href="wishlist.html"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
     </div>
+    
     </header>
         <br>
 

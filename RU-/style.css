@@ -57,7 +57,7 @@ header{
     justify-content: center;
     align-items: center;
     background-image: url('images/nav.png');
-    opacity: 0.95;
+
 }
 
 .TikTok_Sans{
@@ -298,14 +298,18 @@ dl{
     display: flex;
     justify-content: flex-end; 
     width: 100%; 
+
+    
 }
 
 .search-bar input[type="text"] {
     padding: 12px;
     font-size: 12px;
     border-radius: 30px;
-    border: none;
+    border-style: solid;
     margin-left: 30px; 
+    border-color:rgb(46, 110, 96) ;
+    
 }
 
 nav{
@@ -315,6 +319,7 @@ nav{
     align-items: center;
     justify-content:flex-start;
     opacity: 0.95;
+   
 }
 
 .nav-links {
@@ -407,7 +412,7 @@ nav .nav-links li {
     gap: 1rem; 
     
     margin-left: auto; 
-    background-color:  rgb(243, 241, 241);
+    background-image:url('images/nav2.png');;
     padding: 1%;
 }
 
@@ -750,6 +755,17 @@ height: 100%;
 #reviewbody{
     background-color:  #f1f1f1;
 }
+
+#reviewMessage{
+    width:80rem;
+}
+
+#contactUsForm{
+    width: 90rem;
+    padding: 20px;
+}
+
+
 /*REVIEWS PAGE*/
 
 
@@ -846,6 +862,11 @@ label{
 
 /*REPORT PAGE*/
 
+input[type="radio"]{
+    margin-right: 0px;
+    
+}
+
 #submitMisconduct{
     padding: 0.6rem;
     background-color: teal;
@@ -914,12 +935,10 @@ label{
 */
 input{
     height:1rem;
-    width:12rem;
     padding: 0.5rem;
     font-size: 12px;
     border-radius: 30px;
     border: none;
-    
 }
 
 .postBtn button{
@@ -1022,7 +1041,7 @@ button{
     max-width: 400px;
     margin: 100px auto; /* Centers the form on the page */
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
@@ -1061,3 +1080,59 @@ button{
 .controls { margin-top: 15px; text-align: right; }
 button { padding: 10px 20px; cursor: pointer; }
 
+/*----------------------------------------------------------------------------------------------------------------*/
+/*Admin page*/
+
+#adminh2{
+    text-align: center;
+    color: rgb(33, 116, 103);
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+}
+
+#adminp{
+    text-align: center;
+    color: rgb(33, 116, 103);
+    font-size: large;
+}
+
+#deleteUser{
+    padding: 0.6rem;
+    background-color: teal;
+    font-size: medium;
+    border-radius: 2rem;
+    margin-top: 1rem;
+}
+
+#removeListing{
+    padding: 0.6rem;
+    background-color: teal;
+    font-size: medium;
+    border-radius: 2rem;
+    margin-top: 1rem;
+}
+
+#deleteReview{
+    padding: 0.6rem;
+    background-color: teal;
+    font-size: medium;
+    border-radius: 2rem;
+    margin-top: 1rem;
+}
+
+#userManagement input[type="text"]{
+    height:1rem;
+    width:12rem;
+    padding: 0.5rem;
+    font-size: 12px;
+    border-radius: 30px;
+    border: none;
+    margin: 10px; 
+}
+
+#userManagement button{
+    padding: 0.6rem;
+    background-color: teal;
+    font-size: medium;
+    border-radius: 2rem;
+}
