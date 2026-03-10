@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
-
+<?php require "connection.php" ?>
 </head>
 
 <!--report any issues on the page -->
@@ -25,20 +25,20 @@
             </div>
             
             <div class="logo">
-                <a href="index.html"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left"></a>
+                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left"></a>
             </div>
             <ul class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="listing.html">Create Listing</a></li>
-                <li><a href="Create_Acount.html">Create Account</a></li>
-                <li><a href="SignIn.html">Sign in</a></li>
-                <li><a href="CampusMap.html">Map</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="Contact.html">Contact us</a></li>
-                <li><a href="review.html">Reviews</a></li>
-                <li><a href="report.html">Report</a></li>
-                <li><a href="Dummy.html">Dummy Page</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="listing.php">Create Listing</a></li>
+                <li><a href="Create_Acount.php">Create Account</a></li>
+                <li><a href="SignIn.php">Sign in</a></li>
+                <li><a href="CampusMap.php">Map</a></li>
+                <li><a href="about.php">About Us</a></li>
+                <li><a href="Contact.php">Contact us</a></li>
+                <li><a href="review.php">Reviews</a></li>
+                <li><a href="report.php">Report</a></li>
+                <li><a href="Dummy.php">Dummy Page</a></li>
             </ul>
 
             <div class="search-bar">
@@ -48,8 +48,8 @@
             
         </nav>
          <div class="nav-icons">
-    <a href="MyAccount.html"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-    <a href="wishlist.html"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
+    <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
+    <a href="wishlist.php"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
     </div>
     </header>
     <br>
@@ -64,27 +64,30 @@
         <form  id = "report_form" action="submit_report" method="post">
         <label for="misconduct"><b>Select the type of misconduct:</b></label><br>
         <label>
-            <input type="checkbox" name="scam" value="value1"> Scam
+            <input type="radio" name="misconduct" value="value1"> Scam
         </label><br>
         <label>
-            <input type="checkbox" name="damaged goods" value="value2"> Damaged Goods
+            <input type="radio" name="misconduct" value="value2"> Damaged Goods
         </label><br>
         <label>
-            <input type="checkbox" name="theft" value="value3"> Theft
+            <input type="radio" name="misconduct" value="value3"> Theft
         </label><br>
         <label>
-            <input type="checkbox" name="phishing" value="value4"> Phishing
+            <input type="radio" name="misconduct" value="value4"> Phishing
+        </label><br>
 
-                <br>  
+                <br><br>  
             <div>
                 <input type="text" placeholder="username of reported user" id="reported_user" name="name" required>
+                <span class="error" ><?php echo $nameError;?></span>
             </div>
             <br>
             <div>
-                <textarea id = "describe_misconduct" placeholder="    Describe the misconduct experience"  name="problem" required ></textarea>
+                <textarea id = "describe_misconduct" placeholder="    Describe the misconduct experience"  name="description" required ></textarea>
+                <span class="error"><?php echo $description;?></span>
             </div>
             <br>
-            <button id = "submitMisconduct" type="submit"><b>Submit Report</b></button>
+            <button id = "submitMisconduct" type="submit" name="submit" value="Submit"><b>Submit Report</b></button>
         </form>
 
         </section>
@@ -95,7 +98,7 @@
     <div id = "footerLeft">
         <h3> RU Stylish </h3>
         <p> RU stylish? Add items to your wishlist.</p>
-        <a href = "index.html"> read more &#x2192 </a>
+        <a href = "index.php"> read more &#x2192 </a>
         <br>
         <p id = "footerBottom">2026 &copy:RUStylish.com</p>
         <p id = "lastModified"></p>
@@ -108,14 +111,14 @@
             </tr>
 
             <tr>
-                <td> <a href = "index.html">Buy</a></td>
-                <td> <a href = "about.html#aboutSite"> Website </a></td>
+                <td> <a href = "index.php">Buy</a></td>
+                <td> <a href = "about.php#aboutSite"> Website </a></td>
                 <td> <a href = "https://www.instagram.com/ru_stylish/">Instagram</a></li></td>
             </tr>
 
             <tr>
-                <td> <a href = "listing.html"> Sell </a></td>
-                <td> <a href = "about.html#aboutCrew"> Crew </a></td>
+                <td> <a href = "listing.php"> Sell </a></td>
+                <td> <a href = "about.php#aboutCrew"> Crew </a></td>
                 <td> <a href = "#"> Youtube </a></td>
             </tr>      
         </table>
@@ -123,7 +126,7 @@
     
 
     <div>
-        <a id = "footerMap" href="CampusMap.html"> <img src="images/mapicon.png" height = "150px" width="150px" > </a>
+        <a id = "footerMap" href="CampusMap.php"> <img src="images/mapicon.png" height = "150px" width="150px" > </a>
     </div>
 
     <div id = "footerRight">

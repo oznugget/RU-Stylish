@@ -78,6 +78,7 @@ button:active {
 
 
     </style>
+    <?php require "connection.php" ?>
 </head>
 <body>
     <section class="deleteSection">
