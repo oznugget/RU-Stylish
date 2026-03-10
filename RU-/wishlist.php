@@ -3,113 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Listing</title>
-    <style>
-        @import url('style.css');
-    </style>
-    <script src="script.js" defer></script> <!-- defer so it loads html first then js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- for linkedin icon-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
-
-
-
-
+    <title>About RU Stylish</title>
     <style>
+        @import url('style.css');
+    </style>
 
-        body{
-
-        padding:50px;
-
-        }
-
-     .product{
-    color:black;
-    background-color: white;
-    text-align: center;
-    align-items: center;
-    padding:20px;
-    border-color:black;
-    gap: 5%;
-    border-radius: 10%;       
-    background-image: url("images/card_bg.png");
-    text-align: center; 
-    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); 
-    transition: opacity 0.5s ease;
-    z-index: 0;
-    width:300px;
-            border-style: double;
-        }
-
-
-    .ProdDetails{
-          font-family:serif;
-        display:flex;
-         flex-direction:column;
-        align-items: center;
-        padding: 10 px;
-        border-radius: 20px;
-        border-style: double;
-        justify-content: center;
-        text-align:center;
-         width:350px;
-         padding-bottom:50px ;
-         background-color: white;
-
-          flex-direction:column;
-         
-
-            }
-
-        .ContactSeller{
-        display: flex;
-        grid-template-columns: 1fr 1fr;
-        gap:10px
-
-
-        }
-
-.button{
-    margin:10px;
-    padding:10px 20px;
-    font-size:16px;
-    cursor:pointer;
-    
-
-    }
-
-
-    button:hover {
-    background-color: #0f766e;
-    transform: translateY(-2px);
-    box-shadow: 0px 8px 15px rgba(0,0,0,0.2);
-}
-
-button:active {
-    transform: scale(0.96);
-}
-
-.head{
-    padding-bottom: 50px;
-    padding-top: 40px;
-    color:teal;
-
-}
-
-.footer{
-    padding-top: 40px;
-}
-
-
-         
-        </style>
-
-
+    <script src="script.js" defer></script> <!-- defer so it loads html first then js -->
+<?php require "connection.php" ?>
 </head>
 <body>
-    
-   <header>
+
+    <!-- Wishlist page. Future sidebar -->
+<header>
         <nav>
             <div class="menu-icon">
                 <a href="#" onclick = "showSidebar()"> <img src="images/menuicon.png" alt="Menu Icon" width="30px" height="30px" id="menu-icon"> </a>
@@ -136,7 +46,7 @@ button:active {
                 <input type="text" placeholder="Search...">
             </div>
 
-           
+            
         </nav>
         <div class="nav-icons">
     <a href="MyAccount.html"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
@@ -144,46 +54,28 @@ button:active {
     </div>
     </header>
 
+    <h1 id = "mywish"> My Wishlist</h1>
 
+     <!-- list links -->
 
-    <div class="head">
-    <h1>Get in Contact</h1>
-    <div>
+        <section class = "wishitems">
 
-    <section class="ContactSeller">
+            <ul>
+                <div id="picture">
+                <li><a href="view_listing.html" class="listing-link"></li>
+                <li><img src="images/loafers.jpg" alt="Loafers" width="200px" height="200px" class="store_img"></li>
+                </a>
+                <figcaption>
+                    <p>Loafers <p>
+                    <p>R300</p>
+                    <p>Seller: ...</p>
+                </figcaption>
+                </div>
+            </ul>
+        </section>
 
+</body>
 
-        <div class="product">
-            <img src="pic.html" >
-            </div>
-
-        <div class="ProdDetails">
-        <h5 class="location"> Adamson House</h5>
-
-        <figcaption class="prodinfo">
-        <p><strong>Item:</strong> Flower printed dress</p>
-        <p><strong>Size:</strong> M</p>
-        <p><strong>Colour:</strong> Blue</p>
-        <p><strong>Condition:</strong> Good</p>
-        <p><strong>Seller:</strong> Username</p>
-         <p><strong>Price:</strong> Price</p>
-
-            </figcaption>
-
-
-        <div class="contact">
-        <p><strong>Username:</strong> seller123</p>
-        <p><strong>Email:</strong> seller@email.com</p>
-        <button class="contact-btn">Contact Seller</button>
-        </div>
-
-        </div>
-
-    </section>
-
-
-
-    
 <footer style = "color:rgb(212, 212, 212)">
 
     
@@ -237,7 +129,8 @@ button:active {
     </div>
 
 </footer>
-
+    
 </body>
-
 </html>
+    
+ 

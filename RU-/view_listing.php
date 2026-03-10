@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account page</title>
+    <title>View Listing</title>
     <style>
         @import url('style.css');
     </style>
@@ -12,13 +12,104 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
+
+
+
+
+    <style>
+
+        body{
+
+        padding:50px;
+
+        }
+
+     .product{
+    color:black;
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    padding:20px;
+    border-color:black;
+    gap: 5%;
+    border-radius: 10%;       
+    background-image: url("images/card_bg.png");
+    text-align: center; 
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); 
+    transition: opacity 0.5s ease;
+    z-index: 0;
+    width:300px;
+            border-style: double;
+        }
+
+
+    .ProdDetails{
+          font-family:serif;
+        display:flex;
+         flex-direction:column;
+        align-items: center;
+        padding: 10 px;
+        border-radius: 20px;
+        border-style: double;
+        justify-content: center;
+        text-align:center;
+         width:350px;
+         padding-bottom:50px ;
+         background-color: white;
+
+          flex-direction:column;
+         
+
+            }
+
+        .ContactSeller{
+        display: flex;
+        grid-template-columns: 1fr 1fr;
+        gap:10px
+
+
+        }
+
+.button{
+    margin:10px;
+    padding:10px 20px;
+    font-size:16px;
+    cursor:pointer;
     
+
+    }
+
+
+    button:hover {
+    background-color: #0f766e;
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.2);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+.head{
+    padding-bottom: 50px;
+    padding-top: 40px;
+    color:teal;
+
+}
+
+.footer{
+    padding-top: 40px;
+}
+
+
+         
+        </style>
+
+<?php require "connection.php" ?>
 </head>
-
-
 <body>
-
-    <header>
+    
+   <header>
         <nav>
             <div class="menu-icon">
                 <a href="#" onclick = "showSidebar()"> <img src="images/menuicon.png" alt="Menu Icon" width="30px" height="30px" id="menu-icon"> </a>
@@ -47,92 +138,53 @@
 
            
         </nav>
-         <div class="nav-icons">
+        <div class="nav-icons">
     <a href="MyAccount.html"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
     <a href="wishlist.html"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
     </div>
     </header>
-        <br>
 
 
 
-    <h2 style="color:rgb(33, 116, 103)">My Listings</h2>
+    <div class="head">
+    <h1>Get in Contact</h1>
+    <div>
 
-<section  id="MyItems" >
+    <section class="ContactSeller">
 
- <h2 style="color:rgb(33, 116, 103)">Selling Produncts: </h2>   
 
-<div class="store_items">
-
-                <div class ="items">
-                <a href="view_listing.html">
-                <img src="images/loafers.jpg" alt="Loafers" width="200px" height="200px">
-                </a>
-                <figcaption>
-                    <p>Loafers <p>
-                    <p>R300</p>
-                    <p>Seller: ...</p>
-                </figcaption>
+        <div class="product">
+            <img src="pic.html" >
             </div>
-       
-            <div class ="items">
-        
-            <a href="view_listing.html">
-                <img src="images/hoodie.jpg" alt="hoodie" width="200px" height="200px">
-                </a>
-            <figcaption>
-                <p>Black Hoodie<p>
-                <p>R250</p>
-                <p>Seller: ...</p>
+
+        <div class="ProdDetails">
+        <h5 class="location"> Adamson House</h5>
+
+        <figcaption class="prodinfo">
+        <p><strong>Item:</strong> Flower printed dress</p>
+        <p><strong>Size:</strong> M</p>
+        <p><strong>Colour:</strong> Blue</p>
+        <p><strong>Condition:</strong> Good</p>
+        <p><strong>Seller:</strong> Username</p>
+         <p><strong>Price:</strong> Price</p>
+
             </figcaption>
-            
+
+
+        <div class="contact">
+        <p><strong>Username:</strong> seller123</p>
+        <p><strong>Email:</strong> seller@email.com</p>
+        <button class="contact-btn">Contact Seller</button>
         </div>
 
-        
-           <div class ="items">
-            
-                <a href="view_listing.html">
-                <img src="images/whitecap.jpg" alt="whitecap" width="200px" height="200px">
-                </a>
-            <figcaption>
-                <p>White Adidas Cap<p>
-                <p>R150</p>
-                <p>Seller: ...</p>
-            </figcaption>   
-            
         </div>
 
- 
-
-</div>
-</section>
+    </section>
 
 
 
-
-
-
-    </main>        
-          
-        </div>
-
-<div class="AccSetting" >
-        <h2 id = "Acch2"  style="color:teal"> Settings  : </h2>
-
-        <ul>
-
-        <a href="index.html"><li class = "AccSet"> Logout</li><a>
-        <a href="ChangePassword.html"><li class = "AccSet"> Change Password </li></a>
-         <a href="ChgUsername.html"><li class = "AccSet"> Change Username </li></a>
-         <a href="DeleteAcc.html"><li class = "AccSet"> Delete Account </li></a>
-         <a href="Terms.html"><li class = "AccSet"> Terms & Conditions </li></a>
-        </ul>
-
-    </div>
-
-
-
-<footer style = "background-color:#047575; color:rgb(212, 212, 212)">
+    
+<footer style = "color:rgb(212, 212, 212)">
 
     
     <div id = "footerLeft">
@@ -185,7 +237,7 @@
     </div>
 
 </footer>
-    
-    
+
 </body>
+
 </html>

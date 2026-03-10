@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>Sign In Page</title>
     <style>
         @import url('style.css');
     </style>
     <script src="script.js" defer></script> <!-- defer so it loads html first then js -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- for eye icon-->
+    
 
+<?php require "connection.php" ?>
 </head>
-<body >
 
-    <!-- page for getting in contact with us -->
+<body>
 
-   <header>
+<header>
         <nav>
             <div class="menu-icon">
                 <a href="#" onclick = "showSidebar()"> <img src="images/menuicon.png" alt="Menu Icon" width="30px" height="30px" id="menu-icon"> </a>
@@ -44,106 +47,62 @@
                 <input type="text" placeholder="Search...">
             </div>
 
-           
+            
         </nav>
-         <div class="nav-icons">
+        <div class="nav-icons">
     <a href="MyAccount.html"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
     <a href="wishlist.html"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
     </div>
     </header>
 
-    <div class="contactpage">
-   
 
-       <!-- creative feature- hex icons -->
-
-    <h2 id = "contactUs" style="color:rgb(33, 116, 103)">Contact Us</h2>
-    <p class = "contactText">Feel free to reach out to us with any questions or feedback!</p>
-
-    <article class= "contactContainer">
-
-        <table id="contactTable">
-            <tr>
-        <td>
-        <div class = "contact-info">
-        <img class = "AddyIcons" src = "images\AddressIcon.png"  width = "50px" height = "50px" />
-        <p id = "contactAddy"> Rhodes University <br>
-            Makhanda<br>
-            Gramahstown <br>
-            6139 <br>
-            Eastern Cape <br>
-            South-Africa <br>
-        </p> 
-        </div>
-        </td>
-        
-        
-      
-       <td>
-        <div class = "contact-info">
-        <img class = "AddyIcons" src = "images\EmailIcon.png" width = "50px" height = "50px" />
-        <a href="mailto:help@rustylish.com">help@rustylish.com</a>
-        </div>
-        </td>
-
-        
-
-       
-        <td>
-        <div class = "contact-info">
-        <img class = "AddyIcons" src = "images\PhoneIcon.png" width = "50px" height = "50px" />
-        <p> 0789011234</p>
-        </div>
-        </td>
-       
-       
-        <td>
-        <div class = "contact-info">
-        <img class = "AddyIcons" src = "images\instagram_logo-removebg-preview.png" width = "50px" height = "50px" />
-        <a href="https://www.instagram.com/ru_stylish/">@ru_stylish</a>
-        </div>
-        </td>
-        </tr>
-        </table>
-
-
-    </article>
-
-     <section class = contactRight>
-
-    
-    <form id = "contactForm" action="" method="post">
-            <h2 style="color:rgb(33, 116, 103)" id="contactPage-header">Send Us A Message</h2>
+    <form id="form" action="SignIn.html" method="post">
+            <h2 style="color:rgb(33, 116, 103)" id="login-header">Login</h2>
 
         <section>
-
-            <div>
-            <input type="text" placeholder="Full Name" name="name" required>
+            <div class="signin-username">
+                <input type="text" placeholder="Username or Email" id="username" name="username" required>
             </div>
-            <br>
 
-            <div>
-            <input type="text" placeholder="Email Address" name="eAddy" required>
+              <br>
+
+            <div class="signin-password">
+                <input type="password" placeholder="Password" id="password" name="password" style="position:relative;" required>
+                <dic class=""></dic><i class="fa fa-eye hide"></i>
+                <i class="fa fa-eye-slash hide" ></i>
+
             </div>
+
+
             <br>
+              <div>
+                <div class="remember">
+                     <div class="admin" id="adminCheck">
+                    <input type="checkbox" id="admin">
+                    <label> Admin </label>
+                    </div>
+                   
+                    <input type="checkbox">
+                    <label>Remember Me </label>
+                    <br>
+                    <a href="#" >Forgot password?</a>
 
-            <div>
-            <input type="text" placeholder="Type your message..." name="msg" required>
-            </div>
-            <br>
+                </div>            
+                <button type="submit" class="btn">Login </button>
+                
+                <div class="register">
+                    <p>Dont have an Account yet? <a href="Create_Acount.html">Register Now</a></p>
+                    </div>
 
-            
-            <button type="submit" class="send">Send </button>
 
+
+              </div>
         </section>
-
     </form>
 
+    <br>
 
-
-    </section>
-    </div>
-    <div class="slideshow-container">
+<div class="slideshow-container">
 
   
   <div class="mySlides">
@@ -158,21 +117,21 @@
     <div class="text">Caption Two</div>
   </div>
 
-   <div class="mySlides">
+  <div class="mySlides">
     <div class="numbertext">3 / 3</div>
     <img src="images/slide3.png" style="width:100%">
     <div class="text">Caption Three</div>
   </div>
 
 
+
  
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
+<br>
 
-    
-
-<footer style = "color:rgb(212, 212, 212)">
+ <footer style = "color:rgb(212, 212, 212)">
 
     
     <div id = "footerLeft">
@@ -199,7 +158,8 @@
             <tr>
                 <td> <a href = "listing.html"> Sell </a></td>
                 <td> <a href = "about.html#aboutCrew"> Crew </a></td>
-                <td> <a href = "#"> Youtube </a></td>
+                <!--This is a YOUTUBE link for marketing not our personal account-->
+                <td> <a href = "https://youtu.be/4ajmfzj9G1g?si=Nml_kssisJcEpLGM"> YouTube </a></td>
             </tr>      
         </table>
     </div>

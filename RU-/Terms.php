@@ -40,6 +40,7 @@
 
 
     </style>
+    <?php require "connection.php" ?>
 </head>
 
 

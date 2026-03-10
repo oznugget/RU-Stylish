@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=!, initial-scale=1.0">
-    <title>Report Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
     <style>
         @import url('style.css');
     </style>
@@ -11,14 +11,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
-
+<?php require "connection.php" ?>
 </head>
+<body >
 
-<!--report any issues on the page -->
-<body onclick = "moving()">
+    <!-- page for getting in contact with us -->
 
-
-  <header>
+   <header>
         <nav>
             <div class="menu-icon">
                 <a href="#" onclick = "showSidebar()"> <img src="images/menuicon.png" alt="Menu Icon" width="30px" height="30px" id="menu-icon"> </a>
@@ -45,52 +44,133 @@
                 <input type="text" placeholder="Search...">
             </div>
 
-            
+           
         </nav>
          <div class="nav-icons">
     <a href="MyAccount.html"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
     <a href="wishlist.html"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
     </div>
     </header>
-    <br>
 
-    <div id = "bearContainer">
-        <img id = "misconductBear" src = "images\bearMisconduct.png"  alt = "bear moving" width = "400" height = "400"/>
-    </div>
+    <div class="contactpage">
+   
+
+       <!-- creative feature- hex icons -->
+
+    <h2 id = "contactUs" style="color:rgb(33, 116, 103)">Contact Us</h2>
+    <p class = "contactText">Feel free to reach out to us with any questions or feedback!</p>
+
+    <article class= "contactContainer">
+
+        <table id="contactTable">
+            <tr>
+        <td>
+        <div class = "contact-info">
+        <img class = "AddyIcons" src = "images\AddressIcon.png"  width = "50px" height = "50px" />
+        <p id = "contactAddy"> Rhodes University <br>
+            Makhanda<br>
+            Gramahstown <br>
+            6139 <br>
+            Eastern Cape <br>
+            South-Africa <br>
+        </p> 
+        </div>
+        </td>
+        
+        
+      
+       <td>
+        <div class = "contact-info">
+        <img class = "AddyIcons" src = "images\EmailIcon.png" width = "50px" height = "50px" />
+        <a href="mailto:help@rustylish.com">help@rustylish.com</a>
+        </div>
+        </td>
+
+        
+
+       
+        <td>
+        <div class = "contact-info">
+        <img class = "AddyIcons" src = "images\PhoneIcon.png" width = "50px" height = "50px" />
+        <p> 0789011234</p>
+        </div>
+        </td>
+       
+       
+        <td>
+        <div class = "contact-info">
+        <img class = "AddyIcons" src = "images\instagram_logo-removebg-preview.png" width = "50px" height = "50px" />
+        <a href="https://www.instagram.com/ru_stylish/">@ru_stylish</a>
+        </div>
+        </td>
+        </tr>
+        </table>
+
+
+    </article>
+
+     <section class = contactRight>
+
     
+    <form id = "contactForm" action="" method="post">
+            <h2 style="color:rgb(33, 116, 103)" id="contactPage-header">Send Us A Message</h2>
 
-    <section id="report" >
-        <h2 style="color:rgb(33, 116, 103)">Report a Misconduct</h2>
-        <form  id = "report_form" action="submit_report" method="post">
-        <label for="misconduct"><b>Select the type of misconduct:</b></label><br>
-        <label>
-            <input type="radio" name="misconduct" value="value1"> Scam
-        </label><br>
-        <label>
-            <input type="radio" name="misconduct" value="value2"> Damaged Goods
-        </label><br>
-        <label>
-            <input type="radio" name="misconduct" value="value3"> Theft
-        </label><br>
-        <label>
-            <input type="radio" name="misconduct" value="value4"> Phishing
-        </label><br>
+        <section>
 
-                <br><br>  
             <div>
-                <input type="text" placeholder="username of reported user" id="reported_user" name="name" required>
-                <span class="error" ><?php echo $nameError;?></span>
+            <input type="text" placeholder="Full Name" name="name" required>
             </div>
             <br>
+
             <div>
-                <textarea id = "describe_misconduct" placeholder="    Describe the misconduct experience"  name="description" required ></textarea>
-                <span class="error"><?php echo $description;?></span>
+            <input type="text" placeholder="Email Address" name="eAddy" required>
             </div>
             <br>
-            <button id = "submitMisconduct" type="submit" name="submit" value="Submit"><b>Submit Report</b></button>
-        </form>
+
+            <div>
+            <input type="text" placeholder="Type your message..." name="msg" required>
+            </div>
+            <br>
+
+            
+            <button type="submit" class="send">Send </button>
 
         </section>
+
+    </form>
+
+
+
+    </section>
+    </div>
+    <div class="slideshow-container">
+
+  
+  <div class="mySlides">
+    <div class="numbertext">1 / 3</div>
+    <img src="images/slide1.png" style="width:100%">
+    <div class="text">Caption Text</div>
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 3</div>
+    <img src="images/slide2.png" style="width:100%">
+    <div class="text">Caption Two</div>
+  </div>
+
+   <div class="mySlides">
+    <div class="numbertext">3 / 3</div>
+    <img src="images/slide3.png" style="width:100%">
+    <div class="text">Caption Three</div>
+  </div>
+
+
+ 
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+    
 
 <footer style = "color:rgb(212, 212, 212)">
 
@@ -145,7 +225,6 @@
     </div>
 
 </footer>
-
-        </body>
-
-        </html>
+<script src="slideshow.js"></script>
+</body>
+</html>
