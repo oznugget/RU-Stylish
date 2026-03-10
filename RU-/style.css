@@ -922,6 +922,23 @@ input[type="radio"]{
     background-position: center;
 }
 */
+
+#listingpg{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    align-items:center;
+}
+
+#listingImage{
+    margin-left: 60%;
+    position: relative;
+    
+}
+ .listing-form{
+   margin-right: 100%;
+ }
+
 input{
     height:1rem;
     padding: 0.5rem;

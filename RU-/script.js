@@ -151,59 +151,70 @@ if (
   //validation for create account page
 
   /**
-   * @param {string | HTMLElement | null} LastNameV
-   * @param {string | HTMLElement | null} FirstNameV
-   * @param {string | HTMLElement | null} PasswordV
-   * @param {HTMLElement} CpasswordV
-   */
-  function CreateAccErr(LastNameV, FirstNameV, PasswordV, CpasswordV) {
-    let errors = [];
+ * @param {string} FirstNameV 
+ * @param {string} LastNameV 
+ * @param {string} EmailV 
+ * @param {string} PasswordV 
+ * @param {string} CpasswordV 
+ * @returns {Array} Array of error messages
+ */
+function CreateAccErr(FirstNameV, LastNameV, EmailV, PasswordV, CpasswordV) {
+  let errors = [];
 
-    //checks if the inputs are empty, if they are it will add an error message to the errors array and add the incorrect class to the input's parent element to show the red border.
-    if (
-      (FirstNameV == "" || FirstNameV == null) &&
-      FirstName &&
-      FirstName.parentElement
-    ) {
-      errors.push("Firstname is required");
-      FirstName.parentElement.classList.add("incorrect");
+  
+  const addError = (element, message) => {
+    errors.push(message);
+    if (element && element.parentElement) {
+      element.parentElement.classList.add("incorrect");
     }
-    //validation for the password.
-    if (
-      (LastNameV == "" || LastNameV == null) &&
-      LastName &&
-      LastName.parentElement
-    ) {
-      errors.push("LastName is required");
-      LastName.parentElement.classList.add("incorrect");
-    }
-    //more validation for the password, checks if the password is at least 8 characters long, if not it will add an error message to the errors array and add the incorrect class to the input's parent element to show the red border.
-    if (
-      (PasswordV == "" || PasswordV == null) &&
-      Password &&
-      Password.parentElement
-    ) {
-      errors.push("Password is required");
-      Password.parentElement.classList.add("incorrect");
-    }
+  };
 
-    //checks if the confirm password matches the password, if not it will add an error message to the errors array and add the incorrect class to both the password and confirm password input's parent element to show the red border.
-    if (
-      PasswordV !== CpasswordV &&
-      Cpassword &&
-      Cpassword.parentElement &&
-      Password &&
-      Password.parentElement
-    ) {
-      errors.push("Passwords do not match");
-      Cpassword.parentElement.classList.add("incorrect");
-      Password.parentElement.classList.add("incorrect");
-    }
+  const nameRegex = "/^[a-zA-Z\s\-]+$/";
 
-    return errors;
+  if (!FirstNameV || FirstNameV.trim() === "") {
+    addError(FirstName, "First name is required");
+  } else if (FirstNameV.length < 2) {
+    addError(FirstName, "First name must be at least 2 characters long");
+  } else if (!nameRegex.test(FirstNameV)) {
+    addError(FirstName, "First name cannot contain special characters or numbers");
   }
-}
 
+  // --- 2. Last Name Validation ---
+  if (!LastNameV || LastNameV.trim() === "") {
+    addError(LastName, "Last name is required");
+  } else if (LastNameV.length < 2) {
+    addError(LastName, "Last name must be at least 2 characters long");
+  } else if (!nameRegex.test(LastNameV)) {
+    addError(LastName, "Last name cannot contain special characters or numbers");
+  }
+
+  // --- 3. Email Validation ---
+  const emailRegex = "/^[^\s@]+@[^\s@]+\.[^\s@]+$/";
+
+  if (!EmailV || EmailV.trim() === "") {
+    addError(Email, "Email is required");
+  } else if (!emailRegex.test(EmailV)) {
+    addError(Email, "Please enter a valid email address");
+  }
+
+  // --- 4. Password Validation ---
+  if (!PasswordV || PasswordV === "") {
+    addError(Password, "Password is required");
+  } else if (PasswordV.length < 8) {
+    addError(Password, "Password must be at least 8 characters long");
+  } 
+
+  // --- 5. Confirm Password Validation ---
+  if (PasswordV !== CpasswordV) {
+    addError(Cpassword, "Passwords do not match");
+    if (Password && Password.parentElement) {
+      Password.parentElement.classList.add("incorrect");
+    }
+  }
+
+  return errors;
+}
+}
 console.log(`form=${form}`);
 //__________________________________________________________________________________________________________________
 //Validation for sign in page
