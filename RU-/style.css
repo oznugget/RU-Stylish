@@ -846,6 +846,11 @@ label{
 
 /*REPORT PAGE*/
 
+input[type="radio"]{
+    margin-right: 0px;
+    
+}
+
 #submitMisconduct{
     padding: 0.6rem;
     background-color: teal;
@@ -914,12 +919,10 @@ label{
 */
 input{
     height:1rem;
-    width:12rem;
     padding: 0.5rem;
     font-size: 12px;
     border-radius: 30px;
     border: none;
-    
 }
 
 .postBtn button{
@@ -1061,3 +1064,59 @@ button{
 .controls { margin-top: 15px; text-align: right; }
 button { padding: 10px 20px; cursor: pointer; }
 
+/*----------------------------------------------------------------------------------------------------------------*/
+/*Admin page*/
+
+#adminh2{
+    text-align: center;
+    color: rgb(33, 116, 103);
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+}
+
+#adminp{
+    text-align: center;
+    color: rgb(33, 116, 103);
+    font-size: large;
+}
+
+#deleteUser{
+    padding: 0.6rem;
+    background-color: teal;
+    font-size: medium;
+    border-radius: 2rem;
+    margin-top: 1rem;
+}
+
+#removeListing{
+    padding: 0.6rem;
+    background-color: teal;
+    font-size: medium;
+    border-radius: 2rem;
+    margin-top: 1rem;
+}
+
+#deleteReview{
+    padding: 0.6rem;
+    background-color: teal;
+    font-size: medium;
+    border-radius: 2rem;
+    margin-top: 1rem;
+}
+
+#userManagement input[type="text"]{
+    height:1rem;
+    width:12rem;
+    padding: 0.5rem;
+    font-size: 12px;
+    border-radius: 30px;
+    border: none;
+    margin: 10px; 
+}
+
+#userManagement button{
+    padding: 0.6rem;
+    background-color: teal;
+    font-size: medium;
+    border-radius: 2rem;
+}
