@@ -62,29 +62,26 @@
     <section id="report" >
         <h2 style="color:rgb(33, 116, 103)">Report a Misconduct</h2>
         <form  id = "report_form" action="submit_report" method="post">
-        <label for="misconduct"><b>Select the type of misconduct:</b></label><br>
-        <label>
-            <input type="checkbox" name="scam" value="value1"> Scam
-        </label><br>
-        <label>
-            <input type="checkbox" name="damaged goods" value="value2"> Damaged Goods
-        </label><br>
-        <label>
-            <input type="checkbox" name="theft" value="value3"> Theft
-        </label><br>
-        <label>
-            <input type="checkbox" name="phishing" value="value4"> Phishing
+        <h2>Type of misconduct:</h2>
+            <input type="radio" name="scam" value="Scam"> Scam
+            <input type="radio" name="damaged goods" value="Damaged goods"> Damaged Goods
+            <input type="radio" name="theft" value="Theft"> Theft
+            <input type="radio" name="phishing" value="Phishing"> Phishing
+            <span class="error"><?php echo $misconduct;?> </span>
 
-                <br>  
+
+                <br><br>  
             <div>
                 <input type="text" placeholder="username of reported user" id="reported_user" name="name" required>
+                <span class="error" ><?php echo $nameError;?></span>
             </div>
             <br>
             <div>
-                <textarea id = "describe_misconduct" placeholder="    Describe the misconduct experience"  name="problem" required ></textarea>
+                <textarea id = "describe_misconduct" placeholder="    Describe the misconduct experience"  name="description" required ></textarea>
+                <span class="error"><?php echo $description;?></span>
             </div>
             <br>
-            <button id = "submitMisconduct" type="submit"><b>Submit Report</b></button>
+            <button id = "submitMisconduct" type="submit" name="submit" value="Submit"><b>Submit Report</b></button>
         </form>
 
         </section>
