@@ -33,9 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $insertQuery->bind_param("ssss", $username, $email, $hashedPassword, $usertype); // Default permission set to 'user'
             if ($insertQuery->execute()) {
                 $status = "Account created successfully!";
-                echo "<script>
-                alert('Account created successfully!'); window.location.href='index.php';
-                </script>"; // Redirect to sign-in page after successful account creation
+                echo 
+                header("Location: SignIn.php");  // Redirect to sign-in page after successful account creation
             } else {
                 $status = "Error: " . $conn->error;
             }
