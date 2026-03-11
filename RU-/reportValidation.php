@@ -2,22 +2,23 @@
 $misconduct=$nameError=$description="";
 
 $name= "";
+$misconduct="";
 $description= "";
  
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($_POST["misconduct"])){
         $misconductError= "Please choose an option";
     }else{ 
-        $misconduct=$_POST["misconduct"];
+        $misconduct=validate($_POST["misconduct"]);
     if(empty($_POST["name"])){
         $nameError= "Specify user in speculation";
     }else{
-        $name=$_POST["name"];
+        $name=validate($_POST["name"]);
     }
     if(empty($_POST["description"])){
         $description= "Description is needed for investigation";
     }else{
-        $description=$_POST["description"];
+        $description=validate($_POST["description"]);
     }
 }
 }

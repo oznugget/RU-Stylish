@@ -25,4 +25,40 @@ if($conn-> connect_error){
 
 
 ?>
+<!-- 
+/*
+<?php
+// Database connection details
+$servername = "localhost";
+$username = "db_user";
+$password = "db_password";
+$dbname = "my_database";
 
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Collect and sanitize form data
+$user_name = htmlspecialchars($_POST['user_name']);
+$user_email = filter_var($_POST['user_email'], FILTER_SANITIZE_EMAIL);
+
+// Use prepared statements to prevent SQL injection
+$stmt = $conn->prepare("INSERT INTO users (name, email) VALUES (?, ?)");
+$stmt->bind_param("ss", $user_name, $user_email); // "ss" means two string parameters
+
+if ($stmt->execute() === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $stmt->error;
+}
+
+$stmt->close();
+$conn->close();
+?>
+
+*/
+ -->
