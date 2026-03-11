@@ -42,10 +42,8 @@
                 <li><a href="SignIn.php">Sign in</a></li>
                 <li><a href="CampusMap.php">Map</a></li>
                 <li><a href="about.php">About Us</a></li>
-                <li><a href="Contact.php">Contact us</a></li>
                 <li><a href="review.php">Reviews</a></li>
                 <li><a href="report.php">Report</a></li>
-                <li><a href="Dummy.php">Dummy Page</a></li>
             </ul>
 
             <div class="search-bar">
