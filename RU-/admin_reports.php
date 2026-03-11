@@ -7,6 +7,8 @@
     <style>
         @import url('style.css');
     </style>
+
+     <script src="Reports.js" defer></script>
     <script src="script.js" defer></script>
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,26 +71,21 @@
  
     <div class="Find">
    
-
-
         <form>
              <h2> Find Reported User</h2>
             <input type="name" placeholder="Enter Username">
         </form>
 
     </div>
- 
- 
- 
- 
- 
-     <section class="All Reports">
-
-     
-
-    
 
 
+ 
+ 
+ 
+ 
+ 
+     <section class="AllReports">
+        <h1>All Recent Reported Cases</h1>
 
 
      </section>
