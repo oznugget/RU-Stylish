@@ -34,7 +34,7 @@
                 <li><a href="Create_Acount.php">Create Account</a></li>
                 <li><a href="SignIn.php">Sign in</a></li>
                 <li><a href="CampusMap.php">Map</a></li>
-                <li><a href="about.php">About Us</a></li>>
+                <li><a href="about.php">About Us</a></li>
                 <li><a href="review.php">Reviews</a></li>
                 <li><a href="report.php">Report</a></li>
             </ul>
@@ -42,12 +42,12 @@
             <div class="search-bar">
                 <input type="text" placeholder="Search...">
             </div>
+            <div class="nav-icons">
+    <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
+    </div>
 
         </nav>
-         <div class="nav-icons">
-    <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-    <a href="wishlist.php"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
-    </div>
+         
     </header>
 
     <div class="line"></div>

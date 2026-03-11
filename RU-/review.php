@@ -20,6 +20,8 @@
 
 
 <style>
+        @import url('style.css');
+    
 
 
   body {
@@ -57,7 +59,7 @@
             font-weight: bold;
         }
 
-        input, textarea {
+        textarea {
             width: 100%;
             padding: 10px;
             border: 2px solid #ddd;
@@ -74,6 +76,11 @@
         textarea {
             min-height: 100px;
             resize: vertical;
+        }
+        #search-bar{
+            display: flex;
+           justify-content: flex-end; 
+           width: 100%; 
         }
 
         /* Simple Star Rating */
@@ -102,19 +109,15 @@
         }
 
         button {
-            background: #667eea;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            border: 2px solid black;
+            padding: 0.6rem;
+    background-color: teal;
+    font-size: medium;
+    border-radius: 2rem;
+    color: #f6f3f3
         }
 
         button:hover {
-            background: #764ba2;
+            background: #a28b4b;
         }
 
         .note {
@@ -218,11 +221,11 @@
             </div>
 
            
-        </nav>
-         <div class="nav-icons">
+       <div class="nav-icons">
     <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-    <a href="wishlist.php"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
     </div>
+
+        </nav>
     </header>
 <br><br>
     

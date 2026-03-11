@@ -71,11 +71,11 @@ if ($id > 0) {
             </div>
 
            
-        </nav>
-        <div class="nav-icons">
+     <div class="nav-icons">
     <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-    <a href="wishlist.php"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
     </div>
+
+        </nav>
 </header>
 
 <div class="view-container">
