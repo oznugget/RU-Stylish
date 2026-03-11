@@ -12,33 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
-   <style>
-
-    .AdminAttributes{
-        display:grid;
-        align-items:center;
-        justify-content:center;
-    }
-    .button{
-    margin:10px;
-    padding:10px 20px;
-    font-size:16px;
-    cursor:pointer;
-    
-
-    }
-
-
-    button:hover {
-    background-color: #0f766e;
-    transform: translateY(-2px);
-    box-shadow: 0px 8px 15px rgba(0,0,0,0.2);
-}
-
-button:active {
-    transform: scale(0.96);
-}
-   </style>
+   
 <?php require "connection.php" ?>
 </head>
 
@@ -66,6 +40,7 @@ button:active {
                 <li><a href="Contact.php">Contact us</a></li>
                 <li><a href="review.php">Reviews</a></li>
                 <li><a href="report.php">Report</a></li>
+                <li><a href="admin.php">Admin</a></li>
                 <li><a href="Dummy.php">Dummy Page</a></li>
             </ul>
 
@@ -78,45 +53,49 @@ button:active {
     <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
     <a href="wishlist.php"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
     </div>
+    
     </header>
         <br>
 
     </header>
     <br>
 
-    <body>
-
-  
 
 
-        <h1 id="adminh2"> Admin Page </h1>
+     <h1 id="adminh2" > Reports </h1>
 
-        <div class="AdminAttributes">
-        <p id="adminp"> This page is for admin use only. </p>
-
-         <button type="submit">Overview</button>
-         <br>
-        <button type="submit">Reports</button>
-        <br>
-        <button type="submit">Reviews</button>
-    <br>
-        <button type="submit">Store</button>
-    <br>
-    </div>
-
-
-
-
-
-
+     <p id="adminp"> View  the   Reports submitted by users   </p>
 
  
+    <div class="Find">
+   
 
-        
+    
+        <form>
+             <h2> Find Reported User</h2>
+            <input type="name" placeholder="Enter Username">
+        </form>
+
+    </div>
+ 
+ 
+ 
+ 
+ 
+     <section class="All Reports">
+
+    
 
 
 
-    <footer style = "color:rgb(212, 212, 212)">
+
+     </section>
+
+
+
+
+
+<footer style = "color:rgb(212, 212, 212)">
 
     
     <div id = "footerLeft">
@@ -169,3 +148,6 @@ button:active {
     </div>
 <p id="browser"></p> <!-- displays user's browser -->
 </footer>
+    
+</body>
+</html>
