@@ -7,15 +7,51 @@
     <style>
         @import url('style.css');
     </style>
-    <script src="script.js" defer></script> <!-- defer so it loads html first then js -->
+    <script src="script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- for eye icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
 
-<?php require "connection.php" ?>
+<?php 
+session_start();
+require "connection.php"; 
+
+$error_message = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username_input = $_POST['username'];
+    $password_input = $_POST['password'];
+
+    // 1. Prepare a statement to fetch the user by username or email
+    $stmt = $conn->prepare("SELECT UserID, username, Password FROM user WHERE username = ? OR email = ?");
+    $stmt->bind_param("ss", $username_input, $username_input);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows === 1) {
+        $user = $result->fetch_assoc();
+        
+        // 2. Verify the password
+        if (password_hash($password_input, $user['password'])) {
+            // 3. Create Session variables
+            $_SESSION['user_id'] = $user['UserID'];
+            $_SESSION['username'] = $user['username'];
+            $_SESSION['logged_in'] = true;
+            
+            // Redirect to home page
+            header("Location: index.php");
+            exit();
+        } else {
+            $error_message = "Invalid password.";
+        }
+    } else {
+        $error_message = "No account found with that username or email.";
+    }
+}
+?>
 </head>
 
 <body>
@@ -33,12 +69,16 @@
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="listing.php">Create Listing</a></li>
-                <li><a href="Create_Acount.php">Create Account</a></li>
-                <li><a href="SignIn.php">Sign in</a></li>
+    
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="logout.php">Logout</a></li>
+                <?php else: ?>
+                    <li><a href="Create_Acount.php">Create Account</a></li>
+                    <li><a href="SignIn.php">Sign in</a></li>
+                <?php endif; ?>
+    
                 <li><a href="CampusMap.php">Map</a></li>
                 <li><a href="about.php">About Us</a></li>
-                <li><a href="review.php">Reviews</a></li>
-                <li><a href="report.php">Report</a></li>
             </ul>
 
             <div class="search-bar">
@@ -56,6 +96,10 @@
 
     <form id="form" action="SignIn.php" method="post">
             <h2 style="color:rgb(33, 116, 103)" id="login-header">Login</h2>
+
+            <?php if ($error_message): ?>
+                <p style="color: red; text-align: center;"><?php echo $error_message; ?></p>
+            <?php endif; ?>
 
         <section>
             <div class="signin-username">
@@ -75,11 +119,6 @@
             <br>
               <div>
                 <div class="remember">
-                     <div class="admin" id="adminCheck">
-                    <input type="checkbox" id="admin">
-                    <label> Admin </label>
-                    </div>
-                   
                     <input type="checkbox">
                     <label>Remember Me </label>
                     <br>
