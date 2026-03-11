@@ -1,6 +1,10 @@
 <?php 
 session_start(); 
 require "connection.php"; 
+if (!isset($_SESSION['permission']) || $_SESSION['permission'] !== 'Admin') {
+    header("Location: index.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -47,7 +47,9 @@ require "connection.php";
                 <li><a href="about.php">About Us</a></li>
                 <li><a href="review.php">Reviews</a></li>
                 <li><a href="report.php">Report</a></li>
-                <li><a href="admin.php">Admin</a></li>
+                <?php if (isset($_SESSION['permission']) && $_SESSION['permission'] === 'Admin'): ?>
+                    <li><a href="Admin.php" style="color: red;">Admin Dashboard</a></li>
+                <?php endif; ?>
             </ul>
 
             <div class="search-bar">
