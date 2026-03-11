@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    
+    <script src="Reviews.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
     <?php require "connection.php" ?>
@@ -175,6 +175,14 @@
     }
 
 
+    .icon {
+        width: 40px;        /* Set width */
+        height: 40px;       /* Set height */
+        border-radius: 50%; /* Makes it circular */
+        object-fit: cover;  /* Ensures image fits without stretching */
+        border: 2px solid #008080; /* Optional: teal border */
+        margin-right: 10px;
+    }
 
 </style>
 
@@ -227,7 +235,7 @@
             <!-- Username Field -->
             <div class="form-group">
                 <label for="username">Your Name</label>
-                <input type="text" id="username" name="username" placeholder="Enter your name" required>
+                <input type="text" id="username" name="username" placeholder="Enter username" required>
             </div>
 
             <!-- Star Rating (7 stars) -->
@@ -275,6 +283,9 @@
 
     <br>
 
+
+
+
 <section class="AllReviews">
 
 <h2>Customer Reviews</h2>
@@ -282,9 +293,9 @@
     <!-- Review 1 -->
     <div class="review-card">
         <div class="user-header">
-            <div class="user-icon">👤</div>
+            <img class="icon" src="images/DummyIcon.png">
             <span class="username">Sarah Johnson</span>
-            <span class="review-stars">⭐⭐⭐⭐⭐⭐⭐ 7/7</span>
+            <span class="review-stars"> 7/7</span>
         </div>
         <p class="comment">Amazing website! Very easy to use and great selection of items.</p>
     </div>
@@ -292,15 +303,19 @@
     <!-- Review 2 -->
     <div class="review-card">
         <div class="user-header">
-            <div class="user-icon">👤</div>
+              <img class="icon" src="images/DummyIcon.png">
             <span class="username">Mike Smith</span>
-            <span class="review-stars">⭐⭐⭐⭐⭐⭐☆ 6/7</span>
+            <span class="review-stars"> 6/7</span>
         </div>
         <p class="comment">Good experience overall. Shipping was fast.</p>
     </div>
 
 
 </section>
+
+
+
+
 
 
 
@@ -362,5 +377,8 @@
 
 </footer>
     
+
+<script src="Reviews.js" defer></script>
 </body>
 </html>
+
