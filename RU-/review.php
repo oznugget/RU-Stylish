@@ -56,6 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             border: 2px solid black;
+            
         }
 
         h2 {
@@ -99,6 +100,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            justify-content: flex-end; 
            width: 100%; 
         }
+        #reviewForm{
+            border-style:none;
+            border-radius:10%;
+        }
 
         /* Simple Star Rating */
         .rating-stars {
@@ -106,17 +111,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             flex-direction: row-reverse;
             justify-content: flex-end;
             gap: 5px;
+            
         }
 
         .rating-stars input {
-            display: none;
+            display:none;
+           border-style:solid;
+            border-color:grey;
+             
         }
 
         .rating-stars label {
             font-size: 30px;
-            color: #ddd;
+            color: #5a58584f;
             cursor: pointer;
             float: right;
+           
         }
 
         .rating-stars input:checked ~ label,
