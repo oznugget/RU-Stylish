@@ -70,7 +70,7 @@
     <div class="Find">
    
 
-    
+
         <form>
              <h2> Find Reported User</h2>
             <input type="name" placeholder="Enter Username">
@@ -83,6 +83,8 @@
  
  
      <section class="All Reports">
+
+     
 
     
 
