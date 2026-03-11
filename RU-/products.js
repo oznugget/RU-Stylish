@@ -7,7 +7,7 @@ let items =[];
 
 
 //Load items from local storage,runs when page loads to store prevois items
-function loadItems(){
+/*function loadItems(){
     //get saved items for browsers 
     const saved= localStorage.getItem('market');
     if (saved){
@@ -30,7 +30,7 @@ function loadItems(){
 }
 }
 
-
+*/
 
 
 function saveItems() {
@@ -39,7 +39,7 @@ function saveItems() {
 }
 
 
-loadItems(); //run function when pg loasds
+//loadItems(); //run function when pg loasds
 
 
 
@@ -88,7 +88,7 @@ function AllProducts(){
 
 //Create item template and add it
 
-function CreateProd(item, container){
+/*function CreateProd(item, container){
         const itemDiv = document.createElement('div');
         itemDiv.className = 'items';
 
@@ -144,7 +144,7 @@ function CreateProd(item, container){
 
 
 }
-
+    */
 
 
     /*const ListingForm = document.querySelector('.listing-form');

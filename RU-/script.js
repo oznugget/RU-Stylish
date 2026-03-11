@@ -55,18 +55,14 @@ if (cookieWarning) {
       "This site uses cookies to enhance your experience. By continuing to browse, you consent to our use of cookies.";
   }
 }
-//message that displays user's browser
-const browserInfo = document.getElementById("browser");
-if (browserInfo) {
-  browserInfo.textContent =
-    "You are browsing Rustylish using: " + navigator.userAgent;
+
 
   //function to copy website link to clipboard
   function copyLink() {
     navigator.clipboard.writeText("https://www.rustylish.com");
     alert("Website link copied!");
   }
-}
+
 //__________________________________________________________________________________________________________________
 
 //function for typing effect in about page

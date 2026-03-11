@@ -78,282 +78,52 @@
         
 
     </article>
-    <p id="welcomeMessage"></p> <!--Welcome message for users in South Africa-->
-    <p id="connectionStatus"></p> 
-
-
-
-
 
 
 
 <div class="line"></div>
 
-<p id="cookieWarning"></p> <!-- cookie warning message -->
 
 
 
 
 <section  class="store">
- <h2 style="color:rgb(33, 116, 103)">Featured Listings</h2>   
-
+<h2 style="color:rgb(33, 116, 103)">All Listings</h2>   
 <div class="store_items">
+        <?php
+        // Fetch all listings from the database
+        $sql = "SELECT * FROM all_listing";
+        $result = $conn->query($sql);
 
-                 <div id= items class ="items">
-                <div id="picture">
-                <a href="view_listing.php" class="listing-link">
-                <img src="images/loafers.jpg" alt="Loafers" width="200px" height="200px" class="store_img">
-                </a>
-                <figcaption>
-                    <p>Loafers <p>
-                    <p>R300</p>
-                    <p>Seller: ...</p>
-                </figcaption>
-                </div>
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                // Convert the binary image data back to a base64 string for display
+                $imageData = base64_encode($row['Image']);
+                $imageSrc = 'data:image/jpeg;base64,' . $imageData;
                 
-            </div>
-       
-            <div class ="items">
-        
-            <a href="view_listing.php" class="listing-link">
-                <img src="images/hoodie.jpg" alt="hoodie" width="200px" height="200px" class="store_img">
-                </a>
-            <figcaption>
-                <p>Black Hoodie<p>
-                <p>R250</p>
-                <p>Seller: ...</p>
-            </figcaption>
-            
-        </div>
+                echo '<div class="items">
+                        <div id="picture">
+                            <a href="view_listing.php?id=' . $row['ListingID'] . '" class="listing-link">
+                                <img src="' . $imageSrc . '" alt="' . htmlspecialchars($row['Title']) . '" width="200px" height="200px" class="store_img">
+                            </a>
+                            <figcaption>
+                                <p><strong>' . htmlspecialchars($row['Title']) . '</strong></p>
+                                <p>R' . htmlspecialchars($row['Price']) . '</p>
+                                <p>Size: ' . htmlspecialchars($row['Size']) . ' | Colour: ' . htmlspecialchars($row['Colour']) . '</p>
+                            </figcaption>
+                        </div>
+                      </div>';
+            }
+        } else {
+            echo "<p>No listings found.</p>";
+        }
+        ?>
+    </div>
 
-        
-           <div class ="items">
-            
-                <a href="view_listing.php" class="listing-link">
-                <img src="images/whitecap.jpg" alt="whitecap" width="200px" height="200px" class="store_img">
-                </a>
-            <figcaption>
-                <p>White Adidas Cap<p>
-                <p>R150</p>
-                <p>Seller: ...</p>
-            </figcaption>   
-            
-        </div>
-
-                    
-            <div class ="items">
-                <a href="view_listing.php" class="listing-link">
-                <img src="images/Narutoshirt.jpeg" alt="Naruto printed shirt" width="200px" height="200px" class="store_img">
-                </a>
-                <figcaption>
-                    <p>Naruto Printed Shirt <p>
-                    <p>R200</p>
-                    <p>Seller: ...</p>
-                </figcaption>
-            </div>
-       
-            <div class ="items">
-        
-            <a href="view_listing.php" class="listing-link">
-                <img src="images/Niikefootball.jpeg" alt="Nike football" width="200px" height="200px" class="store_img">
-                </a>
-            <figcaption>
-                <p>Nike Football boots<p>
-                <p>R800</p>
-                <p>Seller: ...</p>
-            </figcaption>
-            
-        </div>
-        <div class ="items">
-                <a href="view_listing.php" class="listing-link">
-                    <img src="images/RedXstoneshorts.jpeg" alt="Red X stone shorts" width="200px" height="200px" class="store_img">
-                </a>
-                <figcaption>
-                    <p>Red X Stone Shorts <p>
-                    <p>R300</p>
-                    <p>Seller: ...</p>
-                </figcaption>
-            </div>
-
-
-</div>
-</section>
-
-
-
-
-<div class="line"></div>
-
-
-
-<section  class="store">
-    <h2 style="color:rgb(33, 116, 103)">Recently Added Listings</h2>
-    <div class="store_items">
-  
-        <div class="items">
-            <a href="view_listing.php">
-                <img src="images/belt.jpeg" alt="belt" width="200px" height="200px">
-                </a>
-            <figcaption>
-                <p>Belt<p>
-                <p>R2000</p>
-                <p>Seller: ...</p>
-            </figcaption>
-            
-        </div>
-   
-          <div class="items">
-            <a href="view_listing.php">
-                <img src="images/Blackwomenjacket.jpeg" alt="black jacket" width="200px" height="200px">
-                </a>
-            <figcaption>
-                <p>Black Jacket<p>
-                    <p>R550</p>
-                    <p>Seller: ...</p>
-            </figcaption>
-        </div>
-    
-
-        <div class="items">
-            <a href="view_listing.php">
-                <img src="images/brownbreastedblazer.jpeg" alt="brown blazer" width="200px" height="200px">
-                </a>
-            <figcaption>
-                <p>Brown Blazer<p>
-                <p>R400</p>
-                <p>Seller: ...</p>
-            </figcaption>
-        </div>
-
-
-   
-          <div class="items">
-
-        <a href="view_listing.php">
-                <img src="images/cupidhomershirt.jpeg" alt="white shirt" width="200px" height="200px">
-            </a>
-            <figcaption>
-                <p>Homer Cupid Shirt</p>
-                <p>R120</p>
-                <p>Seller</p>
-            </figcaption>
-        </div>
                 
-  <div class="items">
-
-        <a href="view_listing.php">
-                <img src="images/Flowerdress.jpeg" alt="Flower printe dress" width ="200px" height ="200px">
-            </a>
-            <figcaption>
-                <p> Flower printed dress</p>
-                <p>R220</p>
-                <p>Seller: ...</p>
-            </figcaption>
-        </div>
-  
-          <div class="items">
-            <a href="view_listing.php">
-                <img src="images/flowershorts.jpeg" alt ="Flower printed shorts" width ="200px" height ="200px">
-                </a>
-            <figcaption>
-                <p> Green Flower Printed Shorts</p>
-                <p>R100</p>
-                <p> Seller: ...</p>
-            </figcaption>
-        </div>
-
-        </div>
-
 </section>
 
 
-
-
-
-<div class="line"></div>
-
-
-
-
-<section class="store">
-        <h2 style="color:rgb(33, 116, 103)">Most popular listings</h2>
-    <div class="store_items">
-
-
-       <div class="items">
-            <a href="view_listing.php">
-                <img src="images/Chelseaboot.jpeg" alt="Women's boot" width="200px" height="200px">
-                </a>
-            <figcaption>
-                <p>Black women's boot</p>
-                <p>R450</p>
-                <p>Seller: ...</p>
-            </figcaption>
-        </div>
-
-
-  
-        <div class="items">
-            <a href=" view_listing.php">
-                <img src = "images/cowboyhat.jpg" alt="Cowboy hat" width ="200px" height ="200px">
-                </a>
-            <figcaption>
-                <p>Brown cowboy hat</p>
-                <p>R300</p>
-                <p>Seller: ...</p>
-            </figcaption>
-        </div>
-   
-         <div class="items">
-            <a href="view_listing.php">
-                <img src="images/DFXFDsliders.jpeg" alt="White and black sliders" width="200px" height="200px">
-                </a>
-                <figcaption>
-                    <p>Dunns branded slider</p>
-                    <p>R60</p>
-                    <p>Seller: ...</p>
-                </figcaption>
-        </div>
-  
-
-
-         <div class="items">
-            <a href="view_listing.php">
-                <img src="images/Gladiatorsandal.jpeg" alt="Galdiator sandal" width="200px" height ="200px">
-            </a>
-
-            <figcaption>
-                <p>Galdiator women's sandal</p>
-                <p>R210</p>
-                <p>Seller</p>
-            </figcaption>
-        </div>
- 
-         <div class="items">
-            <a href ="view_listing.php">
-                <img src="images/Gucciscarf.jpeg" alt="Gucci Scarf" width="200px" height="200px">
-            </a>
-            <figcaption>
-                <p>Gucci limited edition scarf</p>
-                <p>R4500</p>
-                <p>Seller: ...</p>
-            </figcaption>
-        </div>
-  
-         <div class="items">
-            <a href="view_listing.php">
-                <img src="images/Narutoshirt.jpeg" alt="Naruto printed shirt" width="200px" height="200px">
-            </a>
-            <figcaption>
-                <p>Naruto shirt</p>
-                <p>R400</p>
-                <p> Seller: ...</p>
-            </figcaption>
-        </div>
-  
-</div>
-
-</section>
 
 
 

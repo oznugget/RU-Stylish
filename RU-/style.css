@@ -1162,3 +1162,13 @@ button { padding: 10px 20px; cursor: pointer; }
     font-size: medium;
     border-radius: 2rem;
 }
+
+/*View Listing Page*/
+
+.view-image{
+    width: 100%;
+    height: auto;
+    border-radius: 10%;
+    border: 5px solid teal;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
+}
