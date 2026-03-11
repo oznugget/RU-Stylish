@@ -27,7 +27,7 @@
             </div>
             
             <div class="logo">
-                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left"></a>
+                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="75px" height="65px" class="logo-left"></a>
             </div>
             <ul class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
@@ -37,10 +37,8 @@
                 <li><a href="SignIn.php">Sign in</a></li>
                 <li><a href="CampusMap.php">Map</a></li>
                 <li><a href="about.php">About Us</a></li>
-                <li><a href="Contact.php">Contact us</a></li>
                 <li><a href="review.php">Reviews</a></li>
                 <li><a href="report.php">Report</a></li>
-                <li><a href="Dummy.php">Dummy Page</a></li>
             </ul>
 
             <div class="search-bar">

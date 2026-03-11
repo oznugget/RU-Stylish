@@ -43,10 +43,8 @@
                 <li><a href="SignIn.php">Sign in</a></li>
                 <li><a href="CampusMap.php">Map</a></li>
                 <li><a href="about.php">About Us</a></li>
-                <li><a href="Contact.php">Contact us</a></li>
                 <li><a href="review.php">Reviews</a></li>
                 <li><a href="report.php">Report</a></li>
-                <li><a href="Dummy.php">Dummy Page</a></li>
             </ul>
 
             <div class="search-bar">
@@ -67,10 +65,10 @@
     <!-- form to create post -->
     <div id="listingpg">
         <img src="images/listingbear.png" width="400px" height="400px" id="listingImage" alt="Listing Image">
-    <form class="listing-form">
+    <form class="listing-form" action="upload.php" method="POST" enctype="multipart/form-data">
 
         <div class="addImageBtn">
-            <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+            <input type="file" name="image" id="imageUpload" accept="image/*" style="display: none;">
             <button id = "uploadIcon" type="button" onclick="document.getElementById('imageUpload').click()">
                 <img  src="images/uploadIcon.png" width="50px" height="50px">
             </button>
@@ -125,7 +123,7 @@
         <label for="lcategory"><b>Choose a category</b></label>
         <br>
         <div class="listing-category">
-            <select name="tag" id="lcategory">
+            <select name="category" id="lcategory">
                 <option value="shirt">Shirts</option>
                 <option value="dresses">Dresses</option>
                 <option value="shoes">Shoes</option>
@@ -139,7 +137,7 @@
         <br>
 
         <div class="postBtn">
-            <button type="submit">Post</button>
+            <button type="submit" name="submit">Post</button>
         </div>
 
     </form>

@@ -10,8 +10,183 @@
     <script src="script.js" defer></script> <!-- defer so it loads html first then js -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
-<?php require "connection.php" ?>
+    
+    <script src="Reviews.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
+
+    <?php require "connection.php" ?>
+
+
+
+
+<style>
+
+
+  body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .review-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 2px solid black;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #667eea;
+            outline: none;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* Simple Star Rating */
+        .rating-stars {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 5px;
+        }
+
+        .rating-stars input {
+            display: none;
+        }
+
+        .rating-stars label {
+            font-size: 30px;
+            color: #ddd;
+            cursor: pointer;
+            float: right;
+        }
+
+        .rating-stars input:checked ~ label,
+        .rating-stars label:hover,
+        .rating-stars label:hover ~ label {
+            color:   #008080;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            border: 2px solid black;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+
+        .note {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+
+
+
+        .AllReviews {
+        max-width: 600px;
+        margin: 20px auto;
+        font-family: Arial, sans-serif;
+    }
+    
+    .AllReviews h2 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+    
+    .review-card {
+        background: white;
+        border: 2px solid black;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .user-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        gap: 10px;
+    }
+    
+    .user-icon {
+        font-size: 24px;
+    }
+    
+    .username {
+        font-weight: bold;
+        color: #333;
+    }
+    
+    .review-stars {
+        margin-left: auto;
+        color:  #008080;
+        font-size: 14px;
+    }
+    
+    .comment {
+        color: #555;
+        margin: 0 0 0 34px;
+        line-height: 1.4;
+    }
+
+
+    .icon {
+        width: 40px;        /* Set width */
+        height: 40px;       /* Set height */
+        border-radius: 50%; /* Makes it circular */
+        object-fit: cover;  /* Ensures image fits without stretching */
+        border: 2px solid #008080; /* Optional: teal border */
+        margin-right: 10px;
+    }
+
+</style>
+
+
 </head>
 <body id = "reviewbody">
 
@@ -24,7 +199,7 @@
             </div>
             
             <div class="logo">
-                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left"></a>
+                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="75px" height="65px" class="logo-left"></a>
             </div>
             <ul class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
@@ -34,10 +209,8 @@
                 <li><a href="SignIn.php">Sign in</a></li>
                 <li><a href="CampusMap.php">Map</a></li>
                 <li><a href="about.php">About Us</a></li>
-                <li><a href="Contact.php">Contact us</a></li>
                 <li><a href="review.php">Reviews</a></li>
                 <li><a href="report.php">Report</a></li>
-                <li><a href="Dummy.php">Dummy Page</a></li>
             </ul>
 
             <div class="search-bar">
@@ -51,69 +224,103 @@
     <a href="wishlist.php"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
     </div>
     </header>
-
-    <h1 id = "reviewh1">What do our users have to say?</h1>
-
-
-    <form id = "contactUsForm" action="" method="post">
+<br><br>
+    
+<div class="review-container">
+        <h2>Leave a Review</h2>
         
-        <h2 id = "reviewh2">Leave A Review Of Our Website</h2>
-
-        <section>
-
-            <div>
-            <input id = "reviewMessage" type="text" placeholder="Write review..." name="reviewMessage" required>
+        <form id="reviewForm">
+            <!-- Username Field -->
+            <div class="form-group">
+                <label for="username">Your Name</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" required>
             </div>
-            <br>
 
-            
-            <button type="submit" class="send">Post </button>
+            <!-- Star Rating (7 stars) -->
+            <div class="form-group">
+                <label>Your Rating</label>
+                <div class="rating-stars">
+                    <input type="radio" id="star7" name="rating" value="7">
+                    <label for="star7"><i class="fas fa-star"></i></label>
+                    
+                    <input type="radio" id="star6" name="rating" value="6">
+                    <label for="star6"><i class="fas fa-star"></i></label>
+                    
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5"><i class="fas fa-star"></i></label>
+                    
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4"><i class="fas fa-star"></i></label>
+                    
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3"><i class="fas fa-star"></i></label>
+                    
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2"><i class="fas fa-star"></i></label>
+                    
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1"><i class="fas fa-star"></i></label>
+                </div>
+            </div>
 
-        </section>
+            <!-- Review Text -->
+            <div class="form-group">
+                <label for="review">Your Review</label>
+                <textarea id="review" name="review" placeholder="Write your review here..." required></textarea>
+            </div>
 
-    </form>
-
-
-    <section id="reviews">
-
-        <div class="box">
-            <img class = "usericon" src="images\usericon.png"/>
-            <p class = "username"> @stace</p>
-            <p>This is the best websites for students looking for clothes near campus
-            </p>
-        </div>
-
-        <div class="box">
-            <img class = "usericon" src="images\usericon.png"/>
-            <p class = "username"> @prinks  </p>
-            <p>This shirt is my favourite like i'm obsessedddd
-            </p>
-        </div>
-
-
-        <div class="box">
-            <img  class = "usericon" src="images\usericon.png"/>
-            <p class = "username"> @ulele2</p>
-            <p>fire ngl
-            </p>
-        </div>
-
-        <div class = "box">
-            <img class = "usericon" src="images\usericon.png"/>
-            <p class = "username"> @songeezy</p>
-            <p>lowkey got scammed fr cause the shoe laces aren't the right volour but it's fine ig cause Ruya's stuff is great
-            </p>
-        </div>
-
-        <?php
-        $_GET["username"];
-
-
-        ?>
-
+            <!-- Submit Button -->
+            <button type="submit">Submit Review</button>
+        </form>
+        
+        <p class="note">Your feedback helps us improve!</p>
+    </div>
 
 
     </section>
+
+    <br>
+
+
+
+
+<section class="AllReviews">
+
+<h2>Customer Reviews</h2>
+    
+    <!-- Review 1 -->
+    <div class="review-card">
+        <div class="user-header">
+            <img class="icon" src="images/DummyIcon.png">
+            <span class="username">Sarah Johnson</span>
+            <span class="review-stars"> 7/7</span>
+        </div>
+        <p class="comment">Amazing website! Very easy to use and great selection of items.</p>
+    </div>
+
+    <!-- Review 2 -->
+    <div class="review-card">
+        <div class="user-header">
+              <img class="icon" src="images/DummyIcon.png">
+            <span class="username">Mike Smith</span>
+            <span class="review-stars"> 6/7</span>
+        </div>
+        <p class="comment">Good experience overall. Shipping was fast.</p>
+    </div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
 <footer style = "color:rgb(212, 212, 212)">
 
     
@@ -168,5 +375,8 @@
 
 </footer>
     
+
+<script src="Reviews.js" defer></script>
 </body>
 </html>
+

@@ -2,17 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-   
-    <meta name="google-site-verification" content="YOUR_UNIQUE_VERIFICATION_CODE_HERE" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-    
-    <title>Create Account Page</title>
+    <title>Home Page</title>
     <style>
         @import url('style.css');
     </style>
-    <script src="script.js" defer></script> <!-- defer so it loads html first then js -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+     <script src="Reports.js" defer></script>
+    <script src="script.js" defer></script>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
@@ -20,17 +18,16 @@
 <?php require "connection.php" ?>
 </head>
 
+<!-- Home Page. navigation bar with absolute and relative links -->
 <body>
 
 
-    <!-- page for creating an account -->
-
-    <header>
+  <header>
         <nav>
-            <div class="menu-icon">
+             <div class="menu-icon">
                 <a href="#" onclick = "showSidebar()"> <img src="images/menuicon.png" alt="Menu Icon" width="30px" height="30px" id="menu-icon"> </a>
-            </div>
-            
+             </div>
+
             <div class="logo">
                 <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="75px" height="65px" class="logo-left"></a>
             </div>
@@ -44,78 +41,56 @@
                 <li><a href="about.php">About Us</a></li>
                 <li><a href="review.php">Reviews</a></li>
                 <li><a href="report.php">Report</a></li>
+                <li><a href="admin.php">Admin</a></li>
             </ul>
 
             <div class="search-bar">
                 <input type="text" placeholder="Search...">
             </div>
 
-            
         </nav>
-         <div class="nav-icons">
+                 <div class="nav-icons">
     <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
     <a href="wishlist.php"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
     </div>
+    
     </header>
-
-    <form autocomplete="off" id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>   
-        <h2 style="color:rgb(33, 116, 103)">Create Account</h2>
-        
-        <p id="Err-Messages"></p>
-
-
-        <div class="createacc-firstname">
-            <input type="text" placeholder="Username" id="username" name="Username" required>
-        </div>
         <br>
 
-        <div class="email">
-            <input type="email" placeholder="Email" id="email" name="Email" required>
-        </div>
-        <br>
-
-        <div class="createacc-password">
-            <input type="Password" placeholder="Password" id="Password" name="Password" required>
-        </div>
-        <br>
-
-            <div class="createacc-cpassword">
-        <input type="Password" placeholder="Confirm password" id="Cpassword" name="CPassword" required>
-        </div>
-        <br>
-
-        <button type="submit" class="btn">Create Account</button>
-        <p class="already" >Already have an Account<a href="SignIn.php"> Sign In</a></p>
+    </header>
+    <br>
 
 
-    </form>
 
-    <div class="slideshow-container">
+     <h1 id="adminh2" > Reports </h1>
 
-  
-  <div class="mySlides">
-    <div class="numbertext">1 / 3</div>
-    <img src="images/slide1.png" style="width:100%">
-    <div class="text">Caption Text</div>
-  </div>
+     <p id="adminp"> View  the   Reports submitted by users   </p>
 
-  <div class="mySlides">
-    <div class="numbertext">2 / 3</div>
-    <img src="images/slide2.png" style="width:100%">
-    <div class="text">Caption Two</div>
-  </div>
+ 
+    <div class="Find">
+   
+        <form>
+             <h2> Find Reported User</h2>
+            <input type="name" placeholder="Enter Username">
+        </form>
 
-   <div class="mySlides">
-    <div class="numbertext">3 / 3</div>
-    <img src="images/slide3.png" style="width:100%">
-    <div class="text">Caption Three</div>
-  </div>
+    </div>
 
 
  
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
+ 
+ 
+ 
+ 
+     <section class="AllReports">
+        <h1>All Recent Reported Cases</h1>
+
+
+     </section>
+
+
+
+
 
 <footer style = "color:rgb(212, 212, 212)">
 
@@ -168,10 +143,8 @@
         &#x2709 Tshikovhi@gmail.com <br>
         </p>
     </div>
-
+<p id="browser"></p> <!-- displays user's browser -->
 </footer>
     
-
-<script src="slideshow.js"></script>
 </body>
 </html>

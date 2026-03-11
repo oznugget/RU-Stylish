@@ -1,134 +1,56 @@
+<?php
+require "connection.php";
+
+// 1. ALWAYS place the logic at the top so variables are ready for the HTML below
+$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+$item = null;
+$imageSrc = 'images/placeholder.jpg'; // Default placeholder
+
+if ($id > 0) {
+    // Note: Ensure your table name is 'all_listing' or 'listings' based on your previous fixes
+    $stmt = $conn->prepare("SELECT * FROM all_listing WHERE ListingID = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $item = $result->fetch_assoc();
+
+    if ($item) {
+        // Convert image for display - use null coalescing ?? to avoid deprecated warnings
+        $rawImage = $item['image'] ?? $item['Image'] ?? null;
+        if ($rawImage) {
+            $imageSrc = 'data:image/jpeg;base64,' . base64_encode($rawImage);
+        }
+    } else {
+        die("Item not found in the database.");
+    }
+} else {
+    die("Invalid Item ID provided.");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Listing</title>
     <style>
         @import url('style.css');
     </style>
-    <script src="script.js" defer></script> <!-- defer so it loads html first then js -->
+    <script src="script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
-
-
-
-
-
-    <style>
-
-        body{
-
-        padding:50px;
-
-        }
-
-     .product{
-    color:black;
-    background-color: white;
-    text-align: center;
-    align-items: center;
-    padding:20px;
-    border-color:black;
-    gap: 5%;
-    border-radius: 10%;       
-    background-image: url("images/card_bg.png");
-    text-align: center; 
-    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2); 
-    transition: opacity 0.5s ease;
-    z-index: 0;
-    width:300px;
-            border-style: double;
-        }
-
-
-    .ProdDetails{
-          font-family:serif;
-        display:flex;
-         flex-direction:column;
-        align-items: center;
-        padding: 10 px;
-        border-radius: 20px;
-        border-style: double;
-        justify-content: center;
-        text-align:center;
-         width:350px;
-         padding-bottom:50px ;
-         background-color: white;
-
-          flex-direction:column;
-         
-
-            }
-
-        .ContactSeller{
-        display: flex;
-        grid-template-columns: 1fr 1fr;
-        gap:30px
-
-
-        }
-
-.button{
-    margin:10px;
-    padding:10px 20px;
-    font-size:16px;
-    cursor:pointer;
-    
-
-    }
-
-
-    button:hover {
-    background-color: #0f766e;
-    transform: translateY(-2px);
-    box-shadow: 0px 8px 15px rgba(0,0,0,0.2);
-}
-
-button:active {
-    transform: scale(0.96);
-}
-
-.head{
-    padding-bottom: 50px;
-    padding-top: 40px;
-    color:teal;
-
-}
-
-.footer{
-    padding-top: 40px;
-}
-
-.sendemail textarea {
-    width: 100%;       
-    height: 100px;     
-    font-size: 16px;    
-    padding: 10px;      
-    box-sizing: border-box; 
-}
-
-.sendemail form {
-    max-width: 600px;
-    margin: 20px auto;
-}
-
-         
-        </style>
-
-<?php require "connection.php" ?>
+    <title><?php echo htmlspecialchars($item['title'] ?? 'Listing Details'); ?></title>
 </head>
-<body>
-    
-   <header>
+
+<header>
         <nav>
             <div class="menu-icon">
                 <a href="#" onclick = "showSidebar()"> <img src="images/menuicon.png" alt="Menu Icon" width="30px" height="30px" id="menu-icon"> </a>
             </div>
             
             <div class="logo">
-                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left"></a>
+                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="75px" height="65px" class="logo-left"></a>
             </div>
             <ul class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
@@ -154,67 +76,27 @@ button:active {
     <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
     <a href="wishlist.php"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
     </div>
-    </header>
+</header>
 
-
-
-    <div class="head">
-    <h1>Get in Contact</h1>
-    <div>
-
-    <section class="ContactSeller">
-
-
-        <div class="product">
-            <img src="pic.php" >
-            </div>
-
-        <div class="ProdDetails">
-        <h5 class="location"> Adamson House</h5>
-
-        <figcaption class="prodinfo">
-        <p><strong>Item:</strong> Flower printed dress</p>
-        <p><strong>Size:</strong> M</p>
-        <p><strong>Colour:</strong> Blue</p>
-        <p><strong>Condition:</strong> Good</p>
-        <p><strong>Seller:</strong> Username</p>
-         <p><strong>Price:</strong> Price</p>
-
-            </figcaption>
-
-
-        <div class="contact">
-        <p><strong>Username:</strong> seller123</p>
-        <p><strong>Email:</strong> seller@email.com</p>
-        <button class="contact-btn">Contact Seller</button>
-
+<div class="view-container">
+        <div class="view-image">
+            <img src="<?php echo $imageSrc; ?>" width="300" alt="Product Image">
         </div>
-
-
-
-
+        
+        <div class="view-details">
+            <h1><?php echo htmlspecialchars($item['title'] ?? $item['Title'] ?? 'Untitled'); ?></h1>
+            <p class="price">R<?php echo htmlspecialchars($item['price'] ?? $item['Price'] ?? '0.00'); ?></p>
+            <hr>
+            <p><strong>Size:</strong> <?php echo htmlspecialchars($item['size'] ?? $item['Size'] ?? 'N/A'); ?></p>
+            <p><strong>Colour:</strong> <?php echo htmlspecialchars($item['colour'] ?? $item['Colour'] ?? 'N/A'); ?></p>
+            <p><strong>Condition:</strong> <?php echo htmlspecialchars($item['condition'] ?? $item['Condition'] ?? 'N/A'); ?></p>
+            <p><strong>Category:</strong> <?php echo htmlspecialchars($item['category'] ?? $item['Category'] ?? 'N/A'); ?></p>
+            
+            <button class="buy-btn">Contact Seller</button>
+            <br><br>
         </div>
+    </div>
 
-    </section>
-
-
-
-    <section class="sendemail">
-
-    <form method="POST">
-
-    <input type="hidden" name="subject" >
-    <textarea name="message" placeholder="Write your message here"></textarea>
-    
-    <button type="submit" class="contact-btn">Send Message</button>
-
-        </form>
-
-    </section>
-
-
-
-    
 <footer style = "color:rgb(212, 212, 212)">
 
     
@@ -269,6 +151,6 @@ button:active {
 
 </footer>
 
-</body>
+
 
 </html>

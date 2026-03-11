@@ -12,8 +12,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
-   
+   <style>
 
+    .AdminAttributes{
+        display:grid;
+        align-items:center;
+        justify-content:center;
+    }
+    .button{
+    margin:10px;
+    padding:10px 20px;
+    font-size:16px;
+    cursor:pointer;
+    
+
+    }
+
+
+    button:hover {
+    background-color: #0f766e;
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.2);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+   </style>
+<?php require "connection.php" ?>
 </head>
 
 <!-- Home Page. navigation bar with absolute and relative links -->
@@ -27,7 +53,7 @@
              </div>
 
             <div class="logo">
-                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left"></a>
+                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="75px" height="65px" class="logo-left"></a>
             </div>
             <ul class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
@@ -37,10 +63,8 @@
                 <li><a href="SignIn.php">Sign in</a></li>
                 <li><a href="CampusMap.php">Map</a></li>
                 <li><a href="about.php">About Us</a></li>
-                <li><a href="Contact.php">Contact us</a></li>
                 <li><a href="review.php">Reviews</a></li>
                 <li><a href="report.php">Report</a></li>
-                <li><a href="Dummy.php">Dummy Page</a></li>
             </ul>
 
             <div class="search-bar">
@@ -59,11 +83,32 @@
     <br>
 
     <body>
+
+  
+
+
         <h1 id="adminh2"> Admin Page </h1>
+
+        <div class="AdminAttributes">
         <p id="adminp"> This page is for admin use only. </p>
 
+         <button type="submit">Overview</button>
+         <br>
+        <button type="submit">Reports</button>
+        <br>
+        <button type="submit">Reviews</button>
+    <br>
+        <button type="submit">Store</button>
+    <br>
+    </div>
 
-        
+
+
+
+
+
+
+ 
 
         
 
