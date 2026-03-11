@@ -33,7 +33,9 @@ if ($id > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>@import url('style.css');</style>
+    <style>
+        @import url('style.css');
+    </style>
     <script src="script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,7 +80,7 @@ if ($id > 0) {
 
 <div class="view-container">
         <div class="view-image">
-            <img src="<?php echo $imageSrc; ?>" width="400" alt="Product Image">
+            <img src="<?php echo $imageSrc; ?>" width="300" alt="Product Image">
         </div>
         
         <div class="view-details">

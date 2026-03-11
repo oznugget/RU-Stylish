@@ -1165,10 +1165,114 @@ button { padding: 10px 20px; cursor: pointer; }
 
 /*View Listing Page*/
 
-.view-image{
-    width: 100%;
+/* Container for the single listing */
+.view-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+    gap: 40px;
+    background-color: #dcdcdc;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Image section */
+.view-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.view-image img {
+    max-width: 100%;
     height: auto;
-    border-radius: 10%;
-    border: 5px solid teal;
-    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Details section */
+.view-details {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.view-details h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.view-details .price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #217467; /* Your theme green */
+    margin-bottom: 20px;
+}
+
+.view-details hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.view-details p {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: #555;
+}
+
+.view-details strong {
+    color: #222;
+    display: inline-block;
+    width: 100px; /* Aligns the labels */
+}
+
+/* Button Styling */
+.buy-btn {
+    background-color: #217467;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    margin-top: 20px;
+}
+
+.buy-btn:hover {
+    background-color: #1a5e53;
+    transform: translateY(-2px);
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .view-container {
+        flex-direction: column;
+        margin: 20px;
+    }
+    
+    .view-details h1 {
+        font-size: 1.8rem;
+    }
 }
