@@ -109,7 +109,7 @@ button:active {
     box-sizing: border-box; 
 }
 
-.sendeanil form {
+.sendemail form {
     max-width: 600px;
     margin: 20px auto;
 }
