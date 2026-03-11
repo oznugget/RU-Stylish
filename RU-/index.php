@@ -1,3 +1,7 @@
+<?php 
+session_start(); 
+require "connection.php"; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
    
-<?php require "connection.php" ?>
+
 </head>
 
 <!-- Home Page. navigation bar with absolute and relative links -->

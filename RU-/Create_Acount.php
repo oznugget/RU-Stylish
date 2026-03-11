@@ -1,5 +1,9 @@
+<?php 
+session_start(); 
+require "connection.php"; 
+?>
 <?php
-require "connection.php";
+
 
 $status = ""; // Initialize status variable
 

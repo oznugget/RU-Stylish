@@ -1,3 +1,7 @@
+<?php 
+session_start(); 
+require "connection.php"; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +18,6 @@
     <script src="Reviews.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
-    <?php require "connection.php" ?>
 
 
 

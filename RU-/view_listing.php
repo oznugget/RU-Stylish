@@ -1,5 +1,7 @@
 <?php
-require "connection.php";
+
+session_start(); 
+require "connection.php"; 
 
 // 1. ALWAYS place the logic at the top so variables are ready for the HTML below
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;

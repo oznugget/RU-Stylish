@@ -1,3 +1,7 @@
+<?php 
+session_start(); 
+require "connection.php"; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +42,7 @@
                     <li><a href="SignIn.php">Sign in</a></li>
                 <?php endif; ?>
                 <li><a href="CampusMap.php">Map</a></li>
-                <li><a href="about.php">About Us</a></li>>
+                <li><a href="about.php">About Us</a></li>
                 <li><a href="review.php">Reviews</a></li>
                 <li><a href="report.php">Report</a></li>
             </ul>

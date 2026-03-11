@@ -1,3 +1,7 @@
+<?php 
+session_start(); 
+require "connection.php"; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +43,7 @@ button:active {
     transform: scale(0.96);
 }
    </style>
-<?php require "connection.php" ?>
+
 </head>
 
 <!-- Home Page. navigation bar with absolute and relative links -->

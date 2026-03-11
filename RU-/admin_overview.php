@@ -1,3 +1,7 @@
+<?php 
+session_start(); 
+require "connection.php"; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -131,7 +135,7 @@ canvas {
    </style>
 
 
-<?php require "connection.php" ?>
+
 
 
 </head>
