@@ -234,9 +234,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <ul class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
                <li><a href="index.php">Home</a></li>
-                <li><a href="listing.php">Create Listing</a></li>
+                
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li><a href="logout.php">Logout</a></li>
+                    <li><a href="listing.php">Create Listing</a></li>
                 <?php else: ?>
                     <li><a href="Create_Acount.php">Create Account</a></li>
                     <li><a href="SignIn.php">Sign in</a></li>
@@ -253,8 +254,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
            
        <div class="nav-icons">
-    <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-    </div>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                    <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
+                <?php else: ?>
+                    <a href="SignIn.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
+            <?php endif; ?>
+    
+        </div>
 
         </nav>
     </header>
