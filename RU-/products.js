@@ -147,10 +147,10 @@ function CreateProd(item, container){
 
 
 
-    const ListingForm = document.querySelector('.listing-form');
+    /*const ListingForm = document.querySelector('.listing-form');
     if (ListingForm){
         ListingForm.addEventListener('submit',function(e) {
-                e.preventDefault();
+                //e.preventDefault();
             
                 
          const title = document.getElementById('title')?.value;
@@ -196,7 +196,7 @@ function CreateProd(item, container){
 
     });
 }
-
+*/
 
 
 
