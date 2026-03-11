@@ -86,8 +86,13 @@ if ($id > 0) {
 
            
      <div class="nav-icons">
-    <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-    </div>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                    <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
+                <?php else: ?>
+                    <a href="SignIn.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
+            <?php endif; ?>
+    
+        </div>
 
         </nav>
 </header>
