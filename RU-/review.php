@@ -1,3 +1,7 @@
+<?php 
+session_start(); 
+require "connection.php"; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +18,6 @@
     <script src="Reviews.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
-    <?php require "connection.php" ?>
 
 
 
@@ -205,14 +208,16 @@
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
                <li><a href="index.php">Home</a></li>
                 <li><a href="listing.php">Create Listing</a></li>
-                <li><a href="Create_Acount.php">Create Account</a></li>
-                <li><a href="SignIn.php">Sign in</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="logout.php">Logout</a></li>
+                <?php else: ?>
+                    <li><a href="Create_Acount.php">Create Account</a></li>
+                    <li><a href="SignIn.php">Sign in</a></li>
+                <?php endif; ?>
                 <li><a href="CampusMap.php">Map</a></li>
                 <li><a href="about.php">About Us</a></li>
-                <li><a href="Contact.php">Contact us</a></li>
                 <li><a href="review.php">Reviews</a></li>
                 <li><a href="report.php">Report</a></li>
-                <li><a href="Dummy.php">Dummy Page</a></li>
             </ul>
 
             <div class="search-bar">

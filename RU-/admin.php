@@ -1,3 +1,7 @@
+<?php 
+session_start(); 
+require "connection.php"; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +43,7 @@ button:active {
     transform: scale(0.96);
 }
    </style>
-<?php require "connection.php" ?>
+
 </head>
 
 <!-- Home Page. navigation bar with absolute and relative links -->
@@ -59,14 +63,16 @@ button:active {
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="listing.php">Create Listing</a></li>
-                <li><a href="Create_Acount.php">Create Account</a></li>
-                <li><a href="SignIn.php">Sign in</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="logout.php">Logout</a></li>
+                <?php else: ?>
+                    <li><a href="Create_Acount.php">Create Account</a></li>
+                    <li><a href="SignIn.php">Sign in</a></li>
+                <?php endif; ?>
                 <li><a href="CampusMap.php">Map</a></li>
                 <li><a href="about.php">About Us</a></li>
-                <li><a href="Contact.php">Contact us</a></li>
                 <li><a href="review.php">Reviews</a></li>
                 <li><a href="report.php">Report</a></li>
-                <li><a href="Dummy.php">Dummy Page</a></li>
             </ul>
 
             <div class="search-bar">

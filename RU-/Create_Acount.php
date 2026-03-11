@@ -1,3 +1,53 @@
+<?php 
+session_start(); 
+require "connection.php"; 
+?>
+<?php
+
+
+$status = ""; // Initialize status variable
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = trim($_POST["Username"]); //trim white space
+    $email = trim($_POST["Email"]); //trim white space)
+    $password = $_POST["Password"];
+    $confirmPassword = $_POST["CPassword"];
+    $usertype = 'User'; // Default user type
+
+    //prepared statements to prevent sql injection
+    $smt = $conn->prepare("SELECT * FROM user WHERE username=? OR email=?");
+    $smt->bind_param("ss", $username, $email);
+    $smt->execute();
+    $result = $smt->get_result(); //get resukt object
+
+    // Validate input
+    if (empty($username) || empty($email) || empty($password) || empty($confirmPassword)) {
+        $status = "All fields are required.";
+    } elseif ($password !== $confirmPassword) {
+        $status = "Passwords do not match.";
+    } else {
+
+
+        if ($result->num_rows > 0) {
+            $status = "Username or email already exists.";
+        } else {
+            // Insert new user into database after hashing password
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            $insertQuery = $conn->prepare("INSERT INTO user (username, email, password, permission) VALUES (?, ?, ?, ?)");
+            $insertQuery->bind_param("ssss", $username, $email, $hashedPassword, $usertype); // Default permission set to 'user'
+            if ($insertQuery->execute()) {
+                $status = "Account created successfully!";
+                echo 
+                header("Location: SignIn.php");  // Redirect to sign-in page after successful account creation
+            } else {
+                $status = "Error: " . $conn->error;
+            }
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +67,6 @@
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
    
-<?php require "connection.php" ?>
 </head>
 
 <body>
@@ -32,14 +81,18 @@
             </div>
             
             <div class="logo">
-                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="75px" height="65px" class="logo-left"></a>
+                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left"></a>
             </div>
             <ul class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="listing.php">Create Listing</a></li>
-                <li><a href="Create_Acount.php">Create Account</a></li>
-                <li><a href="SignIn.php">Sign in</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="logout.php">Logout</a></li>
+                <?php else: ?>
+                    <li><a href="Create_Acount.php">Create Account</a></li>
+                    <li><a href="SignIn.php">Sign in</a></li>
+                <?php endif; ?>
                 <li><a href="CampusMap.php">Map</a></li>
                 <li><a href="about.php">About Us</a></li>
                 <li><a href="Contact.php">Contact us</a></li>
@@ -60,10 +113,10 @@
     </div>
     </header>
 
-    <form autocomplete="off" id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>   
+    <form autocomplete="off" id="form" method = "POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  >
         <h2 style="color:rgb(33, 116, 103)">Create Account</h2>
         
-        <p id="Err-Messages"></p>
+        <p id="Err-Messages"><?php echo htmlspecialchars($status); ?></p> <!--status msg from PHP -->
 
 
         <div class="createacc-firstname">
