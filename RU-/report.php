@@ -15,6 +15,7 @@
 <?php require "connection.php" ?>
 
     <script src="Reports.js" defer></script>
+<?php require "reportValidation.php"?>
 </head>
 
 <!--report any issues on the page -->
@@ -28,7 +29,7 @@
             </div>
             
             <div class="logo">
-                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left"></a>
+                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="75px" height="65px" class="logo-left"></a>
             </div>
             <ul class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
@@ -64,7 +65,7 @@
 
     <section id="report" >
         <h2 style="color:rgb(33, 116, 103)">Report a Misconduct</h2>
-        <form  id = "report_form" action="submit_report" method="post">
+        <form  id = "report_form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
         <label for="misconduct"><b>Select the type of misconduct:</b></label><br>
         <label>
             <input type="radio" name="misconduct" value="value1"> Scam
@@ -77,16 +78,16 @@
         </label><br>
         <label>
             <input type="radio" name="misconduct" value="value4"> Phishing
-        </label><br>
+        </label> <span><?php echo $misconductError;?></span><br>
 
                 <br><br>  
             <div>
-                <input type="text" placeholder="username of reported user" id="reported_user" name="name" required>
+                <input type="text" placeholder="username of reported user" id="reported_user" name="name" >
                 <span class="error" ><?php echo $nameError;?></span>
             </div>
             <br>
             <div>
-                <textarea id = "describe_misconduct" placeholder="    Describe the misconduct experience"  name="description" required ></textarea>
+                <textarea id = "describe_misconduct" placeholder="    Describe the misconduct experience"  name="description"  ></textarea>
                 <span class="error"><?php echo $description;?></span>
             </div>
             <br>

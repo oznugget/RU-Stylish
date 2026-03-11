@@ -32,7 +32,7 @@
             </div>
             
             <div class="logo">
-                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="85px" height="75px" class="logo-left"></a>
+                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="75px" height="65px" class="logo-left"></a>
             </div>
             <ul class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
@@ -72,7 +72,7 @@
         <br>
 
         <div class="email">
-            <input type="email" placeholder="Email" id="email" name="email" required>
+            <input type="email" placeholder="Email" id="email" name="Email" required>
         </div>
         <br>
 
@@ -82,7 +82,7 @@
         <br>
 
             <div class="createacc-cpassword">
-        <input type="Password" placeholder="Confirm password" id="Cpassword" name="password" required>
+        <input type="Password" placeholder="Confirm password" id="Cpassword" name="CPassword" required>
         </div>
         <br>
 

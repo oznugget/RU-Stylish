@@ -9,20 +9,94 @@ $conn =new mysqli($servername,$username,$password,$dbname);
 if($conn-> connect_error){
     die("Connection failed: ".$conn->connect_error);
 }
-echo "Connection was successful";
 
 
-// $sql = "Select * from user;";
-// $result = conn->query($sql);
 
-// if($result->num_rows > 0){
-//     while($row = $result->fetch_assoc()) {
+// $sql = "INSERT INTO user (UserID, Email, Password, Permission) VALUES(?, ?, ?,user
 
-//     echo "<table>";
-//     echo "<tr><th>UserID</th><th>";
+//  )";
+// $mysqli->execute_query($sql,[$name,$Email,$Password])
+// if($conn-> query($sql) === TRUE){
+//     echo "Successful account creation";
+// }
+// else{
+//     echo "Error" . $sql . "<br>" . $conn->error;
 // }
 
+// $conn->close();
+
+/*
+
+$misconduct=$nameError=$description="";
+
+$name= "";
+$misconduct="";
+$description= "";
+ 
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(empty($_POST["misconduct"])){
+        $misconductError= "Please choose an option";
+    }else{ 
+        $misconduct=validate($_POST["misconduct"]);
+    if(empty($_POST["name"])){
+        $nameError= "Specify user in speculation";
+    }else{
+        $name=validate($_POST["name"]);
+    }
+    if(empty($_POST["description"])){
+        $description= "Description is needed for investigation";
+    }else{
+        $description=validate($_POST["description"]);
+    }
+}
+}
+
+
+
+
+
+
+function validate($input){
+    $input=trim($input);
+    $input=stripslashes($$input);
+    $input=htmlspecialchars($input);
+    return $input;
+}
+*/
 
 
 ?>
 
+
+<!-- MY TEMPLATE
+// Database connection details
+$servername = "localhost";
+$username = "db_user";
+$password = "db_password";
+$dbname = "my_database";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Collect and sanitize form data
+$user_name = htmlspecialchars($_POST['user_name']);
+$user_email = filter_var($_POST['user_email'], FILTER_SANITIZE_EMAIL);
+
+// Use prepared statements to prevent SQL injection
+$stmt = $conn->prepare("INSERT INTO users (name, email) VALUES (?, ?)");
+$stmt->bind_param("ss", $user_name, $user_email); // "ss" means two string parameters
+
+if ($stmt->execute() === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $stmt->error;
+}
+
+$stmt->close();
+$conn->close();
+ -->
