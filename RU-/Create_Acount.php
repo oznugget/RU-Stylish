@@ -8,19 +8,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST["Email"]); //trim white space)
     $password = $_POST["Password"];
     $confirmPassword = $_POST["CPassword"];
+    $usertype = 'User'; // Default user type
 
     //prepared statements to prevent sql injection
-    $smt = $conn->prepare("SELECT * FROM users WHERE username=? OR email=?");
+    $smt = $conn->prepare("SELECT * FROM user WHERE username=? OR email=?");
     $smt->bind_param("ss", $username, $email);
     $smt->execute();
     $result = $smt->get_result(); //get resukt object
 
     // Validate input
-    //if (empty($username) || empty($email) || empty($password) || empty($confirmPassword)) {
-    //    $status = "All fields are required.";
-    //} elseif ($password !== $confirmPassword) {
-    //    $status = "Passwords do not match.";
-    //} else {
+    if (empty($username) || empty($email) || empty($password) || empty($confirmPassword)) {
+        $status = "All fields are required.";
+    } elseif ($password !== $confirmPassword) {
+        $status = "Passwords do not match.";
+    } else {
 
 
         if ($result->num_rows > 0) {
@@ -28,16 +29,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             // Insert new user into database after hashing password
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-            $insertQuery = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
-            $insertQuery->bind_param("sss", $username, $email, $hashedPassword);
+            $insertQuery = $conn->prepare("INSERT INTO user (username, email, password, permission) VALUES (?, ?, ?, ?)");
+            $insertQuery->bind_param("ssss", $username, $email, $hashedPassword, $usertype); // Default permission set to 'user'
             if ($insertQuery->execute()) {
                 $status = "Account created successfully!";
+                echo "<script>
+                alert('Account created successfully!'); window.location.href='index.php';
+                </script>"; // Redirect to sign-in page after successful account creation
             } else {
                 $status = "Error: " . $conn->error;
             }
         }
     }
-
+}
 
 ?>
 
@@ -105,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form autocomplete="off" id="form" method = "POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  >
         <h2 style="color:rgb(33, 116, 103)">Create Account</h2>
         
-        <p id="Err-Messages"></p>  <!-- Display error messages here from php or js-->
+        <p id="Err-Messages"><?php echo htmlspecialchars($status); ?></p> <!--status msg from PHP -->
 
 
         <div class="createacc-firstname">
