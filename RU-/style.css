@@ -38,14 +38,14 @@ Map PAGE ------------------------------------------------------------line 701 to
 html{
     font-size: 1rem;
     font-family: "TikTok Sans";
-    padding: 0;
-    margin: 0;
+    margin: 0 !important;
+  padding: 0 !important;;
     background-color: teal;
 }
 body{
     font-family: "TikTok Sans", sans-serif;
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+  padding: 0 !important;
     background-color: rgb(243, 241, 241);
 }
 
@@ -57,6 +57,8 @@ header{
     justify-content: center;
     align-items: center;
     background-image: url('images/nav.png');
+    padding: 0 !important;
+    Margin:0 !important;
 
 }
 
@@ -337,6 +339,7 @@ nav{
     align-items: flex-start;
     justify-content: flex-start;
     padding-left: 2rem;
+    margin:0;
 }
 
 .menu-icon{
@@ -412,7 +415,7 @@ nav .nav-links li {
     gap: 1rem; 
     
     margin-left: auto; 
-    background-image:url('images/nav2.png');;
+    
     padding: 1%;
 }
 

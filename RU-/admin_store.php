@@ -1,7 +1,3 @@
-<?php 
-session_start(); 
-require "connection.php"; 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +8,8 @@ require "connection.php";
         @import url('style.css');
     </style>
 
+    <script src="products.js" defer></script>
+
      <script src="Reports.js" defer></script>
     <script src="script.js" defer></script>
      <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +17,7 @@ require "connection.php";
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
    
-
+<?php require "connection.php" ?>
 </head>
 
 <!-- Home Page. navigation bar with absolute and relative links -->
@@ -39,28 +37,26 @@ require "connection.php";
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="listing.php">Create Listing</a></li>
-                <?php if (isset($_SESSION['user_id'])): ?>
-                    <li><a href="logout.php">Logout</a></li>
-                <?php else: ?>
-                    <li><a href="Create_Acount.php">Create Account</a></li>
-                    <li><a href="SignIn.php">Sign in</a></li>
-                <?php endif; ?>
+                <li><a href="Create_Acount.php">Create Account</a></li>
+                <li><a href="SignIn.php">Sign in</a></li>
                 <li><a href="CampusMap.php">Map</a></li>
                 <li><a href="about.php">About Us</a></li>
+                <li><a href="Contact.php">Contact us</a></li>
                 <li><a href="review.php">Reviews</a></li>
                 <li><a href="report.php">Report</a></li>
                 <li><a href="admin.php">Admin</a></li>
+                <li><a href="Dummy.php">Dummy Page</a></li>
             </ul>
 
             <div class="search-bar">
                 <input type="text" placeholder="Search...">
             </div>
 
-         <div class="nav-icons">
-    <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-    </div>
-
         </nav>
+                 <div class="nav-icons">
+    <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
+    <a href="wishlist.php"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
+    </div>
     
     </header>
         <br>
@@ -70,15 +66,15 @@ require "connection.php";
 
 
 
-     <h1 id="adminh2" > Reports </h1>
+     <h1 id="adminh2" > All Items </h1>
 
-     <p id="adminp"> View  the   Reports submitted by users   </p>
+     <p id="adminp"> View  the all  Items Listed by  users   </p>
 
  
     <div class="Find">
    
         <form>
-             <h2> Find Reported User</h2>
+             <h2> Find Specified Item</h2>
             <input type="name" placeholder="Enter Username">
         </form>
 
@@ -86,16 +82,43 @@ require "connection.php";
 
 
  
- 
- 
- 
- 
-     <section class="AllReports">
-        <h1>All Recent Reported Cases</h1>
+ <section  class="store">
+<h2 style="color:rgb(33, 116, 103)">All Listings</h2>   
+<div class="store_items">
+        <?php
+        // Fetch all listings from the database
+        $sql = "SELECT * FROM all_listing";
+        $result = $conn->query($sql);
 
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                // Convert the binary image data back to a base64 string for display
+                $imageData = base64_encode($row['Image']);
+                $imageSrc = 'data:image/jpeg;base64,' . $imageData;
+                
+                echo '<div class="items">
+                        <div id="picture">
+                            <a href="view_listing.php?id=' . $row['ListingID'] . '" class="listing-link">
+                                <img src="' . $imageSrc . '" alt="' . htmlspecialchars($row['Title']) . '" width="200px" height="200px" class="store_img">
+                            </a>
+                            <figcaption>
+                                <p><strong>' . htmlspecialchars($row['Title']) . '</strong></p>
+                                <p>R' . htmlspecialchars($row['Price']) . '</p>
+                                <p>Size: ' . htmlspecialchars($row['Size']) . ' | Colour: ' . htmlspecialchars($row['Colour']) . '</p>
+                            </figcaption>
+                        </div>
+                      </div>';
+            }
+        } else {
+            echo "<p>No listings found.</p>";
+        }
+        ?>
+    </div>
 
-     </section>
+                
+</section>
 
+<br>
 
 
 

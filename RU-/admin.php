@@ -79,11 +79,11 @@ button:active {
                 <input type="text" placeholder="Search...">
             </div>
 
-        </nav>
-                 <div class="nav-icons">
+         <div class="nav-icons">
     <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-    <a href="wishlist.php"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
     </div>
+
+        </nav>
     </header>
         <br>
 
@@ -100,13 +100,15 @@ button:active {
         <div class="AdminAttributes">
         <p id="adminp"> This page is for admin use only. </p>
 
-         <button type="submit">Overview</button>
+         <a href="admin_overview.php"><button type="submit">Overview</button></a>
          <br>
-        <button type="submit">Reports</button>
+
+         <a href="admin_reports.php"><button type="submit">Reports</button></a>
         <br>
-        <button type="submit">Reviews</button>
+
+       <a href="admin_reviews.php"><button type="submit">Reviews</button></a>
     <br>
-        <button type="submit">Store</button>
+        <a href="admin_store.php" ><button type="submit">Store</button></a>
     <br>
     </div>
 

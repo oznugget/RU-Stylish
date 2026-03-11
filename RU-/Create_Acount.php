@@ -106,11 +106,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             
-        </nav>
-         <div class="nav-icons">
+       <div class="nav-icons">
     <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-    <a href="wishlist.php"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
     </div>
+
+        </nav>
     </header>
 
     <form autocomplete="off" id="form" method = "POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  >
