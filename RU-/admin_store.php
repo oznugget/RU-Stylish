@@ -2,34 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=!, initial-scale=1.0">
-    <title>Report Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
     <style>
         @import url('style.css');
     </style>
 
-       <script src="Report.js" defer></script>
+    <script src="products.js" defer></script>
 
-    <script src="script.js" defer></script> <!-- defer so it loads html first then js -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+     <script src="Reports.js" defer></script>
+    <script src="script.js" defer></script>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
-<?php require "connection.php" ?>
 
-<?php require "reportValidation.php"?>
+   
+<?php require "connection.php" ?>
 </head>
 
-<!--report any issues on the page -->
-<body onclick = "moving()">
+<!-- Home Page. navigation bar with absolute and relative links -->
+<body>
 
 
   <header>
         <nav>
-            <div class="menu-icon">
+             <div class="menu-icon">
                 <a href="#" onclick = "showSidebar()"> <img src="images/menuicon.png" alt="Menu Icon" width="30px" height="30px" id="menu-icon"> </a>
-            </div>
-            
+             </div>
+
             <div class="logo">
                 <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="75px" height="65px" class="logo-left"></a>
             </div>
@@ -44,6 +44,7 @@
                 <li><a href="Contact.php">Contact us</a></li>
                 <li><a href="review.php">Reviews</a></li>
                 <li><a href="report.php">Report</a></li>
+                <li><a href="admin.php">Admin</a></li>
                 <li><a href="Dummy.php">Dummy Page</a></li>
             </ul>
 
@@ -51,52 +52,76 @@
                 <input type="text" placeholder="Search...">
             </div>
 
-            
         </nav>
-         <div class="nav-icons">
+                 <div class="nav-icons">
     <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
     <a href="wishlist.php"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
     </div>
+    
+    </header>
+        <br>
+
     </header>
     <br>
 
-    <div id = "bearContainer">
-        <img id = "misconductBear" src = "images\bearMisconduct.png"  alt = "bear moving" width = "400" height = "400"/>
-    </div>
-    
 
-    <section id="report" >
-        <h2 style="color:rgb(33, 116, 103)">Report a Misconduct</h2>
-        <form  id = "report_form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-        <label for="misconduct"><b>Select the type of misconduct:</b></label><br>
-        <label>
-            <input type="radio" name="misconduct" value="value1"> Scam
-        </label><br>
-        <label>
-            <input type="radio" name="misconduct" value="value2"> Damaged Goods
-        </label><br>
-        <label>
-            <input type="radio" name="misconduct" value="value3"> Theft
-        </label><br>
-        <label>
-            <input type="radio" name="misconduct" value="value4"> Phishing
-        </label> <span></span><br>
 
-                <br><br>  
-            <div>
-                <input type="text" placeholder="username of reported user" id="reported_user" name="name" >
-                <span class="error" ></span>
-            </div>
-            <br>
-            <div>
-                <textarea id = "describe_misconduct" placeholder="    Describe the misconduct experience"  name="description"  ></textarea>
-                <span class="error"></span>
-            </div>
-            <br>
-            <button id = "submitMisconduct" type="submit" name="submit" value="Submit"><b>Submit Report</b></button>
+     <h1 id="adminh2" > All Items </h1>
+
+     <p id="adminp"> View  the all  Items Listed by  users   </p>
+
+ 
+    <div class="Find">
+   
+        <form>
+             <h2> Find Specified Item</h2>
+            <input type="name" placeholder="Enter Username">
         </form>
 
-        </section>
+    </div>
+
+
+ 
+ <section  class="store">
+<h2 style="color:rgb(33, 116, 103)">All Listings</h2>   
+<div class="store_items">
+        <?php
+        // Fetch all listings from the database
+        $sql = "SELECT * FROM all_listing";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                // Convert the binary image data back to a base64 string for display
+                $imageData = base64_encode($row['Image']);
+                $imageSrc = 'data:image/jpeg;base64,' . $imageData;
+                
+                echo '<div class="items">
+                        <div id="picture">
+                            <a href="view_listing.php?id=' . $row['ListingID'] . '" class="listing-link">
+                                <img src="' . $imageSrc . '" alt="' . htmlspecialchars($row['Title']) . '" width="200px" height="200px" class="store_img">
+                            </a>
+                            <figcaption>
+                                <p><strong>' . htmlspecialchars($row['Title']) . '</strong></p>
+                                <p>R' . htmlspecialchars($row['Price']) . '</p>
+                                <p>Size: ' . htmlspecialchars($row['Size']) . ' | Colour: ' . htmlspecialchars($row['Colour']) . '</p>
+                            </figcaption>
+                        </div>
+                      </div>';
+            }
+        } else {
+            echo "<p>No listings found.</p>";
+        }
+        ?>
+    </div>
+
+                
+</section>
+
+<br>
+
+
+
 
 <footer style = "color:rgb(212, 212, 212)">
 
@@ -149,9 +174,8 @@
         &#x2709 Tshikovhi@gmail.com <br>
         </p>
     </div>
-
+<p id="browser"></p> <!-- displays user's browser -->
 </footer>
-
-        </body>
-
-        </html>
+    
+</body>
+</html>

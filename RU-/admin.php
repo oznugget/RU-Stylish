@@ -94,13 +94,15 @@ button:active {
         <div class="AdminAttributes">
         <p id="adminp"> This page is for admin use only. </p>
 
-         <button type="submit">Overview</button>
+         <a href="admin_overview.php"><button type="submit">Overview</button></a>
          <br>
-        <button type="submit">Reports</button>
+
+         <a href="admin_reports.php"><button type="submit">Reports</button></a>
         <br>
-        <button type="submit">Reviews</button>
+
+       <a href="admin_reviews.php"><button type="submit">Reviews</button></a>
     <br>
-        <button type="submit">Store</button>
+        <a href="admin_store.php" ><button type="submit">Store</button></a>
     <br>
     </div>
 
