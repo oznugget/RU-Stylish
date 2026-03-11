@@ -33,7 +33,6 @@
                 <li><a href="SignIn.html">Sign in</a></li>
                 <li><a href="Create_Acount.html">Create Account</a></li>
                 <li><a href="listing.html">Create Listing</a></li>
-                <li><a href="Contact.html">Contact us</a></li>
                 <li><a href="review.html">Reviews</a></li>
                 <li><a href="report.html">Report</a></li>
                 <li><a href="CampusMap.html">Map</a></li>
@@ -75,7 +74,6 @@
             <tr>
                 <td> <a href = "listing.html"> Sell </a></td>
                 <td> <a href = "about.html#aboutCrew"> Crew </a></td>
-                <td> <a href = "#"> Youtube </a></td>
             </tr>      
         </table>
     </div>
