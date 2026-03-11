@@ -72,7 +72,7 @@
         <br>
 
         <div class="email">
-            <input type="email" placeholder="Email" id="email" name="email" required>
+            <input type="email" placeholder="Email" id="email" name="Email" required>
         </div>
         <br>
 
@@ -82,7 +82,7 @@
         <br>
 
             <div class="createacc-cpassword">
-        <input type="Password" placeholder="Confirm password" id="Cpassword" name="password" required>
+        <input type="Password" placeholder="Confirm password" id="Cpassword" name="CPassword" required>
         </div>
         <br>
 

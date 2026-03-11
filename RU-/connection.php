@@ -12,22 +12,63 @@ if($conn-> connect_error){
 
 
 
-// $sql = "Select * from user;";
-// $result = conn->query($sql);
+// $sql = "INSERT INTO user (UserID, Email, Password, Permission) VALUES(?, ?, ?,user
 
-// if($result->num_rows > 0){
-//     while($row = $result->fetch_assoc()) {
-
-//     echo "<table>";
-//     echo "<tr><th>UserID</th><th>";
+//  )";
+// $mysqli->execute_query($sql,[$name,$Email,$Password])
+// if($conn-> query($sql) === TRUE){
+//     echo "Successful account creation";
+// }
+// else{
+//     echo "Error" . $sql . "<br>" . $conn->error;
 // }
 
+// $conn->close();
+
+/*
+
+$misconduct=$nameError=$description="";
+
+$name= "";
+$misconduct="";
+$description= "";
+ 
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(empty($_POST["misconduct"])){
+        $misconductError= "Please choose an option";
+    }else{ 
+        $misconduct=validate($_POST["misconduct"]);
+    if(empty($_POST["name"])){
+        $nameError= "Specify user in speculation";
+    }else{
+        $name=validate($_POST["name"]);
+    }
+    if(empty($_POST["description"])){
+        $description= "Description is needed for investigation";
+    }else{
+        $description=validate($_POST["description"]);
+    }
+}
+}
+
+
+
+
+
+
+function validate($input){
+    $input=trim($input);
+    $input=stripslashes($$input);
+    $input=htmlspecialchars($input);
+    return $input;
+}
+*/
 
 
 ?>
-<!-- 
-/*
-<?php
+
+
+<!-- MY TEMPLATE
 // Database connection details
 $servername = "localhost";
 $username = "db_user";
@@ -58,7 +99,4 @@ if ($stmt->execute() === TRUE) {
 
 $stmt->close();
 $conn->close();
-?>
-
-*/
  -->
