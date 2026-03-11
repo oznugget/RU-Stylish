@@ -75,15 +75,12 @@
             <br>
               <div>
                 <div class="remember">
-                     <div class="admin" id="adminCheck">
-                    <input type="checkbox" id="admin">
-                    <label> Admin </label>
-                    </div>
+                    
                    
                     <input type="checkbox">
                     <label>Remember Me </label>
                     <br>
-                    <a href="#" >Forgot password?</a>
+                    
 
                 </div>            
                 <button type="submit" class="btn">Login </button>

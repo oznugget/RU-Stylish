@@ -186,7 +186,7 @@
 
 </style>
 
-
+<?php require "reviewDB.php" ?>
 </head>
 <body id = "reviewbody">
 
@@ -229,7 +229,7 @@
 <div class="review-container">
         <h2>Leave a Review</h2>
         
-        <form id="reviewForm">
+        <form id="reviewForm" action="reviewDB.php" method ="POST">
             <!-- Username Field -->
             <div class="form-group">
                 <label for="username">Your Name</label>
