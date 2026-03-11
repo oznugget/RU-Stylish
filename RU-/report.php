@@ -7,6 +7,9 @@
     <style>
         @import url('style.css');
     </style>
+
+       <script src="Report.js" defer></script>
+       
     <script src="script.js" defer></script> <!-- defer so it loads html first then js -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +17,6 @@
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 <?php require "connection.php" ?>
 
-    <script src="Reports.js" defer></script>
 <?php require "reportValidation.php"?>
 </head>
 
