@@ -12,8 +12,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
-   
+   <style>
 
+    .AdminAttributes{
+        display:grid;
+        align-items:center;
+        justify-content:center;
+    }
+    .button{
+    margin:10px;
+    padding:10px 20px;
+    font-size:16px;
+    cursor:pointer;
+    
+
+    }
+
+
+    button:hover {
+    background-color: #0f766e;
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.2);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+   </style>
+<?php require "connection.php" ?>
 </head>
 
 <!-- Home Page. navigation bar with absolute and relative links -->
@@ -59,44 +85,34 @@
     <br>
 
     <body>
+
+  
+
+
         <h1 id="adminh2"> Admin Page </h1>
+
+        <div class="AdminAttributes">
         <p id="adminp"> This page is for admin use only. </p>
 
-        <div id="statistics">
-            <h2 id="adminh2"> Site Statistics </h2>
-            <p id="adminp"> Total number of users: 1000 </p>
-            <p id="adminp"> Total number of listings: 500 </p>
-            <p id="adminp"> Total number of sales: 200 </p>
-        </div>
+         <button type="submit">Overview</button>
+         <br>
+        <button type="submit">Reports</button>
+        <br>
+        <button type="submit">Reviews</button>
+    <br>
+        <button type="submit">Store</button>
+    <br>
+    </div>
 
-        <div id="userManagement">
-            <h2 id="adminh2"> User Management </h2>
-            <p id="adminp"> Here you can manage users, view reports, and handle any issues that arise. </p>
-            <br/>
 
-            <form id="deleteUser">
-                <label for="userId">Delete User by username:</label>
-                <input type="text" id="userId" name="userId" placeholder="Enter username">
-                <button type="submit">Delete User</button>
-            </form>
 
-            <form id="removeListing">
-                <label for="listingId">Remove Listing by ID:</label>
-                <input type="text" id="listingId" name="listingId" placeholder="Enter listing ID">
-                <button type="submit">Remove Listing</button>
-            </form>
 
-            <form id="deleteReview">
-                <label for="reviewId">Delete Review by ID:</label>
-                <input type="text" id="reviewId" name="reviewId" placeholder="Enter review ID">
-                <button type="submit">Delete Review</button>
-            </form>
 
-            <h2 id="adminh2"> View Reports </h2>
-            <p id="adminp"> Here you can view user reports and take appropriate action. </p>
-        </div>
-    </body>
 
+
+ 
+
+        
 
 
 
