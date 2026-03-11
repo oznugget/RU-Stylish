@@ -320,3 +320,7 @@ function moving() {
     }
   }
 }
+
+
+//Code to show email when contact seller is clicked
+

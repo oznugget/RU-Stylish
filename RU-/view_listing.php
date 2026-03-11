@@ -1,23 +1,28 @@
 <?php
 
-session_start(); 
-require "connection.php"; 
+session_start();
+require "connection.php";
 
-// 1. ALWAYS place the logic at the top so variables are ready for the HTML below
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 $item = null;
-$imageSrc = 'images/placeholder.jpg'; // Default placeholder
+$imageSrc = 'images/placeholder.png'; // Set a default value
 
 if ($id > 0) {
-    // Note: Ensure your table name is 'all_listing' or 'listings' based on your previous fixes
-    $stmt = $conn->prepare("SELECT * FROM all_listing WHERE ListingID = ?");
+    // 1. Fetch the data
+    $sql = "SELECT al.*, u.Username, u.Email 
+            FROM all_listing al
+            JOIN user_listing ul ON al.ListingID = ul.ListingID
+            JOIN user u ON ul.UserID = u.UserID
+            WHERE al.ListingID = ?";
+            
+    $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id);
     $stmt->execute();
     $result = $stmt->get_result();
     $item = $result->fetch_assoc();
 
+    // 2. Check if item was found
     if ($item) {
-        // Convert image for display - use null coalescing ?? to avoid deprecated warnings
         $rawImage = $item['image'] ?? $item['Image'] ?? null;
         if ($rawImage) {
             $imageSrc = 'data:image/jpeg;base64,' . base64_encode($rawImage);
@@ -26,6 +31,7 @@ if ($id > 0) {
         die("Item not found in the database.");
     }
 } else {
+    // This else now correctly belongs to the 'if ($id > 0)' check
     die("Invalid Item ID provided.");
 }
 ?>
@@ -38,13 +44,14 @@ if ($id > 0) {
     <style>
         @import url('style.css');
     </style>
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
     <title><?php echo htmlspecialchars($item['title'] ?? 'Listing Details'); ?></title>
 </head>
 
+<body>
 <header>
         <nav>
             <div class="menu-icon">
@@ -98,10 +105,33 @@ if ($id > 0) {
             <p><strong>Condition:</strong> <?php echo htmlspecialchars($item['condition'] ?? $item['Condition'] ?? 'N/A'); ?></p>
             <p><strong>Category:</strong> <?php echo htmlspecialchars($item['category'] ?? $item['Category'] ?? 'N/A'); ?></p>
             
-            <button class="buy-btn">Contact Seller</button>
+            <button type="button" class="buy-btn" id="contactButton" onclick="showEmail()">
+                Contact Seller
+            </button>
+
+            <div id="sellerInfo" style="display: none; margin-top: 15px;">
+                <p><strong>Email:</strong> <?php echo htmlspecialchars($item['Email']); ?></p>
+            </div>
             <br><br>
         </div>
     </div>
+
+<script>
+    function showEmail() {
+    var infoDiv = document.getElementById("sellerInfo");
+    var btn = document.getElementById("contactButton");
+
+    // Toggle the display
+    if (infoDiv.style.display === "none") {
+        infoDiv.style.display = "block";
+        btn.innerHTML = "Hide Contact Info"; // Changes button text
+    } else {
+        infoDiv.style.display = "none";
+        btn.innerHTML = "Contact Seller"; // Changes it back
+    }
+}
+</script>
+
 
 <footer style = "color:rgb(212, 212, 212)">
 
