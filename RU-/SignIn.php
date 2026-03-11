@@ -119,10 +119,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <br>
               <div>
                 <div class="remember">
+                    
+                   
                     <input type="checkbox">
                     <label>Remember Me </label>
                     <br>
-                    <a href="#" >Forgot password?</a>
+                    
 
                 </div>            
                 <button type="submit" class="btn">Login </button>
