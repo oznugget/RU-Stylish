@@ -1,3 +1,46 @@
+<?php
+require "connection.php";
+
+$status = ""; // Initialize status variable
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = trim($_POST["Username"]); //trim white space
+    $email = trim($_POST["Email"]); //trim white space)
+    $password = $_POST["Password"];
+    $confirmPassword = $_POST["CPassword"];
+
+    //prepared statements to prevent sql injection
+    $smt = $conn->prepare("SELECT * FROM users WHERE username=? OR email=?");
+    $smt->bind_param("ss", $username, $email);
+    $smt->execute();
+    $result = $smt->get_result(); //get resukt object
+
+    // Validate input
+    //if (empty($username) || empty($email) || empty($password) || empty($confirmPassword)) {
+    //    $status = "All fields are required.";
+    //} elseif ($password !== $confirmPassword) {
+    //    $status = "Passwords do not match.";
+    //} else {
+
+
+        if ($result->num_rows > 0) {
+            $status = "Username or email already exists.";
+        } else {
+            // Insert new user into database after hashing password
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            $insertQuery = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
+            $insertQuery->bind_param("sss", $username, $email, $hashedPassword);
+            if ($insertQuery->execute()) {
+                $status = "Account created successfully!";
+            } else {
+                $status = "Error: " . $conn->error;
+            }
+        }
+    }
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +60,6 @@
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
    
-<?php require "connection.php" ?>
 </head>
 
 <body>
@@ -60,10 +102,10 @@
     </div>
     </header>
 
-    <form autocomplete="off" id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>   
+    <form autocomplete="off" id="form" method = "POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  >
         <h2 style="color:rgb(33, 116, 103)">Create Account</h2>
         
-        <p id="Err-Messages"></p>
+        <p id="Err-Messages"></p>  <!-- Display error messages here from php or js-->
 
 
         <div class="createacc-firstname">
