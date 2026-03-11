@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 <?php require "connection.php" ?>
-<?php require "reportValidation.php"?>
 </head>
 
 <!--report any issues on the page -->
@@ -62,30 +61,32 @@
 
     <section id="report" >
         <h2 style="color:rgb(33, 116, 103)">Report a Misconduct</h2>
-        <form  id = "report_form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+        <form  id = "report_form" action="reportValidation.php" method="post">
         <label for="misconduct"><b>Select the type of misconduct:</b></label><br>
         <label>
-            <input type="radio" name="misconduct" value="value1"> Scam
+            <input type="radio" name="misconduct" value="Scam"> Scam
         </label><br>
         <label>
-            <input type="radio" name="misconduct" value="value2"> Damaged Goods
+            <input type="radio" name="misconduct" value="Damaged Goods"> Damaged Goods
         </label><br>
         <label>
-            <input type="radio" name="misconduct" value="value3"> Theft
+            <input type="radio" name="misconduct" value="Theft"> Theft
         </label><br>
         <label>
-            <input type="radio" name="misconduct" value="value4"> Phishing
-        </label> <span><?php echo $misconductError;?></span><br>
+            <input type="radio" name="misconduct" value="Phishing"> Phishing
+        </label> 
+      
+
 
                 <br><br>  
             <div>
-                <input type="text" placeholder="username of reported user" id="reported_user" name="name" >
-                <span class="error" ><?php echo $nameError;?></span>
+                <input type="text" placeholder="username of reported user" id="reported_user" name="perp" >
+                
             </div>
             <br>
             <div>
                 <textarea id = "describe_misconduct" placeholder="    Describe the misconduct experience"  name="description"  ></textarea>
-                <span class="error"><?php echo $description;?></span>
+                
             </div>
             <br>
             <button id = "submitMisconduct" type="submit" name="submit" value="Submit"><b>Submit Report</b></button>

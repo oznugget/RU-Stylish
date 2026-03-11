@@ -10,24 +10,12 @@ if($conn-> connect_error){
     die("Connection failed: ".$conn->connect_error);
 }
 
-
-
-// $sql = "INSERT INTO user (UserID, Email, Password, Permission) VALUES(?, ?, ?,user
-
-//  )";
-// $mysqli->execute_query($sql,[$name,$Email,$Password])
-// if($conn-> query($sql) === TRUE){
-//     echo "Successful account creation";
-// }
-// else{
-//     echo "Error" . $sql . "<br>" . $conn->error;
-// }
-
-// $conn->close();
-
-
-
 ?>
+
+
+
+
+
 
 
 <!-- MY TEMPLATE
