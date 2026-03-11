@@ -1,3 +1,7 @@
+<?php 
+session_start(); 
+require "connection.php"; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +11,17 @@
     <style>
         @import url('style.css');
     </style>
+
+       <script src="Report.js" defer></script>
+
     <script src="script.js" defer></script> <!-- defer so it loads html first then js -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
-<?php require "connection.php" ?>
 
+
+<?php require "reportValidation.php"?>
     <script src="Reports.js" defer></script>
 </head>
 
@@ -30,12 +38,16 @@
             <div class="logo">
                 <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="75px" height="65px" class="logo-left"></a>
             </div>
-            <ul class="nav-links">
+            <ul id="nav_elems" class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="listing.php">Create Listing</a></li>
-                <li><a href="Create_Acount.php">Create Account</a></li>
-                <li><a href="SignIn.php">Sign in</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="logout.php">Logout</a></li>
+                <?php else: ?>
+                    <li><a href="Create_Acount.php">Create Account</a></li>
+                    <li><a href="SignIn.php">Sign in</a></li>
+                <?php endif; ?>
                 <li><a href="CampusMap.php">Map</a></li>
                 <li><a href="about.php">About Us</a></li>
                 <li><a href="review.php">Reviews</a></li>
@@ -47,11 +59,11 @@
             </div>
 
             
-        </nav>
-         <div class="nav-icons">
+        <div class="nav-icons">
     <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-    <a href="wishlist.php"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
     </div>
+
+        </nav>
     </header>
     <br>
 
