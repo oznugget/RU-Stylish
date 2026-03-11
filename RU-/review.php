@@ -1,3 +1,21 @@
+<?php
+// 1. Always start the session first
+session_start();
+require_once "connection.php";
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    // Check if they are NOT logged in
+    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+        // Redirect them to the login page immediately
+        header('Location: SignIn.php');
+        exit; 
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
