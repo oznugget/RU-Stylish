@@ -1,7 +1,3 @@
-<?php 
-session_start(); 
-require "connection.php"; 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,13 +14,12 @@ require "connection.php";
     <script src="Reviews.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
+    <?php require "connection.php" ?>
 
 
 
 
 <style>
-        @import url('style.css');
-    
 
 
   body {
@@ -62,7 +57,7 @@ require "connection.php";
             font-weight: bold;
         }
 
-        textarea {
+        input, textarea {
             width: 100%;
             padding: 10px;
             border: 2px solid #ddd;
@@ -79,11 +74,6 @@ require "connection.php";
         textarea {
             min-height: 100px;
             resize: vertical;
-        }
-        #search-bar{
-            display: flex;
-           justify-content: flex-end; 
-           width: 100%; 
         }
 
         /* Simple Star Rating */
@@ -112,15 +102,19 @@ require "connection.php";
         }
 
         button {
-            padding: 0.6rem;
-    background-color: teal;
-    font-size: medium;
-    border-radius: 2rem;
-    color: #f6f3f3
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            border: 2px solid black;
         }
 
         button:hover {
-            background: #a28b4b;
+            background: #764ba2;
         }
 
         .note {
@@ -192,7 +186,7 @@ require "connection.php";
 
 </style>
 
-<?php require "reviewDB.php" ?>
+
 </head>
 <body id = "reviewbody">
 
@@ -211,16 +205,14 @@ require "connection.php";
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
                <li><a href="index.php">Home</a></li>
                 <li><a href="listing.php">Create Listing</a></li>
-                <?php if (isset($_SESSION['user_id'])): ?>
-                    <li><a href="logout.php">Logout</a></li>
-                <?php else: ?>
-                    <li><a href="Create_Acount.php">Create Account</a></li>
-                    <li><a href="SignIn.php">Sign in</a></li>
-                <?php endif; ?>
+                <li><a href="Create_Acount.php">Create Account</a></li>
+                <li><a href="SignIn.php">Sign in</a></li>
                 <li><a href="CampusMap.php">Map</a></li>
                 <li><a href="about.php">About Us</a></li>
+                <li><a href="Contact.php">Contact us</a></li>
                 <li><a href="review.php">Reviews</a></li>
                 <li><a href="report.php">Report</a></li>
+                <li><a href="Dummy.php">Dummy Page</a></li>
             </ul>
 
             <div class="search-bar">
@@ -228,69 +220,14 @@ require "connection.php";
             </div>
 
            
-       <div class="nav-icons">
-    <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-    </div>
-
         </nav>
+         <div class="nav-icons">
+    <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
+    <a href="wishlist.php"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
+    </div>
     </header>
 <br><br>
     
-<div class="review-container">
-        <h2>Leave a Review</h2>
-        
-        <form id="reviewForm" action="reviewDB.php" method ="POST">
-            <!-- Username Field -->
-            <div class="form-group">
-                <label for="username">Your Name</label>
-                <input type="text" id="username" name="username" placeholder="Enter username" required>
-            </div>
-
-            <!-- Star Rating (7 stars) -->
-            <div class="form-group">
-                <label>Your Rating</label>
-                <div class="rating-stars">
-                    <input type="radio" id="star7" name="rating" value="7">
-                    <label for="star7"><i class="fas fa-star"></i></label>
-                    
-                    <input type="radio" id="star6" name="rating" value="6">
-                    <label for="star6"><i class="fas fa-star"></i></label>
-                    
-                    <input type="radio" id="star5" name="rating" value="5">
-                    <label for="star5"><i class="fas fa-star"></i></label>
-                    
-                    <input type="radio" id="star4" name="rating" value="4">
-                    <label for="star4"><i class="fas fa-star"></i></label>
-                    
-                    <input type="radio" id="star3" name="rating" value="3">
-                    <label for="star3"><i class="fas fa-star"></i></label>
-                    
-                    <input type="radio" id="star2" name="rating" value="2">
-                    <label for="star2"><i class="fas fa-star"></i></label>
-                    
-                    <input type="radio" id="star1" name="rating" value="1">
-                    <label for="star1"><i class="fas fa-star"></i></label>
-                </div>
-            </div>
-
-            <!-- Review Text -->
-            <div class="form-group">
-                <label for="review">Your Review</label>
-                <textarea id="review" name="review" placeholder="Write your review here..." required></textarea>
-            </div>
-
-            <!-- Submit Button -->
-            <button type="submit">Submit Review</button>
-        </form>
-        
-        <p class="note">Your feedback helps us improve!</p>
-    </div>
-
-
-    </section>
-
-    <br>
-
 
 
 

@@ -1,5 +1,9 @@
+<?php 
+session_start(); 
+require "connection.php"; 
+?>
 <?php
-require "connection.php";
+
 
 $status = ""; // Initialize status variable
 
@@ -83,8 +87,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="listing.php">Create Listing</a></li>
-                <li><a href="Create_Acount.php">Create Account</a></li>
-                <li><a href="SignIn.php">Sign in</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="logout.php">Logout</a></li>
+                <?php else: ?>
+                    <li><a href="Create_Acount.php">Create Account</a></li>
+                    <li><a href="SignIn.php">Sign in</a></li>
+                <?php endif; ?>
                 <li><a href="CampusMap.php">Map</a></li>
                 <li><a href="about.php">About Us</a></li>
                 <li><a href="Contact.php">Contact us</a></li>
@@ -98,11 +106,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             
-        </nav>
-         <div class="nav-icons">
+       <div class="nav-icons">
     <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-    <a href="wishlist.php"><img src="images/wishlist_heart.png" width="50px" height="40px" id="WishIcon"/></a>
     </div>
+
+        </nav>
     </header>
 
     <form autocomplete="off" id="form" method = "POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  >
