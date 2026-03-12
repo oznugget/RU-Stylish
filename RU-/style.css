@@ -36,7 +36,7 @@ Map PAGE ------------------------------------------------------------line 701 to
 /*General styles across all pages*/
 
 html{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-family: "TikTok Sans";
     margin: 0 !important;
     padding: 0 !important;;
@@ -1189,6 +1189,11 @@ button { padding: 10px 20px; cursor: pointer; }
 /*View Listing Page*/
 
 /* Container for the single listing */
+
+.viewlpg{
+    background-image: url("images/view.png");
+
+}
 .view-container {
     display: flex;
     flex-wrap: wrap;
@@ -1196,14 +1201,7 @@ button { padding: 10px 20px; cursor: pointer; }
     margin: 50px auto;
     padding: 20px;
     gap: 40px;
-    background-image: url("images/view.png");
-    
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    
+
 }
 
 /* Image section */

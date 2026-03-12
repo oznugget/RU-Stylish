@@ -26,7 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password_input = $_POST['password'];
 
     // 1. Prepare a statement to fetch the user by username or email
-    $stmt = $conn->prepare("SELECT UserID, username, password FROM user WHERE username = ? OR email = ?");
+
+    $stmt = $conn->prepare("SELECT UserID, username, password, permission FROM user WHERE username = ? OR email = ?");
     $stmt->bind_param("ss", $username_input, $username_input);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -39,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // 3. Create Session variables
             $_SESSION['user_id'] = $user['UserID'];
             $_SESSION['username'] = $user['username'];
+            $_SESSION['permission'] = $user['permission'];
             $_SESSION['logged_in'] = true;
             
             // Redirect to home page

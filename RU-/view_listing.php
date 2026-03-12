@@ -51,7 +51,7 @@ if ($id > 0) {
     <title><?php echo htmlspecialchars($item['title'] ?? 'Listing Details'); ?></title>
 </head>
 
-<body>
+<body class="viewlpg">
 <header>
         <nav>
             <div class="menu-icon">
@@ -78,7 +78,7 @@ if ($id > 0) {
                 <li><a href="Contact.php">Contact us</a></li>
                 <li><a href="review.php">Reviews</a></li>
                 <li><a href="report.php">Report</a></li>
-                <li><a href="Dummy.php">Dummy Page</a></li>
+                
             </ul>
 
             <div class="search-bar">
