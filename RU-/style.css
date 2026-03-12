@@ -1306,3 +1306,13 @@ button { padding: 10px 20px; cursor: pointer; }
         font-size: 1.8rem;
     }
 }
+/*View Listing Page*/
+.view-details{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    border-style: solid;
+    border-radius: 10%;
+    background-color: #d6d4d4;
+}

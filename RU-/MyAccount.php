@@ -71,6 +71,14 @@ require "connection.php";
 <section  class="store">
 
 <?php
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $delsql = "DELETE FROM all_listing WHERE ListingID = ?";
+            $stmt = $conn->prepare($delsql);
+            $stmt->bind_param("i", $_POST['listing_id']);
+            $stmt->execute();
+        }
+
         if (!isset($_SESSION['user_id'])) {
             echo "<p>Please log in to see your listings.</p>";
         } else {
@@ -105,7 +113,7 @@ require "connection.php";
                         <p><strong>Condition:</strong> <?php echo htmlspecialchars($row['Condition'] ?? 'N/A'); ?></p>
                         <p><strong>Category:</strong> <?php echo htmlspecialchars($row['Category'] ?? 'N/A'); ?></p>
                         
-                        <form method="POST" action="delete_listing.php" onsubmit="return confirm('Are you sure you want to delete this listing permanently?');" style="margin-top: 15px;">
+                        <form method="POST" action="" onsubmit="return confirm('Are you sure you want to delete this listing permanently?');" style="margin-top: 15px;">
                             <input type="hidden" name="listing_id" value="<?php echo $row['ListingID']; ?>">
                             <button type="submit" class="del-btn" style="background-color: #ff4d4d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; width: 100%;">Delete</button>
                         </form>
