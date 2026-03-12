@@ -1,3 +1,39 @@
+<?php
+session_start();
+require "connection.php";
+
+$status = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || !isset($_SESSION['user_id'])) { //have to be logged in to delete account
+        header('Location: SignIn.php');
+        exit;
+    }
+
+    if (isset($_POST['cancel'])) {
+        header('Location: index.php'); //go home
+        exit;
+    } else{
+        $userId = $_SESSION['user_id'];
+        $deleteQuery = $conn->prepare("DELETE FROM user WHERE UserID = ?"); //query to delete account
+        $deleteQuery->bind_param("i", $userId);
+
+        if ($deleteQuery->execute()) {
+            session_unset();
+            session_destroy();
+            echo '<script>
+                    alert("Account deleted successfully!");
+                    window.location.href = "index.php";   
+                  </script>';
+            exit;         
+        } else {
+            $status = "Error: " . $conn->error;
+        }
+    }
+}
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -81,20 +117,19 @@ button:active {
     <?php require "connection.php" ?>
 </head>
 <body>
-    <section class="deleteSection">
+    <form class="deleteSection" method="post" action="DeleteAcc.php">
 
     <h1>Delete Account</h1>
     <br>
 
-    <h4>Are you sure you want to delete your Account</h4>
+    <h4>Are you sure you want to delete your Account?</h4>
     <br>
 
-    <div>
-    <button>Yes</button>        <button>No</button>
-    <div>
+    <button class="button" type="submit" name="submit" value="Submit"><b>Yes</b></button>
+    <button class="button" type="submit" name="cancel" value="Cancel"><b>Cancel</b></button>
 
 
-    </section>
+</form>
     
 </body>
 </html>

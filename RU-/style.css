@@ -36,16 +36,16 @@ Map PAGE ------------------------------------------------------------line 701 to
 /*General styles across all pages*/
 
 html{
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-family: "TikTok Sans";
     margin: 0 !important;
-  padding: 0 !important;;
+    padding: 0 !important;;
     background-color: teal;
 }
 body{
     font-family: "TikTok Sans", sans-serif;
     margin: 0 !important;
-  padding: 0 !important;
+    padding: 0 !important;
     background-color: rgb(243, 241, 241);
 }
 
@@ -57,6 +57,9 @@ header{
     justify-content: center;
     align-items: center;
     background-image: url('images/nav.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
     padding: 0 !important;
     Margin:0 !important;
 
@@ -150,7 +153,7 @@ footer{
 
 /*RU Stylish logo across all pages */
 .logo{
-    width: 45px;
+    width: 50px;
     height: 45px;
     float: left;
     padding:0.5%;
@@ -316,7 +319,7 @@ dl{
 
 nav{
     width: 100%;
-    background-image: url('images/nav.png');
+    
     display: flex;
     align-items: center;
     justify-content:flex-start;
@@ -365,6 +368,21 @@ nav .nav-links li {
     transition: background-color 0.3s ease;
 
 }
+.nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.945);
+    backdrop-filter: blur(10px);
+    box-shadow: 10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;    
+    padding-left: 2rem;
+}
+
 .nav-links li a:hover{
     font-weight: bold;
     transition: color 0.3s ease;
@@ -958,8 +976,10 @@ input[type="radio"]{
     position: relative;
     
 }
- .listing-form{
+.listing-form{
    margin-right: 100%;
+   border-style:none;
+   border-radius:10%;
  }
 
 input{
@@ -1169,6 +1189,11 @@ button { padding: 10px 20px; cursor: pointer; }
 /*View Listing Page*/
 
 /* Container for the single listing */
+
+.viewlpg{
+    background-image: url("images/view.png");
+
+}
 .view-container {
     display: flex;
     flex-wrap: wrap;
@@ -1176,9 +1201,7 @@ button { padding: 10px 20px; cursor: pointer; }
     margin: 50px auto;
     padding: 20px;
     gap: 40px;
-    background-color: #dcdcdc;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
 }
 
 /* Image section */
@@ -1204,6 +1227,10 @@ button { padding: 10px 20px; cursor: pointer; }
     min-width: 300px;
     display: flex;
     flex-direction: column;
+    background-color: #d6d4d4;
+    opacity: 0.95;
+    padding: 5%;
+    border-radius: 10%;
 }
 
 .view-details h1 {
@@ -1278,6 +1305,16 @@ button { padding: 10px 20px; cursor: pointer; }
     .view-details h1 {
         font-size: 1.8rem;
     }
+}
+/*View Listing Page*/
+.view-details{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    border-style: solid;
+    border-radius: 10%;
+    background-color: #d6d4d4;
 }
 
 

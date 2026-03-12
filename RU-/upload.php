@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'connection.php';
 
 if (isset($_POST['submit'])) {
@@ -19,11 +20,23 @@ if (isset($_POST['submit'])) {
         $stmt->send_long_data(6, $imageData);
 
         if($stmt->execute()) {
-            // SHOW POPUP AND REDIRECT (Prevents refresh duplicates)
+            $newListingID = $conn->insert_id; 
+            $currentUserID = $_SESSION['user_id']; 
+
+            // 1. Insert into the bridge table
+            $bridgeStmt = $conn->prepare("INSERT INTO user_listing (ListingID, UserID) VALUES (?, ?)");
+            $bridgeStmt->bind_param("ii", $newListingID, $currentUserID);
+            $bridgeStmt->execute();
+            $bridgeStmt->close(); // Always close your second statement
+
+            // 2. ONLY ONE alert and redirect
             echo "<script>
                     alert('Listing created successfully!');
                     window.location.href = 'index.php'; 
                   </script>";
+            
+            // 3. Stop the script here
+            exit(); 
         } else {
             echo "Error: " . $stmt->error;
         }

@@ -73,7 +73,7 @@ else if (isset($_GET['search']) && !empty($_GET['query'])) {
     display: flex;
     align-items: center;
     gap: 15px;
-
+}
 
 
 .clear-btn {
@@ -199,14 +199,15 @@ button:active {
              </div>
 
             <div class="logo">
-                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="75px" height="65px" class="logo-left"></a>
+                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="95px"
+                        height="85px" class="logo-left"></a>
             </div>
             <ul class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="listing.php">Create Listing</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li><a href="logout.php">Logout</a></li>
+                    <li><a href="listing.php">Create Listing</a></li>
                 <?php else: ?>
                     <li><a href="Create_Acount.php">Create Account</a></li>
                     <li><a href="SignIn.php">Sign in</a></li>
@@ -215,7 +216,9 @@ button:active {
                 <li><a href="about.php">About Us</a></li>
                 <li><a href="review.php">Reviews</a></li>
                 <li><a href="report.php">Report</a></li>
-                <li><a href="admin.php">Admin</a></li>
+                <?php if (isset($_SESSION['permission']) && $_SESSION['permission'] === 'Admin'): ?>
+                    <li><a href="Admin.php" style="color: red;">Admin Dashboard</a></li>
+                <?php endif; ?>
             </ul>
 
 

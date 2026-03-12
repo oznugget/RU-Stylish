@@ -1,3 +1,55 @@
+<?php
+session_start();
+require "connection.php";
+
+$status = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || !isset($_SESSION['user_id'])) {
+        header('Location: SignIn.php');
+        exit;
+    }
+
+    $oldPassword = $_POST["Curpassword"];
+    $newPassword = $_POST["Nwpassword"];
+    $confirmPassword = $_POST["Cfpassword"];
+    $userId = $_SESSION['user_id'];  //from sign in session
+
+    if (empty($oldPassword) || empty($newPassword) || empty($confirmPassword)) {
+        $status = "All fields are required.";
+    } elseif ($newPassword !== $confirmPassword) {
+        $status = "New passwords do not match.";
+    } else {
+        
+        $stmt = $conn->prepare("SELECT password FROM user WHERE UserID = ?");
+        $stmt->bind_param("i", $userId); 
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $user = $result->fetch_assoc();
+            
+        if ($user && password_verify($oldPassword, $user['password'])) {
+            $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+            $SQLQuery = $conn->prepare("UPDATE user SET password = ? WHERE UserID = ?"); //new password update query
+            $SQLQuery->bind_param("si", $hashedPassword, $userId);
+
+            if ($SQLQuery->execute()) {
+                //display
+                echo '<script>
+                        alert("Password changed successfully!");
+                        window.location.href = "index.php";   
+                      </script>';
+                exit; 
+
+            } else {
+                $status = "Error: " . $conn->error;
+            }
+        } else {
+            $status = "Current password is incorrect.";
+        }
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -89,14 +141,16 @@ button:active {
     
     <form action="" method="Post">
 
+     <p ><?php echo $status; ?></p> <!--status msg from PHP -->
+
     <label for="OldPassword">Current Password </label>  <br>
-    <input type="passowrd" name="Curpassword" required>  <br>
+    <input type="password" name="Curpassword" required>  <br>
   <br>
-     <label for="NewPassword">Current Password </label>  <br>
-     <input type="passowrd" name="Nwpassword" required>  <br>
+     <label for="NewPassword">New Password </label>  <br>
+     <input type="password" name="Nwpassword" required>  <br>
   <br>
-      <label for="ConfirmNewPassword">Current Password </label>  <br>
-      <input type="passowrd" name="Cfpassword" required>  <br>
+      <label for="ConfirmNewPassword">Confirm New Password </label>  <br>
+      <input type="password" name="Cfpassword" required>  <br>
   <br>
     <button type="submit">Submit</button>
     </form>

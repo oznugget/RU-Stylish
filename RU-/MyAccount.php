@@ -67,9 +67,64 @@ require "connection.php";
 <h2 style="color:rgb(33, 116, 103)">My Listings</h2>
 
 <h2 style="color:rgb(33, 116, 103); margin-top: 40px;">Your Listings Preview</h2>
-    <div class="store">
+    
+<section  class="store">
 
-    </div>
+<?php
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $delsql = "DELETE FROM all_listing WHERE ListingID = ?";
+            $stmt = $conn->prepare($delsql);
+            $stmt->bind_param("i", $_POST['listing_id']);
+            $stmt->execute();
+        }
+
+        if (!isset($_SESSION['user_id'])) {
+            echo "<p>Please log in to see your listings.</p>";
+        } else {
+            $userId = $_SESSION['user_id'];
+
+            $sql = "SELECT all_listing.* FROM all_listing 
+                    JOIN user_listing ON all_listing.ListingID = user_listing.ListingID 
+                    WHERE user_listing.UserID = ?";
+            
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("i", $userId);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    // Convert the binary image data back to a base64 string
+                    $imageData = base64_encode($row['Image']);
+                    $imageSrc = 'data:image/jpeg;base64,' . $imageData;
+                    
+?>
+                    <div class="view-details" style="border: 1px solid #ccc; border-radius: 8px; padding: 15px; margin-bottom: 20px;">
+                        <img src="<?php echo $imageSrc; ?>" alt="<?php echo htmlspecialchars($row['Title']); ?>" width="200px" height="200px" style="border-radius: 8px;">
+                        
+                        <h5><?php echo htmlspecialchars($row['Title'] ?? 'Untitled'); ?></h5>
+                        <p class="price" style="font-size: 1em; color: rgb(33, 116, 103); font-weight: bold;">
+                            R<?php echo htmlspecialchars($row['Price'] ?? '0.00'); ?>
+                        </p>
+                        <hr>
+                        <p><strong>Size:</strong> <?php echo htmlspecialchars($row['Size'] ?? 'N/A'); ?></p>
+                        <p><strong>Colour:</strong> <?php echo htmlspecialchars($row['Colour'] ?? 'N/A'); ?></p>
+                        <p><strong>Condition:</strong> <?php echo htmlspecialchars($row['Condition'] ?? 'N/A'); ?></p>
+                        <p><strong>Category:</strong> <?php echo htmlspecialchars($row['Category'] ?? 'N/A'); ?></p>
+                        
+                        <form method="POST" action="" onsubmit="return confirm('Are you sure you want to delete this listing permanently?');" style="margin-top: 15px;">
+                            <input type="hidden" name="listing_id" value="<?php echo $row['ListingID']; ?>">
+                            <button type="submit" class="del-btn" style="background-color: #ff4d4d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; width: 100%;">Delete</button>
+                        </form>
+                    </div>
+<?php
+                }
+            } else {
+                echo "<p>You haven't created any listings yet.</p>";
+            } 
+        }
+?>
 
 
 
@@ -80,14 +135,13 @@ require "connection.php";
           
         </div>
 
-<div class="AccSetting" >
+    <div class="AccSetting" >
         <h2 id = "Acch2"  style="color:teal"> Settings  : </h2>
 
         <ul>
 
-        <a href="index.php"><li class = "AccSet"> Logout</li><a>
+        <a href="logout.php"><li class = "AccSet"> Logout</li><a>
         <a href="ChangePassword.php"><li class = "AccSet"> Change Password </li></a>
-         <a href="ChgUsername.php"><li class = "AccSet"> Change Username </li></a>
          <a href="DeleteAcc.php"><li class = "AccSet"> Delete Account </li></a>
          <a href="Terms.php"><li class = "AccSet"> Terms & Conditions </li></a>
         </ul>

@@ -37,9 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <style>
-        @import url('style.css');
-    
-
+       
 
   body {
             font-family: Arial, sans-serif;
@@ -56,6 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             border: 2px solid black;
+            
         }
 
         h2 {
@@ -99,6 +98,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            justify-content: flex-end; 
            width: 100%; 
         }
+        #reviewForm{
+            border-style:none;
+            border-radius:10%;
+        }
 
         /* Simple Star Rating */
         .rating-stars {
@@ -106,17 +109,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             flex-direction: row-reverse;
             justify-content: flex-end;
             gap: 5px;
+            
         }
 
         .rating-stars input {
-            display: none;
+            display:none;
+           border-style:solid;
+            border-color:grey;
+             
         }
 
         .rating-stars label {
             font-size: 30px;
-            color: #ddd;
+            color: #5a58584f;
             cursor: pointer;
             float: right;
+           
         }
 
         .rating-stars input:checked ~ label,
@@ -219,14 +227,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             
             <div class="logo">
-                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="75px" height="65px" class="logo-left"></a>
+                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="95px"
+                        height="85px" class="logo-left"></a>
             </div>
             <ul class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
                <li><a href="index.php">Home</a></li>
-                <li><a href="listing.php">Create Listing</a></li>
+                
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li><a href="logout.php">Logout</a></li>
+                    <li><a href="listing.php">Create Listing</a></li>
                 <?php else: ?>
                     <li><a href="Create_Acount.php">Create Account</a></li>
                     <li><a href="SignIn.php">Sign in</a></li>
@@ -243,8 +253,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
            
        <div class="nav-icons">
-    <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-    </div>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                    <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
+                <?php else: ?>
+                    <a href="SignIn.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
+            <?php endif; ?>
+    
+        </div>
 
         </nav>
     </header>

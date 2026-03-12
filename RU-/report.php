@@ -1,7 +1,21 @@
 <?php 
 session_start(); 
 require "connection.php"; 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    // Check if they are NOT logged in
+    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+        // Redirect them to the login page immediately
+        header('Location: SignIn.php');
+        exit; 
+    } else{
+        
+    }
+}
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +30,7 @@ require "connection.php";
 
     <script src="script.js" defer></script> <!-- defer so it loads html first then js -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">

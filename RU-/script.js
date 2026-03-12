@@ -234,7 +234,7 @@ function SignInErr(PasswordV) {
 }
 
 //Cannot fully validate the sign in page without a database, but I can add a simple check for admin login.
-function adminCheck() {
+/*function adminCheck() {
   const adminCheckbox = document.getElementById("admin");
   if (adminCheckbox) {
     if (adminCheckbox.checked && Password.value[0] === "#") {
@@ -242,6 +242,7 @@ function adminCheck() {
     }
   }
 }
+  */
 //__________________________________________________________________________________________________________________
 
 //using navigator to check if java is enabled and browser language
@@ -320,3 +321,7 @@ function moving() {
     }
   }
 }
+
+
+//Code to show email when contact seller is clicked
+
