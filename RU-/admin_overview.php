@@ -307,40 +307,13 @@ canvas {
             <div class="stat-number" id="totalUsers">0</div>
             <p>All registered users</p>
         </div>
-
-
-
-        <div class="stat-card">
-            <h3>New Users</h3>
-            <div class="stat-number" id="newUsers">0</div>
-            <p>This month</p>
-        </div>
-
-        <div class="stat-card">
-            <h3>Deleted Users</h3>
-            <div class="stat-number" id="deletedUsers">0</div>
-            <p>Total removed</p>
-        </div>
-    </div>
-
+                </div>
 
 
 
 
     <div class="charts-row">
 
-        <div class="chart-container">
-            <h3>User Distribution</h3>
-            <canvas id="userPieChart"></canvas>
-        </div>
-
-        <div class="chart-container">
-            <h3>Monthly Growth</h3>
-            <canvas id="growthLineChart"></canvas>
-        </div>
-    </div>
-
-</div>
 
         
 
@@ -358,17 +331,7 @@ canvas {
             <p>All items in inventory</p>
         </div>
 
-        <div class="stat-card">
-            <h3>Items Listed</h3>
-            <div class="stat-number" id="itemsListed">0</div>
-            <p>This month</p>
-        </div>
-
-        <div class="stat-card">
-            <h3>Items Removed</h3>
-            <div class="stat-number" id="itemsRemoved">0</div>
-            <p>Total removed</p>
-        </div>
+      
 
         </div>
 
@@ -381,24 +344,14 @@ canvas {
             <canvas id="categoryPieChart"></canvas>
         </div>
 
-        <div class="chart-container">
-            <h3>Items Growth</h3>
-            <canvas id="itemsGrowthChart"></canvas>
-        </div>
+  
 
     </div>
-</div>
 
-
+                </div>
 
 
          </div>
-
-
-
-
-
-
 
 <br>
 <br>
