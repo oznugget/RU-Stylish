@@ -104,7 +104,7 @@
             <tr>
                 <td> <a href = "listing.php"> Sell </a></td>
                 <td> <a href = "about.php#aboutCrew"> Crew </a></td>
-                <td> <a href = "#"> Youtube </a></td>
+                
             </tr>      
         </table>
     </div>

@@ -200,7 +200,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <td> <a href = "listing.php"> Sell </a></td>
                 <td> <a href = "about.php#aboutCrew"> Crew </a></td>
                 <!--This is a YOUTUBE link for marketing not our personal account-->
-                <td> <a href = "https://youtu.be/4ajmfzj9G1g?si=Nml_kssisJcEpLGM"> YouTube </a></td>
+                
             </tr>      
         </table>
     </div>
