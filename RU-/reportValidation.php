@@ -26,10 +26,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 
-}else{
+}/*else{
     header("Location: index.php");
 }
-
+*/
 function validate($input){
     $input=trim($input);
     $input=stripslashes($input);
