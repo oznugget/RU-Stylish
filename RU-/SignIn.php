@@ -120,15 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <br>
               <div>
-                <div class="remember">
-                    
-                   
-                    <input type="checkbox">
-                    <label>Remember Me </label>
-                    <br>
-                    
-
-                </div>            
+                         
                 <button type="submit" class="btn">Login </button>
                 
                 <div class="register">
