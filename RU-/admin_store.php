@@ -1,3 +1,42 @@
+<?php 
+session_start(); 
+require "connection.php";
+
+$searchResults = [];
+$searchPerformed = false;
+
+// Check if search was submitted
+if (isset($_GET['search']) && !empty($_GET['item'])) {
+    $searchTerm = $_GET['item'];
+    $searchPerformed = true;
+    
+    // Prepare search query to look in multiple columns
+    $stmt = $conn->prepare("SELECT * FROM all_listing WHERE 
+                            Title LIKE ? OR 
+                            Price LIKE ? OR 
+                            Size LIKE ? OR 
+                            Colour LIKE ?");
+    $likeTerm = "%" . $searchTerm . "%";
+    $stmt->bind_param("ssss", $likeTerm, $likeTerm, $likeTerm, $likeTerm);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    while ($row = $result->fetch_assoc()) {
+        $searchResults[] = $row;
+    }
+    $stmt->close();
+}
+
+// Get all listings for default display
+$sql = "SELECT * FROM all_listing";
+$allListings = $conn->query($sql);
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +56,128 @@
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
    
-<?php require "connection.php" ?>
+
+
+<style>
+
+
+   .AdminAttributes{
+        display:grid;
+        align-items:center;
+        justify-content:center;
+    }
+    .button{
+    margin:10px;
+    padding:10px 20px;
+    font-size:16px;
+    cursor:pointer;
+    
+
+    }
+
+
+    button:hover {
+    background-color: #0f766e;
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.2);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+
+
+
+.Find {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+
+
+.Find form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.Find h2 {
+    color: #216074;
+    margin: 0;
+}
+
+.Find input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.Find button {
+    padding: 12px 20px;
+    background: #008080;
+    color: white;
+    border: 2px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.Find button:hover {
+    background: #006666;
+}
+
+.Find a button {
+    background: #666;
+}
+
+.Find a button:hover {
+    background: #444;
+}
+
+.store_items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.items {
+    background: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 15px;
+    width: 250px;
+    transition: transform 0.3s;
+}
+
+.items:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.store_img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+</style>
+
+
+
+
 </head>
 
 <!-- Home Page. navigation bar with absolute and relative links -->
@@ -72,53 +232,104 @@
 
  
     <div class="Find">
-   
-        <form>
-             <h2> Find Specified Item</h2>
-            <input type="name" placeholder="Enter Username">
-        </form>
+            <form method="GET" action="">
+        <h2>Find Specified Item</h2>
+        <input type="text" name="item" placeholder="Search by title, price, size, or colour..." 
+               value="<?php echo isset($_GET['item']) ? htmlspecialchars($_GET['item']) : ''; ?>">
+        <button type="submit" name="search" value="1">Search</button>
+        <?php if (isset($_GET['search'])): ?>
+            <a href="admin_store.php"><button type="button">Clear</button></a>
+        <?php endif; ?>
+    </form>
+</div>
 
-    </div>
 
 
- 
- <section  class="store">
-<h2 style="color:rgb(33, 116, 103)">All Listings</h2>   
-<div class="store_items">
+<section class="store">
+    <h2 style="color:rgb(33, 116, 103)">
+        <?php echo $searchPerformed ? 'Search Results' : 'All Listings'; ?>
+    </h2>
+    
+    <?php if ($searchPerformed): ?>
+        <p style="margin-bottom: 15px; color: #666;">
+            Search results for: <strong>"<?php echo htmlspecialchars($_GET['item']); ?>"</strong> 
+            (<?php echo count($searchResults); ?> items found)
+        </p>
+    <?php endif; ?>
+    
+    <div class="store_items">
         <?php
-        // Fetch all listings from the database
-        $sql = "SELECT * FROM all_listing";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                // Convert the binary image data back to a base64 string for display
-                $imageData = base64_encode($row['Image']);
-                $imageSrc = 'data:image/jpeg;base64,' . $imageData;
-                
-                echo '<div class="items">
-                        <div id="picture">
-                            <a href="view_listing.php?id=' . $row['ListingID'] . '" class="listing-link">
-                                <img src="' . $imageSrc . '" alt="' . htmlspecialchars($row['Title']) . '" width="200px" height="200px" class="store_img">
-                            </a>
-                            <figcaption>
-                                <p><strong>' . htmlspecialchars($row['Title']) . '</strong></p>
-                                <p>R' . htmlspecialchars($row['Price']) . '</p>
-                                <p>Size: ' . htmlspecialchars($row['Size']) . ' | Colour: ' . htmlspecialchars($row['Colour']) . '</p>
-                            </figcaption>
-                        </div>
-                      </div>';
+        if ($searchPerformed) {
+            // Display search results
+            if (count($searchResults) > 0) {
+                foreach ($searchResults as $row) {
+                    $imageData = base64_encode($row['Image']);
+                    $imageSrc = 'data:image/jpeg;base64,' . $imageData;
+                    
+                    echo '<div class="items">
+                            <div id="picture">
+                                <a href="view_listing.php?id=' . $row['ListingID'] . '" class="listing-link">
+                                    <img src="' . $imageSrc . '" alt="' . htmlspecialchars($row['Title']) . '" width="200px" height="200px" class="store_img">
+                                </a>
+                                <figcaption>
+                                    <p><strong>' . htmlspecialchars($row['Title']) . '</strong></p>
+                                    <p>R' . htmlspecialchars($row['Price']) . '</p>
+                                    <p>Size: ' . htmlspecialchars($row['Size']) . ' | Colour: ' . htmlspecialchars($row['Colour']) . '</p>
+                                </figcaption>
+                            </div>
+                          </div>';
+                }
+            } else {
+                echo "<div style='text-align: center; padding: 40px; background: white; border: 2px solid black; border-radius: 8px;'>
+                        <p>No items found matching <strong>'" . htmlspecialchars($_GET['item']) . "'</strong></p>
+                        <p style='color: #666; margin-top: 10px;'>Try different keywords or clear the search</p>
+                      </div>";
             }
         } else {
-            echo "<p>No listings found.</p>";
+            // Display all listings
+            if ($allListings->num_rows > 0) {
+                while($row = $allListings->fetch_assoc()) {
+                    $imageData = base64_encode($row['Image']);
+                    $imageSrc = 'data:image/jpeg;base64,' . $imageData;
+                    
+                    echo '<div class="items">
+                            <div id="picture">
+                                <a href="view_listing.php?id=' . $row['ListingID'] . '" class="listing-link">
+                                    <img src="' . $imageSrc . '" alt="' . htmlspecialchars($row['Title']) . '" width="200px" height="200px" class="store_img">
+                                </a>
+                                <figcaption>
+                                    <p><strong>' . htmlspecialchars($row['Title']) . '</strong></p>
+                                    <p>R' . htmlspecialchars($row['Price']) . '</p>
+                                    <p>Size: ' . htmlspecialchars($row['Size']) . ' | Colour: ' . htmlspecialchars($row['Colour']) . '</p>
+                                </figcaption>
+                            </div>
+                          </div>';
+                }
+            } else {
+                echo "<p>No listings found.</p>";
+            }
         }
         ?>
     </div>
-
-                
 </section>
 
+
+
 <br>
+
+    <div class="AdminAttributes">
+        <p id="adminp"> This page is for admin use only. </p>
+
+         <a href="admin_overview.php"><button type="submit">Overview</button></a>
+         <br>
+
+         <a href="admin_reports.php"><button type="submit">Reports</button></a>
+        <br>
+
+       <a href="admin_reviews.php"><button type="submit">Reviews</button></a>
+    <br>
+     <br>
+    </div>
 
 
 

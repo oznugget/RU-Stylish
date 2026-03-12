@@ -1,7 +1,55 @@
 <?php 
 session_start(); 
 require "connection.php"; 
+
+// Initialize search variable
+
+
+// Initialize variables
+$searchTerm = '';
+$searchResults = null;
+$selectedCategory = '';
+
+// Check if category was selected
+if (isset($_GET['category']) && !empty($_GET['category'])) {
+    $selectedCategory = $_GET['category'];
+    
+    // Prepare category query
+    $stmt = $conn->prepare("SELECT * FROM all_listing WHERE category = ? ORDER BY ListingID DESC");
+    $stmt->bind_param("s", $selectedCategory);
+    $stmt->execute();
+    $searchResults = $stmt->get_result();
+    $stmt->close();
+}
+// Check if search was submitted
+else if (isset($_GET['search']) && !empty($_GET['query'])) {
+    $searchTerm = $_GET['query'];
+    
+    // Prepare search query
+    $stmt = $conn->prepare("SELECT * FROM all_listing WHERE 
+                            Title LIKE ? OR 
+                            Price LIKE ? OR 
+                            Size LIKE ? OR 
+                            Colour LIKE ? 
+                            ORDER BY ListingID DESC");
+    $likeTerm = "%" . $searchTerm . "%";
+    $stmt->bind_param("ssss", $likeTerm, $likeTerm, $likeTerm, $likeTerm);
+    $stmt->execute();
+    $searchResults = $stmt->get_result();
+    $stmt->close();
+} else {
+    // Get all listings if no search or category
+    $sql = "SELECT * FROM all_listing ORDER BY ListingID DESC";
+    $searchResults = $conn->query($sql);
+}
+
 ?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +65,126 @@ require "connection.php";
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
 
    
+
+
+
+<style>
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+
+
+.clear-btn {
+    margin-left: 10px;
+    color: #008080;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.clear-btn:hover {
+    text-decoration: underline;
+}
+
+
+.search-form {
+    background-image: none !important;
+    width: auto !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    text-align: left !important;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.search-input {
+    padding: 8px;
+    font-size: 14px;
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    width: 180px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #008080;
+}
+
+.search-btn {
+    padding: 8px 12px;
+    background-color: #008080;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #0f766e;
+}
+
+
+
+
+
+
+
+
+
+button {
+    padding: 0.6rem;
+    background-color: teal;
+    font-size: medium;
+    border-radius: 2rem;
+    color: #f6f3f3;
+}
+
+button:hover {
+    background-color: #0f766e;
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.2);
+}
+
+button:active {
+    transform: scale(0.96)
+}
+
+.category-form {
+    background-image: none !important;
+    width: auto !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    text-align: left !important;
+}
+
+
+#tag {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 30px;
+    border: none;
+    color: rgb(24, 83, 73);
+    font-weight: bold;
+    display: flex;
+    margin-left: 1rem;
+}
+
+
+
+
+</style>
+
+
 
 </head>
 
@@ -50,12 +218,24 @@ require "connection.php";
                 <li><a href="admin.php">Admin</a></li>
             </ul>
 
-            <div class="search-bar">
-                <input type="text" placeholder="Search...">
-            </div>
-        <div class="nav-icons">
-            <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-    
+
+            <div class="nav-icons">
+
+                       
+                        <form method="GET" action="" id="search-form" class="search-form">
+                         <input type="text" name="query" placeholder="Search items..." 
+                         value="<?php echo htmlspecialchars($searchTerm); ?>" class="search-input">
+                        <button type="submit" name="search" value="1" class="search-btn">Search</button>
+                        <?php if (isset($_GET['search'])): ?>
+                        <a href="index.php" class="clear-btn">Clear</a>
+                        <?php endif; ?>
+                             </form>
+                           <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
+                    </div>
+
+
+  
+                                
         </div>
 
         </nav>
@@ -67,44 +247,74 @@ require "connection.php";
     </header>
     <br>
 
-   <!-- creative feature- drop down menu-->
+
+
+
+
 <article class="Category">
-
-        
-        <h2 style="color:rgb(33, 116, 103)">Shop by category</h2>
-        <div class="listing-category">
-            <select name="tag" id="tag" placeholder="category">
-            <option value="shirt">Shirts</option>
-            <option value="dresses">Dresses</option>
-            <option value="shoes">Shoes</option>
-            <option value="pants">Pants</option>
-            <option value="hoodie">Hoodies</option>
-            <option value="caps_beanies">Caps & Beanies</option>
-        </div>
-        </select>
-        
-
-    </article>
+    <h2 style="color:rgb(33, 116, 103)">Shop by category</h2>
+    <div class="listing-category">
+        <form method="GET" action="" id="categoryForm" class="category-form">
+            <select name="category" id="tag" onchange="this.form.submit()">
+                <option value="">All Categories</option>
+                <option value="shirt" <?php echo ($selectedCategory == 'shirt') ? 'selected' : ''; ?>>Shirts</option>
+                <option value="dresses" <?php echo ($selectedCategory == 'dresses') ? 'selected' : ''; ?>>Dresses</option>
+                <option value="shoes" <?php echo ($selectedCategory == 'shoes') ? 'selected' : ''; ?>>Shoes</option>
+                <option value="pants" <?php echo ($selectedCategory == 'pants') ? 'selected' : ''; ?>>Pants</option>
+                <option value="hoodie" <?php echo ($selectedCategory == 'hoodie') ? 'selected' : ''; ?>>Hoodies</option>
+                <option value="caps_beanies" <?php echo ($selectedCategory == 'caps_beanies') ? 'selected' : ''; ?>>Caps & Beanies</option>
+            </select>
+            <?php if (!empty($searchTerm)): ?>
+                <input type="hidden" name="query" value="<?php echo htmlspecialchars($searchTerm); ?>">
+            <?php endif; ?>
+        </form>
+    </div>
+</article>
 
 
 
 <div class="line"></div>
 
-
-
-
-
-<section  class="store">
-<h2 style="color:rgb(33, 116, 103)">All Listings</h2>   
-<div class="store_items">
+<section class="store">
+    <h2 style="color:rgb(33, 116, 103)">
+        <?php 
+        if (!empty($selectedCategory)) {
+            $categoryNames = [
+                'shirt' => 'Shirts',
+                'dresses' => 'Dresses',
+                'shoes' => 'Shoes',
+                'pants' => 'Pants',
+                'hoodie' => 'Hoodies',
+                'caps_beanies' => 'Caps & Beanies'
+            ];
+            echo $categoryNames[$selectedCategory] . ' Category';
+        } else if (isset($_GET['search']) && !empty($_GET['query'])) {
+            echo 'Search Results for "' . htmlspecialchars($searchTerm) . '"';
+        } else {
+            echo 'All Listings';
+        }
+        ?>
+    </h2>
+    
+    <?php if (!empty($selectedCategory)): ?>
+        <p style="margin-bottom: 15px; color: #666;">
+            Found <?php echo $searchResults->num_rows; ?> item(s) in this category
+            <a href="index.php" style="color: #008080; margin-left: 10px;">View All</a>
+        </p>
+    <?php elseif (isset($_GET['search']) && !empty($_GET['query'])): ?>
+        <p style="margin-bottom: 15px; color: #666;">
+            Found <?php echo $searchResults->num_rows; ?> item(s)
+        </p>
+    <?php endif; ?>
+    
+   
+    <div class="store_items">
         <?php
-        // Fetch all listings from the database
-        $sql = "SELECT * FROM all_listing";
-        $result = $conn->query($sql);
+        if ($searchResults && $searchResults->num_rows > 0) {
+            while($row = $searchResults->fetch_assoc()) {
 
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                // Convert the binary image data back to a base64 string for display
+                // Convert the binary image data back to a base64 string for display    !!!!!!
+
                 $imageData = base64_encode($row['Image']);
                 $imageSrc = 'data:image/jpeg;base64,' . $imageData;
                 
@@ -122,17 +332,24 @@ require "connection.php";
                       </div>';
             }
         } else {
-            echo "<p>No listings found.</p>";
+            echo "<div style='text-align: center; padding: 40px; background: white; border: 2px solid black; border-radius: 8px; width: 100%;'>
+                    <p>No items found.</p>";
+            if (!empty($selectedCategory)) {
+                echo "<p style='color: #666; margin-top: 10px;'>Try another category or <a href='index.php' style='color: #008080;'>view all listings</a></p>";
+            } else if (isset($_GET['search']) && !empty($_GET['query'])) {
+                echo "<p style='color: #666; margin-top: 10px;'>Try different keywords or <a href='index.php' style='color: #008080;'>view all listings</a></p>";
+            }
+            echo "</div>";
         }
         ?>
     </div>
-
-                
 </section>
 
 
 
 
+
+        
 
 
 <br>

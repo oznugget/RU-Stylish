@@ -21,6 +21,40 @@
 
 <style>
 
+    .B{
+    margin:10px;
+    padding:10px 20px;
+    font-size:16px;
+    cursor:pointer;
+    
+
+    }
+
+
+.B:hover {
+    background-color: #0f766e;
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.2);
+}
+
+.B:active {
+    transform: scale(0.96);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   body {
             font-family: Arial, sans-serif;
@@ -176,11 +210,11 @@
 
 
     .icon {
-        width: 40px;        /* Set width */
-        height: 40px;       /* Set height */
-        border-radius: 50%; /* Makes it circular */
-        object-fit: cover;  /* Ensures image fits without stretching */
-        border: 2px solid #008080; /* Optional: teal border */
+        width: 40px;      
+        height: 40px;       
+        border-radius: 50%; 
+        object-fit: cover;  
+        border: 2px solid #008080; 
         margin-right: 10px;
     }
 
@@ -235,7 +269,7 @@
 
 <h2>Customer Reviews</h2>
     
-    <!-- Review 1 -->
+ 
     <div class="review-card">
         <div class="user-header">
             <img class="icon" src="images/DummyIcon.png">
@@ -245,7 +279,7 @@
         <p class="comment">Amazing website! Very easy to use and great selection of items.</p>
     </div>
 
-    <!-- Review 2 -->
+ 
     <div class="review-card">
         <div class="user-header">
               <img class="icon" src="images/DummyIcon.png">
@@ -259,7 +293,19 @@
 </section>
 
 
+      <div class="AdminAttributes">
+        <p id="adminp"> This page is for admin use only. </p>
 
+         <a href="admin_overview.php" ><button type="submit" class="B" >Overview</button></a>
+         <br>
+
+         <a href="admin_reports.php"><button type="submit" class="B" >Reports</button></a>
+        <br>
+
+    
+        <a href="admin_store.php" ><button type="submit" class="B">Store</button></a>
+    <br>
+    </div>
 
 
 

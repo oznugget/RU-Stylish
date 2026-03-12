@@ -1,7 +1,101 @@
 <?php 
 session_start(); 
-require "connection.php"; 
+require "connection.php";
+
+
+$userStats = [];
+
+// Total users
+$totalQuery = "SELECT COUNT(*) as total FROM user";
+$totalResult = $conn->query($totalQuery);
+$totalRow = $totalResult->fetch_assoc();
+$userStats['total'] = $totalRow['total'];
+
+// For now, set new users to 0 since we don't have a date column
+$userStats['new'] = 0;
+
+// Deleted users - set to 0 if no status column
+$userStats['deleted'] = 0;
+
+// For monthly growth, use empty data since no date column
+$monthlyLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+$monthlyCounts = [0, 0, 0, 0, 0, 0];
+
+// For pie chart
+$activeCount = $userStats['total'];
+$deletedCount = 0;
+
+
+
+
+
+//Inventory stuff
+
+
+$inventoryStats = [
+    'total' => 0,
+    'listed' => 0,
+    'removed' => 0
+];
+
+$categoryData = [
+    'labels' => ['Shirts', 'Dresses', 'Shoes', 'Pants', 'Hoodies', 'Caps & Beanies'],
+    'counts' => [0, 0, 0, 0, 0, 0]
+];
+
+$monthlyGrowth = [
+    'labels' => ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    'items' => [0, 0, 0, 0, 0, 0]
+];
+
+// Get total items from all_listing (this should work)
+$totalQuery = "SELECT COUNT(*) as total FROM all_listing";
+$totalResult = $conn->query($totalQuery);
+if ($totalResult) {
+    $totalRow = $totalResult->fetch_assoc();
+    $inventoryStats['total'] = $totalRow['total'];
+}
+
+
+$inventoryStats['listed'] = 0;
+
+// Try to get category data if category column exists
+$checkCategory = $conn->query("SHOW COLUMNS FROM all_listing LIKE 'category'");
+if ($checkCategory && $checkCategory->num_rows > 0) {
+    $categoryQuery = "SELECT category, COUNT(*) as count FROM all_listing GROUP BY category";
+    $categoryResult = $conn->query($categoryQuery);
+    
+    if ($categoryResult && $categoryResult->num_rows > 0) {
+        $catLabels = [];
+        $catCounts = [];
+        
+        while ($row = $categoryResult->fetch_assoc()) {
+            $catLabels[] = $row['category'];
+            $catCounts[] = $row['count'];
+        }
+        
+        if (!empty($catLabels)) {
+            $categoryData['labels'] = $catLabels;
+            $categoryData['counts'] = $catCounts;
+        }
+    }
+}
+
+
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -299,68 +393,29 @@ canvas {
 
          </div>
 
-<div class="Activity">    
-            <h2 class="section-title">Site Activity</h2>
-
-    <div class="stats-row">
-        <div class="stat-card">
-            <h3>Today's Visitors</h3>
-            <div class="stat-number" id="todayVisitors">0</div>
-            <p>Active today</p>
-        </div>
-
-
-        <div class="stat-card">
-            <h3>This Month</h3>
-            <div class="stat-number" id="monthlyVisitors">0</div>
-            <p>Total this month</p>
-        </div>
-
-
-        <div class="stat-card">
-            <h3>Average Daily</h3>
-            <div class="stat-number" id="avgDailyVisitors">0</div>
-            <p>Last 30 days</p>
-        </div>
-
-
-    </div>
 
 
 
-    <div class="charts-row">
-        
+
+
+
+<br>
+<br>
+
+
+
     
-        <div class="chart-container">
-            <h3>Daily Visitors (This Week)</h3>
-            <canvas id="dailyVisitorsChart"></canvas>
-        </div>
-
-
-        <div class="chart-container">
-            <h3>Monthly Visitors (Last 6 Months)</h3>
-            <canvas id="monthlyVisitorsChart"></canvas>
-        </div>
-
-    </div>
-
-
-</div>
-
-
-<br>
-<br>
-
-
- 
- <div class="AdminAttributes">
-        <button type="submit">Reports</button>
+        <div class="AdminAttributes">
+     
+       
+         <a href="admin_reports.php"><button type="submit">Reports</button></a>
         <br>
-        <button type="submit">Reviews</button>
+
+       <a href="admin_reviews.php"><button type="submit">Reviews</button></a>
     <br>
-        <button type="submit">Store</button>
+        <a href="admin_store.php" ><button type="submit">Store</button></a>
     <br>
-    </div>
+                </div>
 
 </body>
         
@@ -426,131 +481,122 @@ canvas {
 
 <script>
 
+ const userStats = {
+        total: <?php echo $userStats['total']; ?>,
+        new: <?php echo $userStats['new']; ?>,
+        deleted: <?php echo $userStats['deleted']; ?>
+    };
+    
+    const monthlyData = {
+        labels: <?php echo json_encode($monthlyLabels); ?>,
+        users: <?php echo json_encode($monthlyCounts); ?>
+    };
 
- document.addEventListener('DOMContentLoaded', function() {
 
-//user data
-const userData = {
-    total: 1250,
-    new: 145,
-    deleted: 23
+
+
+    
+
+const inventoryStats = {
+    total: <?php echo $inventoryStats['total']; ?>,
+    listed: <?php echo $inventoryStats['listed']; ?>,
+    removed: <?php echo $inventoryStats['removed']; ?>
+};
+
+const categoryData = {
+    labels: <?php echo json_encode($categoryData['labels']); ?>,
+    counts: <?php echo json_encode($categoryData['counts']); ?>
+};
+
+const monthlyGrowth = {
+    labels: <?php echo json_encode($monthlyGrowth['labels']); ?>,
+    items: <?php echo json_encode($monthlyGrowth['items']); ?>
 };
 
 
 
 
-const monthlyData = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-    users: [1000, 1050, 1100, 1150, 1200, 1250]
-};
-
-// Null Check !!
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get elements
         const totalUsersEl = document.getElementById('totalUsers');
         const newUsersEl = document.getElementById('newUsers');
         const deletedUsersEl = document.getElementById('deletedUsers');
         const userPieChart = document.getElementById('userPieChart');
         const growthLineChart = document.getElementById('growthLineChart');
 
-        // Update stat numbers if elements exist
-        if (totalUsersEl) totalUsersEl.textContent = userData.total;
-        if (newUsersEl) newUsersEl.textContent = userData.new;
-        if (deletedUsersEl) deletedUsersEl.textContent = userData.deleted;
+        // Update stat numbers with REAL data from PHP
+        if (totalUsersEl) totalUsersEl.textContent = userStats.total;
+        if (newUsersEl) newUsersEl.textContent = userStats.new;
+        if (deletedUsersEl) deletedUsersEl.textContent = userStats.deleted;
 
-
-
-
-
-//  Pie Chart (shows distribution)
-if(userPieChart){
-const pieCtx = document.getElementById('userPieChart').getContext('2d');
-new Chart(pieCtx, {
-    type: 'pie',
-    data: {
-        labels: ['Active Users', 'Deleted Users'],
-        datasets: [{
-            data: [userData.total, userData.deleted],
-            backgroundColor: ['#36A2EB', '#FF6384'],
-            hoverOffset: 4
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            legend: {
-                position: 'bottom'
-            }
+        // Pie Chart (shows distribution)
+        if(userPieChart){
+            const pieCtx = userPieChart.getContext('2d');
+            new Chart(pieCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Active Users', 'Deleted Users'],
+                    datasets: [{
+                        data: [userStats.total, userStats.deleted],
+                        backgroundColor: ['#36A2EB', '#FF6384'],
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
         }
-    }
-});
-}
- 
 
-
-
-//  Line Chart (shows growth)
-if(growthLineChart){
-
-
-const lineCtx = document.getElementById('growthLineChart').getContext('2d');
-new Chart(lineCtx, {
-    type: 'line',
-    data: {
-        labels: monthlyData.labels,
-        datasets: [{
-            label: 'Total Users',
-            data: monthlyData.users,
-            borderColor: '#36A2EB',
-            backgroundColor: 'rgba(54, 162, 235, 0.1)',
-            tension: 0.1,
-            fill: true
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            legend: {
-                display: false
-            }
-        },
-        scales: {
-            y: {
-                beginAtZero: true
-            }
+        // Line Chart (shows growth)
+        if(growthLineChart){
+            const lineCtx = growthLineChart.getContext('2d');
+            new Chart(lineCtx, {
+                type: 'line',
+                data: {
+                    labels: monthlyData.labels,
+                    datasets: [{
+                        label: 'Total Users',
+                        data: monthlyData.users,
+                        borderColor: '#36A2EB',
+                        backgroundColor: 'rgba(54, 162, 235, 0.1)',
+                        tension: 0.1,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
         }
-    }
-});
-
-}
 
 
-
-
-//  INVENTORY DATA
-const inventoryData = {
-    total: 345,
-    listed: 28,
-    removed: 12,
-    categories: {
-        labels: ['Shirts', 'Dresses', 'Shoes', 'Pants', 'Hoodies', 'Caps & Beanies'],
-        counts: [98, 45, 67, 52, 43, 40]  // Total: 345 items
-    },
-    growth: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-        items: [280, 295, 310, 320, 335, 345]
-    }
-};
-
-// Get inventory elements
+//Inventory Data
 const totalItemsEl = document.getElementById('totalItems');
 const itemsListedEl = document.getElementById('itemsListed');
 const itemsRemovedEl = document.getElementById('itemsRemoved');
 const categoryPieChart = document.getElementById('categoryPieChart');
 const itemsGrowthChart = document.getElementById('itemsGrowthChart');
 
-// Update inventory stat numbers
-if (totalItemsEl) totalItemsEl.textContent = inventoryData.total;
-if (itemsListedEl) itemsListedEl.textContent = inventoryData.listed;
-if (itemsRemovedEl) itemsRemovedEl.textContent = inventoryData.removed;
+// Update inventory stat numbers with REAL data
+if (totalItemsEl) totalItemsEl.textContent = inventoryStats.total;
+if (itemsListedEl) itemsListedEl.textContent = inventoryStats.listed;
+if (itemsRemovedEl) itemsRemovedEl.textContent = inventoryStats.removed;
 
 // Category Pie Chart
 if (categoryPieChart) {
@@ -558,16 +604,12 @@ if (categoryPieChart) {
     new Chart(categoryCtx, {
         type: 'pie',
         data: {
-            labels: inventoryData.categories.labels,
+            labels: categoryData.labels,
             datasets: [{
-                data: inventoryData.categories.counts,
+                data: categoryData.counts,
                 backgroundColor: [
-                    '#FF6B6B',  // Shirts - Red
-                    '#4ECDC4',  // Dresses - Turquoise
-                    '#45B7D1',  // Shoes - Blue
-                    '#96CEB4',  // Pants - Green
-                    '#FFE194',  // Hoodies - Yellow
-                    '#D4A5A5'   // Caps & Beanies - Pink/Brown
+                    '#FF6B6B', '#4ECDC4', '#45B7D1', 
+                    '#96CEB4', '#FFE194', '#D4A5A5'
                 ],
                 hoverOffset: 4
             }]
@@ -577,11 +619,7 @@ if (categoryPieChart) {
             plugins: {
                 legend: {
                     position: 'bottom',
-                    labels: {
-                        font: {
-                            size: 11
-                        }
-                    }
+                    labels: { font: { size: 11 } }
                 },
                 tooltip: {
                     callbacks: {
@@ -589,7 +627,7 @@ if (categoryPieChart) {
                             const label = context.label || '';
                             const value = context.raw || 0;
                             const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                            const percentage = ((value / total) * 100).toFixed(1);
+                            const percentage = total > 0 ? ((value / total) * 100).toFixed(1) : 0;
                             return `${label}: ${value} items (${percentage}%)`;
                         }
                     }
@@ -605,10 +643,10 @@ if (itemsGrowthChart) {
     new Chart(growthCtx, {
         type: 'line',
         data: {
-            labels: inventoryData.growth.labels,
+            labels: monthlyGrowth.labels,
             datasets: [{
                 label: 'Total Items',
-                data: inventoryData.growth.items,
+                data: monthlyGrowth.items,
                 borderColor: '#96CEB4',
                 backgroundColor: 'rgba(150, 206, 180, 0.1)',
                 borderWidth: 3,
@@ -624,9 +662,7 @@ if (itemsGrowthChart) {
         options: {
             responsive: true,
             plugins: {
-                legend: {
-                    display: false
-                },
+                legend: { display: false },
                 tooltip: {
                     callbacks: {
                         label: function(context) {
@@ -637,220 +673,32 @@ if (itemsGrowthChart) {
             },
             scales: {
                 y: {
-                    beginAtZero: false,
-                    grid: {
-                        color: 'rgba(0,0,0,0.05)'
-                    },
-                    title: {
-                        display: true,
-                        text: 'Number of Items'
-                    }
+                    beginAtZero: true,
+                    grid: { color: 'rgba(0,0,0,0.05)' },
+                    title: { display: true, text: 'Number of Items' }
                 },
                 x: {
-                    grid: {
-                        display: false
-                    },
-                    title: {
-                        display: true,
-                        text: 'Month'
-                    }
+                    grid: { display: false },
+                    title: { display: true, text: 'Month' }
                 }
             }
         }
     });
 }
 
-// category breakdown 
-const inventoryHTML = `
-    <div class="category-breakdown">
-        <h4>Category Breakdown:</h4>
-        <ul style="list-style: none; padding: 0;">
-            ${inventoryData.categories.labels.map((cat, index) => 
-                `<li style="margin: 5px 0;">
-                    <span style="display:inline-block; width:15px; height:15px; background-color: ${getCategoryColor(index)}; margin-right:10px;"></span>
-                    ${cat}: ${inventoryData.categories.counts[index]} items
-                </li>`
-            ).join('')}
-        </ul>
-    </div>
-`;
-
-
-//COLORS
+// Colors function for category breakdown
 function getCategoryColor(index) {
     const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFE194', '#D4A5A5'];
     return colors[index];
 }
+     
 
 
-
-// ACTIVITY DATA ///////////////////////////////////////
-
-const activityData = {
-    today: 156,
-    monthly: 4320,
-    avgDaily: 144,
-    daily: {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        visitors: [120, 145, 132, 168, 190, 210, 156] // Today is Sunday (156)
-    },
-    monthly: {
-        labels: ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb'],
-        visitors: [3850, 4020, 3950, 4200, 4450, 4320] // Current month: 4320
-    },
-    hourly: {
-        labels: ['12am', '2am', '4am', '6am', '8am', '10am', '12pm', '2pm', '4pm', '6pm', '8pm', '10pm'],
-        visitors: [12, 8, 5, 15, 45, 78, 102, 98, 85, 110, 75, 30]
-    }
-};
-
-// Find busiest day
-const busiestDayIndex = activityData.daily.visitors.indexOf(Math.max(...activityData.daily.visitors));
-const busiestDay = activityData.daily.labels[busiestDayIndex];
-const busiestDayCount = Math.max(...activityData.daily.visitors);
-
-// Get  elements
-const todayVisitorsEl = document.getElementById('todayVisitors');
-const monthlyVisitorsEl = document.getElementById('monthlyVisitors');
-const avgDailyVisitorsEl = document.getElementById('avgDailyVisitors');
-const dailyVisitorsChart = document.getElementById('dailyVisitorsChart');
-const monthlyVisitorsChart = document.getElementById('monthlyVisitorsChart');
-const busiestDayEl = document.getElementById('busiestDay');
-const busiestDayCountEl = document.getElementById('busiestDayCount');
-
-// Update  stat numbers
-if (todayVisitorsEl) todayVisitorsEl.textContent = activityData.today;
-if (monthlyVisitorsEl) monthlyVisitorsEl.textContent = activityData.monthly.toLocaleString();
-if (avgDailyVisitorsEl) avgDailyVisitorsEl.textContent = activityData.avgDaily;
-if (busiestDayEl) busiestDayEl.textContent = busiestDay;
-if (busiestDayCountEl) busiestDayCountEl.textContent = `${busiestDayCount} visitors`;
-
-// Daily Visitors Bar Chart
-if (dailyVisitorsChart) {
-    const dailyCtx = dailyVisitorsChart.getContext('2d');
-    new Chart(dailyCtx, {
-        type: 'bar',
-        data: {
-            labels: activityData.daily.labels,
-            datasets: [{
-                label: 'Visitors',
-                data: activityData.daily.visitors,
-                backgroundColor: 'rgba(255, 107, 107, 0.7)',
-                borderColor: '#FF6B6B',
-                borderWidth: 1,
-                borderRadius: 5,
-                barPercentage: 0.7
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    display: false
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            return `${context.raw} visitors`;
-                        }
-                    }
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    grid: {
-                        color: 'rgba(0,0,0,0.05)'
-                    },
-                    title: {
-                        display: true,
-                        text: 'Number of Visitors'
-                    }
-                }
-            }
-        }
-    });
-}
-
-// Monthly Visitors Line Chart
-if (monthlyVisitorsChart) {
-    const monthlyCtx = monthlyVisitorsChart.getContext('2d');
-    new Chart(monthlyCtx, {
-        type: 'line',
-        data: {
-            labels: activityData.monthly.labels,
-            datasets: [{
-                label: 'Monthly Visitors',
-                data: activityData.monthly.visitors,
-                borderColor: '#4ECDC4',
-                backgroundColor: 'rgba(78, 205, 196, 0.1)',
-                borderWidth: 3,
-                pointBackgroundColor: '#4ECDC4',
-                pointBorderColor: 'white',
-                pointBorderWidth: 2,
-                pointRadius: 5,
-                pointHoverRadius: 7,
-                tension: 0.1,
-                fill: true
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            return `${context.raw.toLocaleString()} visitors`;
-                        }
-                    }
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: false,
-                    grid: {
-                        color: 'rgba(0,0,0,0.05)'
-                    },
-                    title: {
-                        display: true,
-                        text: 'Number of Visitors'
-                    }
-                }
-            }
-        }
-    });
-}
-
-// Peak Hours Visualization
-const peakHoursEl = document.getElementById('peakHours');
-if (peakHoursEl) {
-    const maxHourly = Math.max(...activityData.hourly.visitors);
-    
-    let peakHTML = '';
-    activityData.hourly.labels.forEach((label, index) => {
-        const visitors = activityData.hourly.visitors[index];
-        const height = (visitors / maxHourly) * 80; // Max height 80px
         
-        peakHTML += `
-            <div class="hour-bar">
-                <div class="hour-label">${label}</div>
-                <div class="hour-value">
-                    <div class="hour-fill" style="height: ${height}px;"></div>
-                    <span class="hour-number">${visitors}</span>
-                </div>
-            </div>
-        `;
+
+
+
     });
-    
-    peakHoursEl.innerHTML = peakHTML;
-}
-
-
-
-
- });
-
-
 
 </script>
 
