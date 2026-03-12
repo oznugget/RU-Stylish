@@ -9,11 +9,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Redirect them to the login page immediately
         header('Location: SignIn.php');
         exit; 
+    } else{
+        
     }
 }
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
