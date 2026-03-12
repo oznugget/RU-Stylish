@@ -61,8 +61,8 @@ button:active {
              </div>
 
             <div class="logo">
-                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="95px"
-                        height="85px" class="logo-left"></a>
+                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="75px"
+                        height="65px" class="logo-left"></a>
             </div>
             <ul class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
