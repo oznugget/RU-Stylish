@@ -1,8 +1,42 @@
+<?php
+session_start();
+require "connection.php";
+
+$status = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || !isset($_SESSION['user_id'])) { //have to be logged in to delete account
+        header('Location: SignIn.php');
+        exit;
+    }
+
+    if (isset($_POST['cancel'])) {
+        header('Location: index.php'); //go home
+        exit;
+    } else{
+        $userId = $_SESSION['user_id'];
+        $deleteQuery = $conn->prepare("DELETE FROM user WHERE UserID = ?"); //query to delete account
+        $deleteQuery->bind_param("i", $userId);
+
+        if ($deleteQuery->execute()) {
+            session_unset();
+            session_destroy();
+            echo '<script>
+                    alert("Account deleted successfully!");
+                    window.location.href = "index.php";   
+                  </script>';
+            exit;         
+        } else {
+            $status = "Error: " . $conn->error;
+        }
+    }
+}
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
-    <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
-<head>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +45,6 @@
 
 
 <style>
-html{
-font-size: 1rem;
-font-family: "TikTok Sans", sans-serif;  
-}
 
 
     body{
@@ -23,12 +53,9 @@ font-family: "TikTok Sans", sans-serif;
         height:100vh;  
         align-items:center;
         background-image: url("images/delAcc.webp");
-        background-position: top;
-        background-repeat: no-repeat;
-        background-size: cover;
+         background-repeat: no-repeat;
+        background-position: center center;
         display:flex;
-        font-family: "TikTok Sans";
-
 
         align-items: center;
         justify-content: center;
@@ -39,36 +66,31 @@ font-family: "TikTok Sans", sans-serif;
 
 
     .deleteSection{
-        font-family: "TikTok Sans";
-
+        font-family:serif;
         display:flex;
          flex-direction:column;
         align-items: center;
         padding: 10 px;
         border-radius: 20px;
-        border-style: solid;
+        border-style: double;
         justify-content: center;
         text-align:center;
          width:350px;
          padding-bottom:50px ;
-        background-image:url("images/nav.png");
-          flex-direction:column;
-                  border-color:teal;
-        box-shadow:0 2px 10px rgba(0,0,0,0.1);
+         background-color: white;
 
+          flex-direction:column;
          
 
        
 
     }
    
-    button{
-    padding: 0.6rem;
-    background-color: teal;
-    font-size: medium;
-    border-radius: 2rem;
-    color: #f6f3f3;
-
+    .button{
+    margin:10px;
+    padding:10px 20px;
+    font-size:16px;
+    cursor:pointer;
     
 
     }
@@ -86,8 +108,7 @@ button:active {
 
     h1{
         color:teal;
-                font-family: "TikTok Sans";
-
+        font-family: Georgia, 'Times New Roman', Times, serif;
     }
 
 
@@ -96,20 +117,19 @@ button:active {
     <?php require "connection.php" ?>
 </head>
 <body>
-    <section class="deleteSection">
+    <form class="deleteSection" method="post" action="DeleteAcc.php">
 
     <h1>Delete Account</h1>
     <br>
 
-    <h4>Are you sure you want to delete your Account</h4>
+    <h4>Are you sure you want to delete your Account?</h4>
     <br>
 
-    <div>
-    <button>Yes</button>        <button>No</button>
-    <div>
+    <button class="button" type="submit" name="submit" value="Submit"><b>Yes</b></button>
+    <button class="button" type="submit" name="cancel" value="Cancel"><b>Cancel</b></button>
 
 
-    </section>
+</form>
     
 </body>
 </html>

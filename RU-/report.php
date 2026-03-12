@@ -1,7 +1,20 @@
 <?php 
 session_start(); 
 require "connection.php"; 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    // Check if they are NOT logged in
+    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+        // Redirect them to the login page immediately
+        header('Location: SignIn.php');
+        exit; 
+    }
+}
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +29,7 @@ require "connection.php";
 
     <script src="script.js" defer></script> <!-- defer so it loads html first then js -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
@@ -36,16 +50,14 @@ require "connection.php";
             </div>
             
             <div class="logo">
-                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="95px"
-                        height="85px" class="logo-left"></a>
+                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="75px" height="65px" class="logo-left"></a>
             </div>
             <ul id="nav_elems" class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
                 <li><a href="index.php">Home</a></li>
-                
+                <li><a href="listing.php">Create Listing</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li><a href="logout.php">Logout</a></li>
-                    <li><a href="listing.php">Create Listing</a></li>
                 <?php else: ?>
                     <li><a href="Create_Acount.php">Create Account</a></li>
                     <li><a href="SignIn.php">Sign in</a></li>
@@ -62,13 +74,8 @@ require "connection.php";
 
             
         <div class="nav-icons">
-            <?php if (isset($_SESSION['user_id'])): ?>
-                    <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-                <?php else: ?>
-                    <a href="SignIn.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-            <?php endif; ?>
-    
-        </div>
+    <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
+    </div>
 
         </nav>
     </header>

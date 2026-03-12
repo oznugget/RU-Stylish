@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password_input = $_POST['password'];
 
     // 1. Prepare a statement to fetch the user by username or email
-    $stmt = $conn->prepare("SELECT UserID, username, Password, permission FROM user WHERE username = ? OR email = ?");
+    $stmt = $conn->prepare("SELECT UserID, username, password FROM user WHERE username = ? OR email = ?");
     $stmt->bind_param("ss", $username_input, $username_input);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -35,11 +35,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $result->fetch_assoc();
         
         // 2. Verify the password
-        if (password_hash($password_input, $user['password'])) {
+        if (password_verify($password_input, $user['password'])) {
             // 3. Create Session variables
             $_SESSION['user_id'] = $user['UserID'];
             $_SESSION['username'] = $user['username'];
-            $_SESSION['permission'] = $user['permission'];
             $_SESSION['logged_in'] = true;
             
             // Redirect to home page
@@ -64,8 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             
             <div class="logo">
-                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="95px"
-                        height="85px" class="logo-left"></a>
+                <a href="index.php"><img src="images/rustylishlogo.png" alt="RU Stylish Logo" width="75px" height="65px" class="logo-left"></a>
             </div>
             <ul class="nav-links">
                 <li><a href=# onclick="closeSidebar()"><img src="images/closeIcon.png" alt="Close Icon" width="30px" height="30px"></a></li>
@@ -89,13 +87,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             
          <div class="nav-icons">
-            <?php if (isset($_SESSION['user_id'])): ?>
-                    <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-                <?php else: ?>
-                    <a href="SignIn.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
-            <?php endif; ?>
-    
-        </div>
+    <a href="MyAccount.php"><img src="images/AccountIcon.png" width="50px" height="50px" id="myAicon"/></a>
+    </div>
 
         </nav>
     </header>
