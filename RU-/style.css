@@ -36,16 +36,16 @@ Map PAGE ------------------------------------------------------------line 701 to
 /*General styles across all pages*/
 
 html{
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-family: "TikTok Sans";
     margin: 0 !important;
-  padding: 0 !important;;
+    padding: 0 !important;;
     background-color: teal;
 }
 body{
     font-family: "TikTok Sans", sans-serif;
     margin: 0 !important;
-  padding: 0 !important;
+    padding: 0 !important;
     background-color: rgb(243, 241, 241);
 }
 
@@ -57,6 +57,9 @@ header{
     justify-content: center;
     align-items: center;
     background-image: url('images/nav.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
     padding: 0 !important;
     Margin:0 !important;
 
@@ -316,7 +319,7 @@ dl{
 
 nav{
     width: 100%;
-    background-image: url('images/nav.png');
+    
     display: flex;
     align-items: center;
     justify-content:flex-start;
