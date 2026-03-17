@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         @import url('style.css');
     </style>
 
-       <script src="Report.js" defer></script>
+       <!-- <script src="Report.js" defer></script> -->
 
     <script src="script.js" defer></script> <!-- defer so it loads html first then js -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <?php require "reportValidation.php"?>
-    <script src="Reports.js" defer></script>
+    <!-- <script src="Reports.js" defer></script> -->
 </head>
 
 <!--report any issues on the page -->

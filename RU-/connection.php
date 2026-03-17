@@ -1,6 +1,6 @@
 <?php
 
-$servername= "cs3-dev.ict.ru.ac.za"; //stays the same for everyone
+$servername= "cs3-dev"; //stays the same for everyone
 $username="G24N9666"; // student id all capitals e.g. G+stuent id
 $password="NtsAbo24"; //Find this on the email sent by the instructor
 $dbname="group4";

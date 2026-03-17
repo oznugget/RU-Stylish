@@ -9,16 +9,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     try{
         require_once "connection.php";
 
-        $query ="INSERT INTO report (MisconductType, ReportedUsername, MisconductDescription) VALUES (?,?,?);";
-        $data = $conn->prepare($query);
-        var_dump($misconduct);
-        $data->execute([$misconduct, $perp, $description]);
-        $conn = null;
-        $data = null;
+        $query ="INSERT INTO report (MisconductType, MisconductDescription, ReportedUsername) VALUES (?,?,?);";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("sss", $misconduct, $perp, $description);
+        $stmt->execute();
+        $stmt->close();
+        $conn->close();
         header("Location: report.php");
         die();
 
-    }catch(PDOException $e){
+    }catch(Exception $e){
         die("Error found: ". $e->getMessage());
     }
 
@@ -26,39 +26,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 
-}/*else{
-    header("Location: index.php");
 }
-*/
 function validate($input){
     $input=trim($input);
     $input=stripslashes($input);
-    // $input=htmlspecialchars($input);
+    $input=htmlspecialchars($input);
     return $input;
 }
 
-
-// $misconduct=$nameError=$description="";
-
-
- 
-// if($_SERVER["REQUEST_METHOD"] == "POST"){
-//     if(empty($_POST["misconduct"])){
-//         $misconductError= "Please choose an option";
-//     }else{ 
-//         $misconduct=validate($_POST["misconduct"]);
-//     if(empty($_POST["name"])){
-//         $nameError= "Specify user in speculation";
-//     }else{
-//         $name=validate($_POST["name"]);
-//     }
-//     if(empty($_POST["description"])){
-//         $description= "Description is needed for investigation";
-//     }else{
-//         $description=validate($_POST["description"]);
-//     }
-// }
-// }
 
 
 
