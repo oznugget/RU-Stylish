@@ -69,11 +69,7 @@ else if (isset($_GET['search']) && !empty($_GET['query'])) {
 
 
 <style>
-.nav-icons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+
 
 
 .clear-btn {
@@ -98,18 +94,18 @@ else if (isset($_GET['search']) && !empty($_GET['query'])) {
     text-align: left !important;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 2px !important;
 }
 
 
 .search-input {
-    padding: 8px;
-    font-size: 14px;
-    border: 2px solid #ddd;
-    border-radius: 50px;
-    width: 180px;
-    outline: none;
-    transition: border-color 0.3s ease;
+    width: 100% !important;
+        max-width: 110px !important; 
+        min-width: 60px !important;
+        padding: 6px !important;
+        font-size: 12px !important;
+        border-radius: 20px !important;
+        border: 1px solid #ccc !important;
 }
 
 .search-input:focus {
@@ -246,9 +242,6 @@ button:active {
     
     </header>
         <br>
-
-    </header>
-    <br>
 
 
 

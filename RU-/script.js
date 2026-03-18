@@ -312,7 +312,7 @@ function moving() {
   id = setInterval(frame, 10); //frame runs every 10ms
 
   function frame() {
-    if (pos == 350) {
+    if (pos == 550) {
       clearInterval(id); //max movement
     } else {
       pos++;

@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <!--report any issues on the page -->
-<body onclick = "moving()">
+<body onclick = "moving()" class="reportPage" >
 
 
   <header>
@@ -83,12 +83,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <br>
 
     <div id = "bearContainer">
-        <img id = "misconductBear" src = "images\bearMisconduct.png"  alt = "bear moving" width = "400" height = "400"/>
+        <img id = "misconductBear" src = "images\bearMisconduct.png"  alt = "bear moving" />
     </div>
     
 
     <section id="report" >
-        <h2 style="color:rgb(33, 116, 103)">Report a Misconduct</h2>
+        
         <form  id = "report_form" action="reportValidation.php" method="post">
         <label for="misconduct"><b>Select the type of misconduct:</b></label><br>
         <label>
